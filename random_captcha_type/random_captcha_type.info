@@ -1,0 +1,6 @@
+; $Id$
+name = "Random captcha type"
+description = "Pick a random captcha challenge out of enabled captcha types."
+package = "Spam control"
+dependencies = captcha
+version = "$Name$"

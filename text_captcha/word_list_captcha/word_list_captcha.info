@@ -1,0 +1,6 @@
+; $Id$
+name = "Word list captcha"
+description = "Captchas like 'which word does not belong in the list [green red bird blue]?'."
+package = "Spam control"
+dependencies = captcha
+version = "$Name$"
