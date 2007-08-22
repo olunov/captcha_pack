@@ -1,6 +1,6 @@
 ; $Id$
 name = "CSS captcha"
-description = "Captcha challenge: the user has to type over a code which is scrambled with CSS."
+description = "Provides a CSS based captcha challenge."
 package = "Spam control"
 dependencies = captcha
 version = "$Name$"

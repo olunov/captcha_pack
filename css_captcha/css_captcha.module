@@ -1,7 +1,20 @@
 <?php
 // $Id$
 
-DEFINE(CSS_CAPTCHA_ALLOWED_CHARACTERS, 'aAbBcCdDeEfFgGhHijkKLmMnNpPqQrRsStTuUvVwWxXyYzZ123456789');
+DEFINE(CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS, 'aAbBcCdDeEfFgGhHijkKLmMnNpPqQrRsStTuUvVwWxXyYzZ123456789');
+
+require_once(drupal_get_path('module', 'css_captcha') . '/../text_captcha/text_captcha.inc');
+
+/**
+ * Implementation of hook_help().
+ */
+function css_captcha_help($section) {
+  switch ($section) {
+    case 'admin/user/captcha/css_captcha':
+      return '<p>' . t('The CSS captcha uses CSS tricks to obfuscate a random text code for spam bots. The characters of the code are scrambled in the HTML markup but are displayed in the correct order when rendered with a CSS capable browser.') . '</p>' ;
+  }
+  return $output;
+}
 
 /**
  * Implementation of hook_menu().
@@ -28,13 +41,13 @@ function css_captcha_settings_form() {
   $form['css_captcha_allowed_characters'] = array(
     '#type' => 'textfield',
     '#title' => t('Characters to use in the code'),
-    '#default_value' => variable_get('css_captcha_allowed_characters', CSS_CAPTCHA_ALLOWED_CHARACTERS),
+    '#default_value' => variable_get('css_captcha_allowed_characters', CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS),
   );
   $form['css_captcha_code_length'] = array(
     '#type' => 'select',
     '#title' => t('Code length'),
-    '#options' => array(4=>4, 5=>5, 6=>6, 7=>7, 8=>8),
-    '#default_value' => (int) variable_get('css_captcha_code_length', 4),
+    '#options' => array(4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9, 10=>10),
+    '#default_value' => (int) variable_get('css_captcha_code_length', 6),
   );
   return system_settings_form($form);
 }
@@ -57,8 +70,8 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
     case 'generate':
       if ($captcha_type == "CSS captcha") {
         // get settings
-        $allowed_chars = _text_captcha_utf8_split(variable_get('css_captcha_allowed_characters', CSS_CAPTCHA_ALLOWED_CHARACTERS));
-        $code_length = (int) variable_get('css_captcha_code_length', 4);
+        $allowed_chars = _text_captcha_utf8_split(variable_get('css_captcha_allowed_characters', CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS));
+        $code_length = (int) variable_get('css_captcha_code_length', 6);
         // build solution and $code_struct
         $solution = '';
         $code_struct = array();
@@ -68,29 +81,30 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
           $solution .= $character;
         }
         // generate css scrambling
-        $c = 0;
         while (count($code_struct) > 1) {
           // pick random neighbouring items from $code_struct
           $i = mt_rand(0, count($code_struct) - 2);
           $item_left = $code_struct[$i];
           $item_right = $code_struct[$i+1];
           // merge
-          $merged_size = $item_left['size']+$item_right['size'];
+          $merged_size = $item_left['size'] + $item_right['size'];
           if (mt_rand(0,1)) {
-            // normal merge: $item_left first $item_right second
+            // normal merge: $item_left first and $item_right second
             $merged_content = "<div style=\"width:{$item_left['size']}em;float:left;\">{$item_left['content']}</div>"
               . "<div style=\"width:{$item_right['size']}em;float:left;\">{$item_right['content']}</div>";
           }
           else {
-            // mirror merge: $item_right first $item_left second
+            // mirror merge: $item_right first and $item_left second
             $merged_content = "<div style=\"width:{$item_right['size']}em;float:right;\">{$item_right['content']}</div>"
               . "<div style=\"width:{$item_left['size']}em;float:left;\">{$item_left['content']}</div>";
           }
-          $item = array(
+          // build merged item
+          $item_merged = array(
             'content' => "<div style=\"width:{$merged_size}em;height:1.5em;\">$merged_content</div>",
             'size' => $merged_size,
           );
-          array_splice($code_struct, $i, 2, array($item));
+          // replace the two items with the merged one
+          array_splice($code_struct, $i, 2, array($item_merged));
           // make array indices contiguous again
           $code_struct = array_values($code_struct);
         }
