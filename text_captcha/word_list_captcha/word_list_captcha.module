@@ -116,6 +116,7 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
           // almost never the same during the generate phase and the validation
           // phase.
           '#DANGEROUS_SKIP_CHECK' => TRUE, //
+          '#required' => TRUE,
         );
         // additional CSS rules for the word list
         drupal_add_css(drupal_get_path('module', 'word_list_captcha') . '/word_list_captcha.css');
