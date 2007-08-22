@@ -108,7 +108,7 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
           '#title' => t('Which word does not belong to the list?'),
           '#options' => array_combine($word_list, $word_list),
           // extra class needed for additional CSS'ing of the options
-          '#attributes' => array('class' => 'word_list_captcha_radios'),
+          '#attributes' => array('class' => 'text-captcha-word-list-radios'),
           // The following entry '#DANGEROUS_SKIP_CHECK' is needed to prevent
           // that Drupal checks during validation phase if a submitted option
           // is in the list of possible options. (see includes/form.inc)
@@ -118,9 +118,8 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
           '#DANGEROUS_SKIP_CHECK' => TRUE, //
           '#required' => TRUE,
         );
-        // additional CSS rules for the word list
-        drupal_add_css(drupal_get_path('module', 'word_list_captcha') . '/word_list_captcha.css');
-        $captcha['preprocess'] = FALSE;
+        // additional text captcha CSS rules
+        drupal_add_css(drupal_get_path('module', 'word_list_captcha') . '/../text_captcha.css');
         return $captcha;
       }
       break;

@@ -275,6 +275,8 @@ function phrase_captcha_captcha($op, $captcha_type='') {
           '#title' => $question,
           '#prefix' => '"' . implode(' ', $phrase_words) . '"',
           '#options' => $options,
+          // extra class needed for additional CSS'ing of the options
+          '#attributes' => array('class' => 'text-captcha-word-list-radios'),
           // The following entry '#DANGEROUS_SKIP_CHECK' is needed to prevent
           // that Drupal checks during validation phase if a submitted option
           // is in the list of possible options. (see includes/form.inc)
@@ -284,6 +286,8 @@ function phrase_captcha_captcha($op, $captcha_type='') {
           '#DANGEROUS_SKIP_CHECK' => TRUE, //
           '#required' => TRUE,
         );
+        // additional text captcha CSS rules
+        drupal_add_css(drupal_get_path('module', 'phrase_captcha') . '/../text_captcha.css');
         return $captcha;
       }
   }
