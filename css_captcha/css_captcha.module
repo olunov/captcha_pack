@@ -3,7 +3,7 @@
 
 DEFINE(CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS, 'aAbBcCdDeEfFgGhHijkKLmMnNpPqQrRsStTuUvVwWxXyYzZ123456789');
 
-require_once(drupal_get_path('module', 'css_captcha') . '/../text_captcha/text_captcha.inc');
+require_once(drupal_get_path('module', 'css_captcha') .'/../text_captcha/text_captcha.inc');
 
 /**
  * Implementation of hook_help().
@@ -11,7 +11,7 @@ require_once(drupal_get_path('module', 'css_captcha') . '/../text_captcha/text_c
 function css_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/css_captcha':
-      return '<p>' . t('The CSS captcha uses CSS tricks to obfuscate a random text code for spam bots. The characters of the code are scrambled in the HTML markup but are displayed in the correct order when rendered with a CSS capable browser.') . '</p>' ;
+      return '<p>'. t('The CSS captcha uses CSS tricks to obfuscate a random text code for spam bots. The characters of the code are scrambled in the HTML markup but are displayed in the correct order when rendered with a CSS capable browser.') .'</p>' ;
   }
   return $output;
 }
@@ -46,7 +46,7 @@ function css_captcha_settings_form() {
   $form['css_captcha_code_length'] = array(
     '#type' => 'select',
     '#title' => t('Code length'),
-    '#options' => array(4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9, 10=>10),
+    '#options' => array(4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10),
     '#default_value' => (int) variable_get('css_captcha_code_length', 6),
   );
   return system_settings_form($form);
@@ -64,7 +64,7 @@ function css_captcha_settings_form_validate($form_id, $form_values) {
 }
 
 function css_captcha_captcha($op, $captcha_type='', $response='') {
-  switch($op) {
+  switch ($op) {
     case 'list':
       return array("CSS captcha");
     case 'generate':
@@ -88,15 +88,15 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
           $item_right = $code_struct[$i+1];
           // merge
           $merged_size = $item_left['size'] + $item_right['size'];
-          if (mt_rand(0,1)) {
+          if (mt_rand(0, 1)) {
             // normal merge: $item_left first and $item_right second
             $merged_content = "<div style=\"width:{$item_left['size']}em;float:left;\">{$item_left['content']}</div>"
-              . "<div style=\"width:{$item_right['size']}em;float:left;\">{$item_right['content']}</div>";
+              ."<div style=\"width:{$item_right['size']}em;float:left;\">{$item_right['content']}</div>";
           }
           else {
             // mirror merge: $item_right first and $item_left second
             $merged_content = "<div style=\"width:{$item_right['size']}em;float:right;\">{$item_right['content']}</div>"
-              . "<div style=\"width:{$item_left['size']}em;float:left;\">{$item_left['content']}</div>";
+              ."<div style=\"width:{$item_left['size']}em;float:left;\">{$item_left['content']}</div>";
           }
           // build merged item
           $item_merged = array(
@@ -111,7 +111,7 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
         // build captcha challenge
         $captcha = array();
         $captcha['solution'] = $solution;
-        $captcha['form']['captcha_response'] = array (
+        $captcha['form']['captcha_response'] = array(
           '#type' => 'textfield',
           '#title' => t('Enter the code above'),
           '#size' => 10,
