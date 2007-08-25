@@ -1,7 +1,7 @@
 <?php
 // $Id$
 
-require_once(drupal_get_path('module', 'lost_character_captcha') . '/../text_captcha.inc');
+require_once(drupal_get_path('module', 'lost_character_captcha') .'/../text_captcha.inc');
 
 define('LOST_CHARACTERS_CAPTCHA_DEFAULT_WORD_POOL', 'information language interesting vocabulary communication computer security presentation infrastructure videotape yesterday xylophone workforce validation supervisor standalone multimedia grapefruit friendship aboriginal alphabetical agriculture atmosphere candidature catastrophe audiovisual fingerprint keyboard testimonial supervision supermarket temperature terminology telephonist ultraviolet scholarship spaceflight shoplifting punctuation screwdriver quarterback');
 
@@ -13,7 +13,7 @@ define('LOST_CHARACTERS_CAPTCHA_HINTER', '_');
 function lost_character_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/lost_character_captcha':
-      return '<p>' . t('The challenge in this captcha is to determine the lost characters of a given word.') . '</p>';
+      return '<p>'. t('The challenge in this captcha is to determine the lost characters of a given word.') .'</p>';
   }
   return $output;
 }
@@ -46,7 +46,7 @@ function lost_character_captcha_settings_form() {
     '#title' => t('Number of characters to lose'),
     '#default_value' => variable_get('lost_character_captcha_quantity', 1),
     '#description' => t('Select how many characters should be lost in the challenge.'),
-    '#options' => array(1=>1,2=>2,3=>3),
+    '#options' => array(1 => 1, 2 => 2, 3 => 3),
   );
   // form element for hinting
   $form['lost_character_captcha_enable_hint'] = array(
@@ -101,7 +101,7 @@ function lost_character_captcha_settings_form_validate($form_id, $form_values) {
  * Implementation of hook_captcha().
  */
 function lost_character_captcha_captcha($op, $captcha_type='', $response='') {
-  switch($op) {
+  switch ($op) {
     case 'list':
       return array("Lost characters");
     case 'generate':
@@ -144,7 +144,7 @@ function lost_character_captcha_captcha($op, $captcha_type='', $response='') {
         //
         $captcha = array();
         $captcha['solution'] = $solution;
-        $captcha['form']['captcha_response'] = array (
+        $captcha['form']['captcha_response'] = array(
           '#type' => 'textfield',
           '#title' => $title,
           '#field_prefix' => "$given_word: ",

@@ -1,7 +1,7 @@
 <?php
 // $Id$
 
-require_once(drupal_get_path('module', 'word_list_captcha') . '/../text_captcha.inc');
+require_once(drupal_get_path('module', 'word_list_captcha') .'/../text_captcha.inc');
 
 define('WORD_LIST_CAPTCHA_WORD_POOL1', 'green red blue yellow black white magenta cyan orange violet purple gold brown pink');
 define('WORD_LIST_CAPTCHA_WORD_POOL2', 'bird elephant dog cat crocodile lion fish cow horse sheep frog beetle worm spider bat giraffe lizard goat monkey rabbit chimpanzee');
@@ -12,7 +12,7 @@ define('WORD_LIST_CAPTCHA_WORD_POOL2', 'bird elephant dog cat crocodile lion fis
 function word_list_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/word_list_captcha':
-      return '<p>' . t('The unrelated word captcha challenge consists of a list of closely related words with one non-related word, which the user has to select. To generate this list, two word pools are needed: one for the related words and one for the non-related word.') . '</p>';
+      return '<p>'. t('The unrelated word captcha challenge consists of a list of closely related words with one non-related word, which the user has to select. To generate this list, two word pools are needed: one for the related words and one for the non-related word.') .'</p>';
   }
   return $output;
 }
@@ -46,7 +46,7 @@ function word_list_captcha_settings_form() {
     '#type' => 'select',
     '#title' => t('Number of words in word list'),
     '#default_value' => variable_get('word_list_captcha_list_size', 5),
-    '#options' => array(4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9, 10=>10),
+    '#options' => array(4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10),
   );
   // form elements for the word pools
   _text_captcha_word_pool_form_items($form,
@@ -83,7 +83,7 @@ function word_list_captcha_settings_form_validate($form_id, $form_values) {
  * helper function for generating a word list captcha
  */
 function _word_list_captcha_get_word_list_captcha($list_size) {
-  if (mt_rand(0,1)) {
+  if (mt_rand(0, 1)) {
     $normal_words = _text_captcha_word_pool_get_content('word_list_captcha_word_pool_1', NULL, WORD_LIST_CAPTCHA_WORD_POOL1, TRUE);
     $other_words = _text_captcha_word_pool_get_content('word_list_captcha_word_pool_2', NULL, WORD_LIST_CAPTCHA_WORD_POOL2, TRUE);
   }
@@ -103,7 +103,7 @@ function _word_list_captcha_get_word_list_captcha($list_size) {
  * Implementation of hook_captcha().
  */
 function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
-  switch($op) {
+  switch ($op) {
     case 'list':
       return array('Pick the unrelated word');
       break;
@@ -113,7 +113,7 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
         list($word_list, $wrong_word) = _word_list_captcha_get_word_list_captcha($list_size);
         $captcha = array();
         $captcha['solution'] = $wrong_word;
-        $captcha['form']['captcha_response'] = array (
+        $captcha['form']['captcha_response'] = array(
           '#type' => 'radios',
           '#title' => t('Which word does not belong to the list?'),
           '#options' => array_combine($word_list, $word_list),
@@ -129,7 +129,7 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
           '#required' => TRUE,
         );
         // additional text captcha CSS rules
-        drupal_add_css(drupal_get_path('module', 'word_list_captcha') . '/../text_captcha.css');
+        drupal_add_css(drupal_get_path('module', 'word_list_captcha') .'/../text_captcha.css');
         return $captcha;
       }
       break;

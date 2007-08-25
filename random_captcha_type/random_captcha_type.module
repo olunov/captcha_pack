@@ -12,7 +12,7 @@
 function random_captcha_type_help($section) {
   switch ($section) {
     case 'admin/user/captcha/random_captcha_type':
-      return '<p>' . t('This captcha could be seen as a "meta captcha type", which randomly picks one of the selected captcha types.') . '</p>';
+      return '<p>'. t('This captcha could be seen as a "meta captcha type", which randomly picks one of the selected captcha types.') .'</p>';
   }
   return $output;
 }
@@ -41,7 +41,7 @@ function random_captcha_type_menu($may_cache) {
  */
 function _random_captcha_type_get_all_challenges() {
   $captcha_challenges = array();
-  foreach(module_implements('captcha') as $module) {
+  foreach (module_implements('captcha') as $module) {
     // skip random_captcha_type module
     if ($module == 'random_captcha_type') {
       continue;
@@ -49,7 +49,7 @@ function _random_captcha_type_get_all_challenges() {
     // get available  challenges
     $result = call_user_func_array($module .'_captcha', 'list');
     if (is_array($result)) {
-      foreach($result as $challenge) {
+      foreach ($result as $challenge) {
         $captcha_challenges["$module/$challenge"] = "$challenge ($module)";
       }
     }
@@ -110,7 +110,7 @@ function random_captcha_type_settings_form_validate($form_id, $form_values) {
  * Implementation of hook_captcha
  */
 function random_captcha_type_captcha($op, $captcha_type='') {
-  switch($op) {
+  switch ($op) {
     case 'list':
       return array('Random captcha type');
     case 'generate':

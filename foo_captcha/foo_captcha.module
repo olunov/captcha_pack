@@ -7,7 +7,7 @@
 function foo_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/foo_captcha':
-      return '<p>' . t('This is a very simple captcha, which requires users to enter "foo" in a textfield.') . '</p>';
+      return '<p>'. t('This is a very simple captcha, which requires users to enter "foo" in a textfield.') .'</p>';
   }
   return $output;
 }
@@ -48,7 +48,7 @@ function foo_captcha_settings_form() {
  * Implementation of hook_captcha().
  */
 function foo_captcha_captcha($op, $captcha_type='', $response='') {
-  switch($op) {
+  switch ($op) {
     case 'list':
       return array('Foo captcha');
       break;
@@ -56,7 +56,7 @@ function foo_captcha_captcha($op, $captcha_type='', $response='') {
       if ($captcha_type == 'Foo captcha') {
         $captcha = array();
         $captcha['solution'] = 'foo';
-        $captcha['form']['captcha_response'] = array (
+        $captcha['form']['captcha_response'] = array(
           '#type' => 'textfield',
           '#title' => t('Enter "foo"'),
           '#required' => TRUE,
