@@ -2,7 +2,7 @@
 // $Id$
 
 /**
- * Implementation of a phrase based captcha, for use with the captcha module
+ * Implementation of a phrase based CAPTCHA, for use with the CAPTCHA module
  *
  * @todo: add character picking of current word, which is harder for spam bots
  * than plain word guessing.
@@ -20,7 +20,7 @@ DEFINE('PHRASE_CAPTCHA_USER_DEFINED_WORDS', 1);
 function phrase_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/phrase_captcha':
-      return '<p>'. t('This phrase based captcha presents a captcha phrase of a given number of words and asks to pick the right word (based on counting, alphabetical order, etc).') .'</p>';
+      return '<p>'. t('This phrase based CAPTCHA presents a CAPTCHA phrase of a given number of words and asks to pick the right word (based on counting, alphabetical order, etc).') .'</p>';
   }
   return $output;
 }
@@ -34,10 +34,9 @@ function phrase_captcha_menu($may_cache) {
     // add an administration tab for phrase_captcha
     $items[] = array(
       'path' => 'admin/user/captcha/phrase_captcha',
-      'title' => t('Phrase captcha'),
+      'title' => t('Phrase CAPTCHA'),
       'callback' => 'drupal_get_form',
       'callback arguments' => array('phrase_captcha_settings_form'),
-      'access' => user_access('administer captcha'),
       'type' => MENU_LOCAL_TASK,
     );
   }
@@ -52,7 +51,7 @@ function phrase_captcha_settings_form() {
   // radio buttons for selecting the kind of words to use
   $form['phrase_captcha_words'] = array(
     '#type' => 'radios',
-    '#title' => t('Kind of words to use in the captcha phrase'),
+    '#title' => t('Kind of words to use in the CAPTCHA phrase'),
     '#options' => array(
       PHRASE_CAPTCHA_GENERATE_NONSENSE_WORDS => t('Generate nonsense words'),
       PHRASE_CAPTCHA_USER_DEFINED_WORDS => t('Use user defined words')
@@ -63,13 +62,13 @@ function phrase_captcha_settings_form() {
   // form elements for the word pools
   _text_captcha_word_pool_form_items($form,
     'phrase_captcha_userdefined_word_pool', t('User defined word pool'),
-    t('Enter the words to use in the captcha phrase (space separated, no punctuation).'),
+    t('Enter the words to use in the CAPTCHA phrase (space separated, no punctuation).'),
     ''
   );
-  // select form element for the number of words in the captcha phrase
+  // select form element for the number of words in the CAPTCHA phrase
   $form['phrase_captcha_word_quantity'] = array(
     '#type' => 'select',
-    '#title' => t('Number of words in the captcha phrase'),
+    '#title' => t('Number of words in the CAPTCHA phrase'),
     '#default_value' => (int) variable_get('phrase_captcha_word_quantity', 5),
     '#options' => array(4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10),
     '#required' => TRUE,
@@ -197,16 +196,16 @@ function _phrase_captcha_word_question_word_index($words) {
   $key = array_rand($words, 1);
   $answer = $words[$key];
   if (mt_rand(0, 1)) {
-    $description = t('What is the @nth word in the captcha phrase above?',
+    $description = t('What is the @nth word in the CAPTCHA phrase above?',
       array('@nth' => _phrase_captcha_ordinal($key + 1)));
   }
   else {
     $n = count($words) - $key;
     if ($n == 1) {
-      $description = t('What is the last word in the captcha phrase above?');
+      $description = t('What is the last word in the CAPTCHA phrase above?');
     }
     else {
-      $description = t('What is the @nth last word in the captcha phrase above?',
+      $description = t('What is the @nth last word in the CAPTCHA phrase above?',
         array('@nth' => _phrase_captcha_ordinal($n)));
     }
   }
@@ -231,7 +230,7 @@ function _phrase_captcha_word_question_alphabetical_misplaced($words) {
   unset($words[$from]);
   array_splice($words, $to, 0, $answer);
   // build the description
-  $description = t('Which word does not follow the alphabetical order in the captcha phrase above?');
+  $description = t('Which word does not follow the alphabetical order in the CAPTCHA phrase above?');
   return array($words, $description, $answer);
 }
 
@@ -244,7 +243,7 @@ function _phrase_captcha_word_question_double_occurence($words) {
   // replace another word with it
   while (($pos = array_rand($words, 1)) == $key) {}
   array_splice($words, $pos, 1, $answer);
-  $description = t('Which word occurs two times in the captcha phrase above?');
+  $description = t('Which word occurs two times in the CAPTCHA phrase above?');
   return array($words, $description, $answer);
 }
 
@@ -254,9 +253,9 @@ function _phrase_captcha_word_question_double_occurence($words) {
 function phrase_captcha_captcha($op, $captcha_type='') {
   switch ($op) {
     case 'list':
-      return array('Phrase captcha');
+      return array('Phrase CAPTCHA');
     case 'generate':
-      if ($captcha_type == 'Phrase captcha') {
+      if ($captcha_type == 'Phrase CAPTCHA') {
         // generate words
         $words = _phrase_captcha_generate_words((int) variable_get('phrase_captcha_word_quantity', 5));
         // pick a random word selection challenge
@@ -290,7 +289,7 @@ function phrase_captcha_captcha($op, $captcha_type='') {
           '#DANGEROUS_SKIP_CHECK' => TRUE, //
           '#required' => TRUE,
         );
-        // additional text captcha CSS rules
+        // additional text CAPTCHA CSS rules
         drupal_add_css(drupal_get_path('module', 'phrase_captcha') .'/../text_captcha.css');
         return $captcha;
       }

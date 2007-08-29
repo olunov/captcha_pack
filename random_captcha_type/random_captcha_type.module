@@ -2,7 +2,7 @@
 // $Id$
 
 /**
- * Implementation of a "meta captcha" which randomly switches between several captcha types
+ * Implementation of a "meta CAPTCHA" which randomly picks a CAPTCHA type
  */
 
 
@@ -12,7 +12,7 @@
 function random_captcha_type_help($section) {
   switch ($section) {
     case 'admin/user/captcha/random_captcha_type':
-      return '<p>'. t('This captcha could be seen as a "meta captcha type", which randomly picks one of the selected captcha types.') .'</p>';
+      return '<p>'. t('This CAPTCHA type is a "meta" CAPTCHA type, which randomly picks one of the selected CAPTCHA types.') .'</p>';
   }
   return $output;
 }
@@ -26,7 +26,7 @@ function random_captcha_type_menu($may_cache) {
     // add an administration tab for random_captcha_type
     $items[] = array(
       'path' => 'admin/user/captcha/random_captcha_type',
-      'title' => t('Random captcha type'),
+      'title' => t('Random CAPTCHA type'),
       'callback' => 'drupal_get_form',
       'callback arguments' => array('random_captcha_type_settings_form'),
       'type' => MENU_LOCAL_TASK,
@@ -36,43 +36,43 @@ function random_captcha_type_menu($may_cache) {
 }
 
 /**
- * Function for getting all the possible captcha challenges to switch between.
+ * Function for getting all the possible CAPTCHA types to switch between.
  * For use as #options entry of a checkboxes widget.
  */
-function _random_captcha_type_get_all_challenges() {
-  $captcha_challenges = array();
+function _random_captcha_type_get_all_types() {
+  $captcha_types = array();
   foreach (module_implements('captcha') as $module) {
     // skip random_captcha_type module
     if ($module == 'random_captcha_type') {
       continue;
     }
-    // get available  challenges
+    // get available  types
     $result = call_user_func_array($module .'_captcha', 'list');
     if (is_array($result)) {
-      foreach ($result as $challenge) {
-        $captcha_challenges["$module/$challenge"] = "$challenge ($module)";
+      foreach ($result as $type) {
+        $captcha_types["$module/$type"] = "$type ($module)";
       }
     }
   }
-  return $captcha_challenges;
+  return $captcha_types;
 }
 
 /**
- * Function for getting the enabled captcha challenges.
- * Alternative of variable_get('random_captcha_type_challenges', ...) with
+ * Function for getting the enabled CAPTCHA types.
+ * Alternative of variable_get('random_captcha_type_enabled_types', ...) with
  * sensible default value.
  * For use as #default_value of checkboxes widget.
- * Returns an array mapping "$module/$challenge" to "$module/$challenge" if
- * that challenge is enabled or 0 if not enabled.
+ * Returns an array mapping "$module/$type" to "$module/$type" if
+ * that type is enabled or 0 if not enabled.
  */
-function _random_captcha_type_get_enabled_challenges() {
-  $enabled_challenges = variable_get('random_captcha_type_challenges', array());
-  if (!$enabled_challenges) {
-    $keys = array_keys(_random_captcha_type_get_all_challenges());
-    $enabled_challenges = array_combine($keys, $keys);
-    variable_set('random_captcha_type_challenges', $enabled_challenges);
+function _random_captcha_type_get_enabled_types() {
+  $enabled_types = variable_get('random_captcha_type_enabled_types', array());
+  if (!$enabled_types) {
+    $keys = array_keys(_random_captcha_type_get_all_types());
+    $enabled_types = array_combine($keys, $keys);
+    variable_set('random_captcha_type_enabled_types', $enabled_types);
   }
-  return $enabled_challenges;
+  return $enabled_types;
 }
 
 /**
@@ -80,16 +80,16 @@ function _random_captcha_type_get_enabled_challenges() {
  */
 function random_captcha_type_settings_form() {
 
-  if (count(array_filter(_random_captcha_type_get_enabled_challenges())) < 2) {
-    drupal_set_message(t('You need at least two captcha challenge types (other than %random_captcha_type).', array('%random_captcha_type' => 'Random captcha type')), 'error');
+  if (count(array_filter(_random_captcha_type_get_enabled_types())) < 2) {
+    drupal_set_message(t('You need at least two CAPTCHA types (other than %random_captcha_type).', array('%random_captcha_type' => 'Random CAPTCHA type')), 'error');
   }
   $form = array();
-  $captcha_challenges = _random_captcha_type_get_all_challenges();
-  $form['random_captcha_type_challenges'] = array(
+  $captcha_types = _random_captcha_type_get_all_types();
+  $form['random_captcha_type_enabled_types'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Randomly switch between'),
-    '#options' => $captcha_challenges,
-    '#default_value' => _random_captcha_type_get_enabled_challenges(),
+    '#options' => $captcha_types,
+    '#default_value' => _random_captcha_type_get_enabled_types(),
   );
   return system_settings_form($form);
 }
@@ -99,9 +99,9 @@ function random_captcha_type_settings_form() {
  */
 function random_captcha_type_settings_form_validate($form_id, $form_values) {
   if ($form_id == 'random_captcha_type_settings_form') {
-    // at least 2 captcha types should be selected
-    if (count(array_filter($form_values['random_captcha_type_challenges'])) < 2) {
-      form_set_error('random_captcha_type_challenges', t('You should select at least two captcha types.'));
+    // at least 2 CAPTCHA types should be selected
+    if (count(array_filter($form_values['random_captcha_type_enabled_types'])) < 2) {
+      form_set_error('random_captcha_type_enabled_types', t('You should select at least two CAPTCHA types.'));
     }
   }
 }
@@ -112,12 +112,12 @@ function random_captcha_type_settings_form_validate($form_id, $form_values) {
 function random_captcha_type_captcha($op, $captcha_type='') {
   switch ($op) {
     case 'list':
-      return array('Random captcha type');
+      return array('Random CAPTCHA type');
     case 'generate':
-      if ($captcha_type == 'Random captcha type') {
-        $challenges = array_filter(_random_captcha_type_get_enabled_challenges());
-        $key = array_rand($challenges);
-        list($module, $type) = explode('/', $challenges[$key]);
+      if ($captcha_type == 'Random CAPTCHA type') {
+        $types = array_filter(_random_captcha_type_get_enabled_types());
+        $key = array_rand($types);
+        list($module, $type) = explode('/', $types[$key]);
         return module_invoke($module, 'captcha', 'generate', $type);
       }
   }

@@ -1,6 +1,6 @@
 ; $Id$
-name = "Phrase captcha"
-description = "Pick for the right word/character out of a captcha phrase."
+name = "Phrase CAPTCHA"
+description = "Provides CAPTCHA that requires to pick for the right word/character out of a CAPTCHA phrase."
 package = "Spam control"
 dependencies = captcha
 version = "$Name$"

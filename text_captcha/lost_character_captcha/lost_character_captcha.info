@@ -1,6 +1,6 @@
 ; $Id$
-name = "Lost character captcha"
-description = "Ask for lost characters in a given word."
+name = "Lost character CAPTCHA"
+description = "Provides CAPTCHA that asks for the lost character(s) in a given word."
 package = "Spam control"
 dependencies = captcha
 version = "$Name$"

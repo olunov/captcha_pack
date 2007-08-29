@@ -3,9 +3,8 @@
 
 require_once(drupal_get_path('module', 'lost_character_captcha') .'/../text_captcha.inc');
 
-define('LOST_CHARACTERS_CAPTCHA_DEFAULT_WORD_POOL', 'information language interesting vocabulary communication computer security presentation infrastructure videotape yesterday xylophone workforce validation supervisor standalone multimedia grapefruit friendship aboriginal alphabetical agriculture atmosphere candidature catastrophe audiovisual fingerprint keyboard testimonial supervision supermarket temperature terminology telephonist ultraviolet scholarship spaceflight shoplifting punctuation screwdriver quarterback');
-
-define('LOST_CHARACTERS_CAPTCHA_HINTER', '_');
+define('LOST_CHARACTER_CAPTCHA_DEFAULT_WORD_POOL', 'information language interesting vocabulary communication computer security presentation infrastructure videotape yesterday xylophone workforce validation supervisor standalone multimedia grapefruit friendship aboriginal alphabetical agriculture atmosphere candidature catastrophe audiovisual fingerprint keyboard testimonial supervision supermarket temperature terminology telephonist ultraviolet scholarship spaceflight shoplifting punctuation screwdriver quarterback');
+define('LOST_CHARACTER_CAPTCHA_HINTER', '_');
 
 /**
  * Implementation of hook_help().
@@ -13,9 +12,8 @@ define('LOST_CHARACTERS_CAPTCHA_HINTER', '_');
 function lost_character_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/lost_character_captcha':
-      return '<p>'. t('The challenge in this captcha is to determine the lost characters of a given word.') .'</p>';
+      return '<p>'. t('The challenge in this CAPTCHA is to determine the lost character(s) of a given word.') .'</p>';
   }
-  return $output;
 }
 
 /**
@@ -45,13 +43,13 @@ function lost_character_captcha_settings_form() {
     '#type' => 'select',
     '#title' => t('Number of characters to lose'),
     '#default_value' => variable_get('lost_character_captcha_quantity', 1),
-    '#description' => t('Select how many characters should be lost in the challenge.'),
+    '#description' => t('Select how many characters should be lost in the CAPTCHA.'),
     '#options' => array(1 => 1, 2 => 2, 3 => 3),
   );
   // form element for hinting
   $form['lost_character_captcha_enable_hint'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Put "%hinter" where the characters are lost as a hint', array('%hinter' => LOST_CHARACTERS_CAPTCHA_HINTER)),
+    '#title' => t('Put "%hinter" where the characters are lost as a hint', array('%hinter' => LOST_CHARACTER_CAPTCHA_HINTER)),
     '#default_value' => variable_get('lost_character_captcha_enable_hint', TRUE),
     '#description' => t('Enable this option to make it easier to determine the lost characters.'),
   );
@@ -60,7 +58,7 @@ function lost_character_captcha_settings_form() {
     'lost_character_captcha_word_pool',
     'Word pool',
     'Enter the words to use, separated with spaces. Make sure every word is unambiguously recognizable when characters are lost. Avoid for example verbs, adverbs, plural forms, too short words, names. Also make sure the words are well known to your intended public.',
-    LOST_CHARACTERS_CAPTCHA_DEFAULT_WORD_POOL
+    LOST_CHARACTER_CAPTCHA_DEFAULT_WORD_POOL
   );
   // add a pre_render callback
   $form['#pre_render'] = (array)($form['#pre_render']) + array('lost_character_captcha_settings_form_pre_render');
@@ -107,7 +105,7 @@ function lost_character_captcha_captcha($op, $captcha_type='', $response='') {
     case 'generate':
       if ($captcha_type == "Lost characters") {
         // get the word pool
-        $words = _text_captcha_word_pool_get_content('lost_character_captcha_word_pool', NULL, LOST_CHARACTERS_CAPTCHA_DEFAULT_WORD_POOL, TRUE);
+        $words = _text_captcha_word_pool_get_content('lost_character_captcha_word_pool', NULL, LOST_CHARACTER_CAPTCHA_DEFAULT_WORD_POOL, TRUE);
         // pick a random word
         $word = $words[array_rand($words)];
         // split in characters
@@ -118,20 +116,20 @@ function lost_character_captcha_captcha($op, $captcha_type='', $response='') {
         for ($i=0; $i<$lose_quantity; $i++) {
           // pick a random character
           $n = array_rand($characters);
-          while ($characters[$n] == LOST_CHARACTERS_CAPTCHA_HINTER) {
+          while ($characters[$n] == LOST_CHARACTER_CAPTCHA_HINTER) {
             $n = array_rand($characters);
           }
           // save it for building the solution
           $lost[] = $characters[$n];
           // and lose it in the given word
           if (variable_get('lost_character_captcha_enable_hint', TRUE)) {
-            $characters[$n] = LOST_CHARACTERS_CAPTCHA_HINTER;
+            $characters[$n] = LOST_CHARACTER_CAPTCHA_HINTER;
           }
           else {
             unset($characters[$n]);
           }
         }
-        // build the challenge
+        // build the CAPTCHA
         sort($lost);
         $given_word = implode('', $characters);
         $solution = implode('', $lost);

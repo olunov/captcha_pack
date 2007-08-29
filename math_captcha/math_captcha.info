@@ -1,6 +1,6 @@
 ; $Id$
-name = "Math captcha"
-description = "Math captchas like 'two + three = ?' and '2 times ? = 6'"
+name = "Math CAPTCHA"
+description = "Provide math CAPTCHAs like 'two + three = ?' and '2 times ? = 6'"
 package = "Spam control"
 dependencies = captcha
 version = "$Name$"

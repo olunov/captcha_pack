@@ -1,6 +1,6 @@
 ; $Id$
-name = "Foo captcha"
-description = "The foo captcha requires the user to enter the word 'foo'."
+name = "Foo CAPTCHA"
+description = "The foo CAPTCHA requires the user to enter the word 'foo'."
 package = "Spam control"
 dependencies = captcha
 version = "$Name$"

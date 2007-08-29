@@ -11,7 +11,7 @@ require_once(drupal_get_path('module', 'css_captcha') .'/../text_captcha/text_ca
 function css_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/css_captcha':
-      return '<p>'. t('The CSS captcha uses CSS tricks to obfuscate a random text code for spam bots. The characters of the code are scrambled in the HTML markup but are displayed in the correct order when rendered with a CSS capable browser.') .'</p>' ;
+      return '<p>'. t('The CSS CAPTCHA uses CSS tricks to obfuscate a random text code for spam bots. The characters of the code are scrambled in the HTML markup but are displayed in the correct order when rendered with a CSS capable browser.') .'</p>' ;
   }
   return $output;
 }
@@ -24,7 +24,7 @@ function css_captcha_menu($may_cache) {
   if ($may_cache) {
     $items[] = array(
       'path' => 'admin/user/captcha/css_captcha',
-      'title' => t('CSS captcha'),
+      'title' => t('CSS CAPTCHA'),
       'callback' => 'drupal_get_form',
       'callback arguments' => array('css_captcha_settings_form'),
       'type' => MENU_LOCAL_TASK,
@@ -66,9 +66,9 @@ function css_captcha_settings_form_validate($form_id, $form_values) {
 function css_captcha_captcha($op, $captcha_type='', $response='') {
   switch ($op) {
     case 'list':
-      return array("CSS captcha");
+      return array("CSS CAPTCHA");
     case 'generate':
-      if ($captcha_type == "CSS captcha") {
+      if ($captcha_type == "CSS CAPTCHA") {
         // get settings
         $allowed_chars = _text_captcha_utf8_split(variable_get('css_captcha_allowed_characters', CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS));
         $code_length = (int) variable_get('css_captcha_code_length', 6);
@@ -108,7 +108,7 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
           // make array indices contiguous again
           $code_struct = array_values($code_struct);
         }
-        // build captcha challenge
+        // build CAPTCHA
         $captcha = array();
         $captcha['solution'] = $solution;
         $captcha['form']['captcha_response'] = array(

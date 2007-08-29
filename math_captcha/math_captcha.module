@@ -2,7 +2,7 @@
 // $Id$
 
 /**
- * Implementation of a math captcha, for use with the captcha module
+ * Implementation of a math CAPTCHA, for use with the CAPTCHA module
  */
 
 
@@ -14,7 +14,7 @@ function math_captcha_menu($may_cache) {
   if ($may_cache) {
     $items[] = array(
       'path' => 'admin/user/captcha/math_captcha',
-      'title' => t('Math captcha'),
+      'title' => t('Math CAPTCHA'),
       'callback' => 'drupal_get_form',
       'callback arguments' => array('math_captcha_settings_form'),
       'type' => MENU_LOCAL_TASK,
@@ -36,7 +36,7 @@ function _math_captcha_enabled_challenges() {
 }
 
 /**
- * Math captcha settings form
+ * Math CAPTCHA settings form
  */
 function math_captcha_settings_form() {
   $form = array();
@@ -153,7 +153,7 @@ function _math_captcha_repr_op($op) {
   return $t;
 }
 /**
- * helper function to build a math captcha form item
+ * helper function to build a math CAPTCHA form item
  */
 function _math_captcha_build_captcha($x, $y, $operator, $result) {
   $form_item = array();
@@ -238,9 +238,9 @@ function _math_captcha_multiplication_challenge() {
 function math_captcha_captcha($op, $captcha_type='') {
   switch ($op) {
     case 'list':
-      return array('Math captcha');
+      return array('Math CAPTCHA');
     case 'generate':
-      if ($captcha_type == 'Math captcha') {
+      if ($captcha_type == 'Math CAPTCHA') {
         // get the available challenges
         $challenges = array_filter(_math_captcha_enabled_challenges());
         $challenge = $challenges[array_rand($challenges)];

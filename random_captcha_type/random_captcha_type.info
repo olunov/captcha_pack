@@ -1,6 +1,6 @@
 ; $Id$
-name = "Random captcha type"
-description = "Pick a random captcha challenge out of enabled captcha types."
+name = "Random CAPTCHA type"
+description = "Provides a 'meta' CAPTCHA that randomly picks a CAPTCHA type."
 package = "Spam control"
 dependencies = captcha
 version = "$Name$"

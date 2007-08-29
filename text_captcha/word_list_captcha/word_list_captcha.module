@@ -12,7 +12,7 @@ define('WORD_LIST_CAPTCHA_WORD_POOL2', 'bird elephant dog cat crocodile lion fis
 function word_list_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/word_list_captcha':
-      return '<p>'. t('The unrelated word captcha challenge consists of a list of closely related words with one non-related word, which the user has to select. To generate this list, two word pools are needed: one for the related words and one for the non-related word.') .'</p>';
+      return '<p>'. t('The unrelated word CAPTCHA consists of a list of closely related words with one non-related word, which the user has to select. To generate this list, two word pools are needed: one for the related words and one for the non-related word.') .'</p>';
   }
   return $output;
 }
@@ -29,7 +29,6 @@ function word_list_captcha_menu($may_cache) {
       'title' => t('Unrelated word'),
       'callback' => 'drupal_get_form',
       'callback arguments' => array('word_list_captcha_settings_form'),
-      'access' => user_access('administer captcha'),
       'type' => MENU_LOCAL_TASK,
     );
   }
@@ -80,7 +79,7 @@ function word_list_captcha_settings_form_validate($form_id, $form_values) {
 }
 
 /**
- * helper function for generating a word list captcha
+ * helper function for generating a word list CAPTCHA
  */
 function _word_list_captcha_get_word_list_captcha($list_size) {
   if (mt_rand(0, 1)) {
@@ -128,7 +127,7 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
           '#DANGEROUS_SKIP_CHECK' => TRUE, //
           '#required' => TRUE,
         );
-        // additional text captcha CSS rules
+        // additional text CAPTCHA CSS rules
         drupal_add_css(drupal_get_path('module', 'word_list_captcha') .'/../text_captcha.css');
         return $captcha;
       }

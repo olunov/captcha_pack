@@ -7,7 +7,7 @@
 function foo_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/foo_captcha':
-      return '<p>'. t('This is a very simple captcha, which requires users to enter "foo" in a textfield.') .'</p>';
+      return '<p>'. t('This is a very simple CAPTCHA, which requires users to enter "foo" in a textfield.') .'</p>';
   }
   return $output;
 }
@@ -20,7 +20,7 @@ function foo_captcha_menu($may_cache) {
   if ($may_cache) {
     $items[] = array(
       'path' => 'admin/user/captcha/foo_captcha',
-      'title' => t('Foo captcha'),
+      'title' => t('Foo CAPTCHA'),
       'callback' => 'drupal_get_form',
       'callback arguments' => array('foo_captcha_settings_form'),
       'type' => MENU_LOCAL_TASK,
@@ -50,10 +50,10 @@ function foo_captcha_settings_form() {
 function foo_captcha_captcha($op, $captcha_type='', $response='') {
   switch ($op) {
     case 'list':
-      return array('Foo captcha');
+      return array('Foo CAPTCHA');
       break;
     case 'generate':
-      if ($captcha_type == 'Foo captcha') {
+      if ($captcha_type == 'Foo CAPTCHA') {
         $captcha = array();
         $captcha['solution'] = 'foo';
         $captcha['form']['captcha_response'] = array(
@@ -66,7 +66,7 @@ function foo_captcha_captcha($op, $captcha_type='', $response='') {
       }
       break;
     case 'preprocess':
-      if ($captcha_type == 'Foo captcha') {
+      if ($captcha_type == 'Foo CAPTCHA') {
         if (variable_get('foo_captcha_case_insensitive', TRUE)) {
           $response = strtolower($response);
         }
