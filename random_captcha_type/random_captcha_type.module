@@ -68,8 +68,10 @@ function _random_captcha_type_get_all_types() {
 function _random_captcha_type_get_enabled_types() {
   $enabled_types = variable_get('random_captcha_type_enabled_types', array());
   if (!$enabled_types) {
-    $keys = array_keys(_random_captcha_type_get_all_types());
-    $enabled_types = array_combine($keys, $keys);
+    $enabled_types = array();
+    foreach (_random_captcha_type_get_all_types() as $key => $value) {
+      $enabled_types[$key] = $key;
+    }
     variable_set('random_captcha_type_enabled_types', $enabled_types);
   }
   return $enabled_types;

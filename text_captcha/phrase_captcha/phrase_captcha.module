@@ -263,9 +263,13 @@ function phrase_captcha_captcha($op, $captcha_type='') {
         $key = array_rand($word_challenges);
         $function = $word_challenges[$key];
         list($phrase_words, $question, $solution) = call_user_func($function, $words);
-        $options = array_merge($words, _phrase_captcha_generate_words((int) variable_get('phrase_captcha_additional_word_quantity', 1)));
-        shuffle($options);
-        $options = array_combine($options, $options);
+        // build options list
+        $all_words = array_merge($words, _phrase_captcha_generate_words((int) variable_get('phrase_captcha_additional_word_quantity', 1)));
+        shuffle($all_words);
+        $options = array();
+        foreach ($all_words as $word) {
+          $options[$word] = $word;
+        }
         // store the answer and build the form elements
         $captcha = array();
         $captcha['solution'] = $solution;

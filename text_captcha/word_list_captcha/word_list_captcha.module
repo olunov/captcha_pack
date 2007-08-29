@@ -110,12 +110,17 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
       if ($captcha_type == 'Pick the unrelated word') {
         $list_size = (int) variable_get('word_list_captcha_list_size', 5);
         list($word_list, $wrong_word) = _word_list_captcha_get_word_list_captcha($list_size);
+        // build options list
+        $options = array();
+        foreach ($word_list as $word) {
+          $options[$word] = $word;
+        }
         $captcha = array();
         $captcha['solution'] = $wrong_word;
         $captcha['form']['captcha_response'] = array(
           '#type' => 'radios',
           '#title' => t('Which word does not belong to the list?'),
-          '#options' => array_combine($word_list, $word_list),
+          '#options' => $options,
           // extra class needed for additional CSS'ing of the options
           '#attributes' => array('class' => 'text-captcha-word-list-radios'),
           // The following entry '#DANGEROUS_SKIP_CHECK' is needed to prevent
