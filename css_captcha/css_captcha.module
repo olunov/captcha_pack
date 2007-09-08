@@ -1,7 +1,7 @@
 <?php
 // $Id$
 
-DEFINE(CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS, 'aAbBcCdDeEfFgGhHijkKLmMnNpPqQrRsStTuUvVwWxXyYzZ123456789');
+define(CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS, 'aAbBcCdDeEfFgGhHijkKLmMnNpPqQrRsStTuUvVwWxXyYzZ123456789');
 
 require_once(drupal_get_path('module', 'css_captcha') .'/../text_captcha/text_captcha.inc');
 
@@ -13,7 +13,6 @@ function css_captcha_help($section) {
     case 'admin/user/captcha/css_captcha':
       return '<p>'. t('The CSS CAPTCHA uses CSS tricks to obfuscate a random text code for spam bots. The characters of the code are scrambled in the HTML markup but are displayed in the correct order when rendered with a CSS capable browser.') .'</p>' ;
   }
-  return $output;
 }
 
 /**

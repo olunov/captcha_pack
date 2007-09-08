@@ -11,8 +11,8 @@
 require_once(drupal_get_path('module', 'phrase_captcha') .'/../text_captcha.inc');
 
 
-DEFINE('PHRASE_CAPTCHA_GENERATE_NONSENSE_WORDS', 0);
-DEFINE('PHRASE_CAPTCHA_USER_DEFINED_WORDS', 1);
+define('PHRASE_CAPTCHA_GENERATE_NONSENSE_WORDS', 0);
+define('PHRASE_CAPTCHA_USER_DEFINED_WORDS', 1);
 
 /**
  * Implementation of hook_help().
@@ -22,7 +22,6 @@ function phrase_captcha_help($section) {
     case 'admin/user/captcha/phrase_captcha':
       return '<p>'. t('This phrase based CAPTCHA presents a CAPTCHA phrase of a given number of words and asks to pick the right word (based on counting, alphabetical order, etc).') .'</p>';
   }
-  return $output;
 }
 
 /**

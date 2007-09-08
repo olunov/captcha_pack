@@ -14,7 +14,6 @@ function word_list_captcha_help($section) {
     case 'admin/user/captcha/word_list_captcha':
       return '<p>'. t('The unrelated word CAPTCHA consists of a list of closely related words with one non-related word, which the user has to select. To generate this list, two word pools are needed: one for the related words and one for the non-related word.') .'</p>';
   }
-  return $output;
 }
 
 /**

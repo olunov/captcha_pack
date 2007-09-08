@@ -9,7 +9,6 @@ function foo_captcha_help($section) {
     case 'admin/user/captcha/foo_captcha':
       return '<p>'. t('This is a very simple CAPTCHA, which requires users to enter "foo" in a textfield.') .'</p>';
   }
-  return $output;
 }
 
 /**

@@ -14,7 +14,6 @@ function random_captcha_type_help($section) {
     case 'admin/user/captcha/random_captcha_type':
       return '<p>'. t('This CAPTCHA type is a "meta" CAPTCHA type, which randomly picks one of the selected CAPTCHA types.') .'</p>';
   }
-  return $output;
 }
 
 /**
