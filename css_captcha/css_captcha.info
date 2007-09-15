@@ -3,4 +3,3 @@ name = "CSS CAPTCHA"
 description = "Provides a CSS based CAPTCHA type."
 package = "Spam control"
 dependencies = captcha
-version = "$Name$"
