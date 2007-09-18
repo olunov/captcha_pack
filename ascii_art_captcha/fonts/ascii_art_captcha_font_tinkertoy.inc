@@ -1,8 +1,9 @@
 <?php
+// $Id$
 // Font definition based on figlet font "tinker-toy" (http://www.figlet.org/)
 // as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_tinker-toy() {
+function ASCII_art_captcha_font_tinkertoy() {
   $font = array();
   $font['height'] = 7;
   $font['name'] = 'tinker-toy';

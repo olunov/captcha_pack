@@ -1,4 +1,5 @@
 <?php
+// $Id$
 // Font definition based on figlet font "thick" (http://www.figlet.org/)
 // as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
