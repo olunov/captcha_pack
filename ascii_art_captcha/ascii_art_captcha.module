@@ -43,6 +43,7 @@ function _ascii_art_captcha_available_fonts() {
     ereg($pattern, $font->basename, $regs);
     $available_fonts[$regs[1]] = $regs[1];
   }
+  asort($available_fonts);
   return $available_fonts;
 }
 
@@ -63,7 +64,19 @@ function ascii_art_captcha_settings_form() {
     '#title' => t('Font'),
     '#options' => $available_fonts,
     '#default_value' => variable_get('ascii_art_captcha_font', 'standard'),
-    '#description' => t('Define the ASCII art font to use. Note that some characters are not very recognizable in some (small) fonts. Make sure to disable the right character sets in these cases.'),
+    '#description' => t('Define the ASCII art font to use. Note that some characters are not very recognizable in some (small/weird) fonts. Make sure to disable the right character sets in these cases.'),
+  );
+  // font size
+  $font_sizes = array(0 => t('default'));
+  foreach(array(4, 6, 8, 9, 10, 11, 12) as $pt) {
+    $font_sizes[$pt] = $pt .'pt';
+  }
+  $form['ascii_art_captcha_font_size'] = array(
+    '#type' => 'select',
+    '#title' => t('Font size'),
+    '#options' => $font_sizes,
+    '#default_value' => variable_get('ascii_art_captcha_font_size', 0),
+    '#description' => t('Set the font size for the ASCII art.'),
   );
   $form['ascii_art_captcha_allowed_characters'] = array(
     '#type' => 'checkboxes',
@@ -145,9 +158,13 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
         // build CAPTCHA array
         $captcha = array();
         $captcha['solution'] = $solution;
+        $style = 'line-height:1.1;';
+        if (variable_get('ascii_art_captcha_font_size', 0)) {
+          $style .= 'font-size:' . variable_get('ascii_art_captcha_font_size', 0) .'pt;';
+        }
         $captcha['form']['ascii'] = array(
           '#type' => 'markup',
-          '#value' => '<pre class="ascii_art_captcha" style="line-height:1;">'. implode('<br />', $ascii_lines) .'</pre>',
+          '#value' => '<pre class="ascii_art_captcha" style="'. $style .'">'. implode('<br />', $ascii_lines) .'</pre>',
         );
         $captcha['form']['captcha_response'] = array(
           '#type' => 'textfield',
