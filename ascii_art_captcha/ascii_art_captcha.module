@@ -1,17 +1,16 @@
 <?php
 // $Id$
 
-define(ASCII_ART_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS, 'aAbBcCdDeEfFgGhHijkKLmMnNpPqQrRsStTuUvVwWxXyYzZ123456789');
-
-require_once(drupal_get_path('module', 'css_captcha') .'/../text_captcha/text_captcha.inc');
-
 /**
  * Implementation of hook_help().
  */
 function ascii_art_captcha_help($section) {
   switch ($section) {
     case 'admin/user/captcha/ascii_art_captcha':
-      return '<p>'. t('TODO.') .'</p>' ;
+      $output = '<p>'. t('The ASCII art CAPTCHA shows a random character code in ASCII art style. Example with current settings:') .'</p>';
+      $captcha = ascii_art_captcha_captcha('generate', 'ASCII art CAPTCHA');
+      $output .= $captcha['form']['ascii']['#value'];
+      return $output;
   }
 }
 
@@ -33,17 +32,80 @@ function ascii_art_captcha_menu($may_cache) {
 }
 
 /**
+ * function to get a list of available fonts
+ */
+function _ascii_art_captcha_available_fonts() {
+  $available_fonts = array();
+  $fontsdirectory = drupal_get_path('module', 'ascii_art_captcha') .'/fonts';
+  $pattern = 'ascii_art_captcha_font_([a-zA-Z0-9]+)\.[iI][nN][cC]$';
+  foreach (file_scan_directory($fontsdirectory, $pattern) as $filename => $font) {
+    $regs = array();
+    ereg($pattern, $font->basename, $regs);
+    $available_fonts[$regs[1]] = $regs[1];
+  }
+  return $available_fonts;
+}
+
+/**
  * Function for the settings form
  */
 function ascii_art_captcha_settings_form() {
   $form = array();
+  $available_fonts = _ascii_art_captcha_available_fonts();
   $form['ascii_art_captcha_code_length'] = array(
     '#type' => 'select',
     '#title' => t('Code length'),
     '#options' => array(4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10),
     '#default_value' => (int) variable_get('ascii_art_captcha_code_length', 6),
   );
+  $form['ascii_art_captcha_font'] = array(
+    '#type' => 'select',
+    '#title' => t('Font'),
+    '#options' => $available_fonts,
+    '#default_value' => variable_get('ascii_art_captcha_font', 'standard'),
+    '#description' => t('Define the ASCII art font to use. Note that some characters are not very recognizable in some (small) fonts. Make sure to disable the right character sets in these cases.'),
+  );
+  $form['ascii_art_captcha_allowed_characters'] = array(
+    '#type' => 'checkboxes',
+    '#title' => 'Character sets to use',
+    '#options' => array(
+      'upper' => t('upper case characters'),
+      'lower' => t('lower case characters'),
+      'digit' => t('digits'),
+    ),
+    '#default_value' => variable_get('ascii_art_captcha_allowed_characters', array('upper' => 'upper', 'lower' => 'lower', 'digit' => 'digit')),
+    '#description' => t('Enable the character sets to use in the code. Choose wisely by taking the recognizability of the used font into account.'),
+  );
   return system_settings_form($form);
+}
+
+/**
+ * Validation function for the settings
+ */
+function ascii_art_captcha_settings_form_validate($form_id, $form_values) {
+  if ($form_id = 'ascii_art_captcha_settings_form') {
+    if ($form_values['ascii_art_captcha_allowed_characters'][0]) {
+      form_set_error('ascii_art_captcha_allowed_characters', t('You should select at least one type of characters to use'));
+    }
+  }
+}
+
+/**
+ * helper function for generating a code, taking the allowed characters into account
+ */
+function _ascii_art_captcha_get_allowed_characters() {
+  $allowed_chars = array();
+  $allowed_chars_settings = variable_get('ascii_art_captcha_allowed_characters', array('upper' => 'upper', 'lower' => 'lower', 'digit' => 'digit'));
+  if ($allowed_chars_settings['upper']) {
+    $allowed_chars = array_merge($allowed_chars, array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'));
+  }
+  if ($allowed_chars_settings['lower']) {
+    $allowed_chars = array_merge($allowed_chars, array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'));
+  }
+  if ($allowed_chars_settings['digit']) {
+    $allowed_chars += array_merge($allowed_chars, array('1', '2', '3', '4', '5', '6', '7', '8', '9'));
+  }
+  return $allowed_chars;
 }
 
 /**
@@ -56,11 +118,17 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
     case 'generate':
       if ($captcha_type == "ASCII art CAPTCHA") {
         // get settings
-        $allowed_chars = _text_captcha_utf8_split(CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS);
+        $allowed_chars = _ascii_art_captcha_get_allowed_characters();
         $code_length = (int) variable_get('ascii_art_captcha_code_length', 6);
         // load font
-        require_once('ascii_art_captcha_font.inc');
-        $font = ascii_art_captcha_font();
+        $font_name = variable_get('ascii_art_captcha_font', 'standard');
+        if (!include_once('fonts/ascii_art_captcha_font_'. $font_name .'.inc')) {
+          return;
+        }
+        $font = call_user_func('ascii_art_captcha_font_'. $font_name);
+        if (!$font){
+          return;
+        }
         // build solution and ASCII art array
         $solution = '';
         $ascii_lines = array();
@@ -71,7 +139,7 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
           $character = $allowed_chars[array_rand($allowed_chars)];
           $solution .= $character;
           foreach ($font[$character] as $l => $line) {
-            $ascii_lines[$l] .= $line;
+            $ascii_lines[$l] .= ' '. $line;
           }
         }
         // build CAPTCHA
@@ -79,7 +147,7 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
         $captcha['solution'] = $solution;
         $captcha['form']['ascii'] = array(
           '#type' => 'markup',
-          '#value' => '<pre class="ascii_art_captcha">'. implode('<br />', $ascii_lines) .'</pre>',
+          '#value' => '<pre class="ascii_art_captcha" style="line-height:1;">'. implode('<br />', $ascii_lines) .'</pre>',
         );
         $captcha['form']['captcha_response'] = array(
           '#type' => 'textfield',
