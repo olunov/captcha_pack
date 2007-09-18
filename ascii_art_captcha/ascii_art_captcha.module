@@ -138,11 +138,11 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
         for ($i = 0; $i < $code_length; $i++) {
           $character = $allowed_chars[array_rand($allowed_chars)];
           $solution .= $character;
-          foreach ($font[$character] as $l => $line) {
-            $ascii_lines[$l] .= ' '. $line;
+          foreach ($font[$character] as $l => $cline) {
+            $ascii_lines[$l] .= ' '. check_plain($cline);
           }
         }
-        // build CAPTCHA
+        // build CAPTCHA array
         $captcha = array();
         $captcha['solution'] = $solution;
         $captcha['form']['ascii'] = array(
