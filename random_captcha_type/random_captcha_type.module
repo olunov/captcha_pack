@@ -116,10 +116,26 @@ function random_captcha_type_captcha($op, $captcha_type='') {
       return array('Random CAPTCHA type');
     case 'generate':
       if ($captcha_type == 'Random CAPTCHA type') {
-        $types = array_filter(_random_captcha_type_get_enabled_types());
-        $key = array_rand($types);
-        list($module, $type) = explode('/', $types[$key]);
-        return module_invoke($module, 'captcha', 'generate', $type);
+        if (isset($_POST['random_captcha_type'])) {
+          // If this is a POST request, we're possibly in a validation phase
+          // so the CAPTCHA type should be the same as in the originating form
+          $module_and_type = $_POST['random_captcha_type'];
+        }
+        else {
+          // If not, just pick a random one
+          $types = array_filter(_random_captcha_type_get_enabled_types());
+          $module_and_type = $types[array_rand($types)];
+        }
+        list($module, $type) = explode('/', $module_and_type);
+        // Call the generate CAPTCHA hook
+        $captcha = module_invoke($module, 'captcha', 'generate', $type);
+        // Store the current CAPTCHA type so it can be recovered for
+        // regenerating the form in the validation phase
+        $captcha['form']['random_captcha_type'] = array (
+          '#type' => 'hidden',
+          '#value' => $module_and_type,
+        );
+        return $captcha;
       }
   }
 }
