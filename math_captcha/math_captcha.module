@@ -123,8 +123,8 @@ function _math_captcha_repr($n, $add_paratheses_when_negative=FALSE) {
   if (variable_get('math_captcha_textual_numbers', TRUE)) {
     $repr_map = array(
       0 => t('zero'), 1 => t('one'), 2 => t('two'), 3 => t('three'),
-      4 => t('four'), 5 => t('five'), 6 => t('six'), 7 => ('seven'), 8 => ('eight'),
-      9 => ('nine'), 10 => t('ten'), 11 => t('eleven'), 12 => t('twelve'),
+      4 => t('four'), 5 => t('five'), 6 => t('six'), 7 => t('seven'), 8 => t('eight'),
+      9 => t('nine'), 10 => t('ten'), 11 => t('eleven'), 12 => t('twelve'),
       13 => t('thirteen'), 14 => t('fourteen'), 15 => t('fifteen'),
     );
     if (array_key_exists(abs($n), $repr_map)) {
