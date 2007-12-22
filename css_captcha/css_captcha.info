@@ -2,4 +2,5 @@
 name = "CSS CAPTCHA"
 description = "Provides a CSS based CAPTCHA type."
 package = "Spam control"
-dependencies = captcha
+dependencies[] = captcha
+core = 6.x
