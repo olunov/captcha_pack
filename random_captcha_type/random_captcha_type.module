@@ -144,7 +144,7 @@ function random_captcha_type_captcha($op, $captcha_type='') {
         $captcha = module_invoke($module, 'captcha', 'generate', $type);
         // Store the current CAPTCHA type so it can be recovered for
         // regenerating the form in the validation phase
-        $captcha['form']['random_captcha_type'] = array (
+        $captcha['form']['random_captcha_type'] = array(
           '#type' => 'hidden',
           '#value' => $module_and_type,
         );

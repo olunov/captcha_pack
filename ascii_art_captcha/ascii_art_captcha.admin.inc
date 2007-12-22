@@ -52,7 +52,7 @@ function ascii_art_captcha_settings_form() {
  */
 function ascii_art_captcha_settings_form_validate($form, &$form_state) {
   if (count(array_filter($form_state['values']['ascii_art_captcha_allowed_characters'])) < 1) {
-    form_set_error('ascii_art_captcha_allowed_characters', t('You should select at least one type of characters to use'));
+    form_set_error('ascii_art_captcha_allowed_characters', t('You should select at least one type of characters to use.'));
   }
 }
 

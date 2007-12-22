@@ -4,7 +4,7 @@
 /**
  * On uninstall: remove module variables and clear variable cache
  */
-function math_captcha_uninstall() {
+function ascii_art_captcha_uninstall() {
   db_query("DELETE FROM {variable} WHERE name LIKE 'ascii_art_captcha_%'");
   cache_clear_all('variables', 'cache');
 }
