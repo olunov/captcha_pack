@@ -2,4 +2,5 @@
 name = "ASCII art CAPTCHA"
 description = "Provides an ASCII art based CAPTCHA type."
 package = "Spam control"
-dependencies = captcha
+dependencies[] = captcha
+core = 6.x
