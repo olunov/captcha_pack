@@ -76,7 +76,7 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
         $code_struct = array();
         for ($i = 0; $i < $code_length; $i++) {
           $character = $allowed_chars[array_rand($allowed_chars)];
-          $code_struct[$i] = array('content' => $character, 'size' => 1);
+          $code_struct[$i] = array('content' => $character, 'size' => 1.25);
           $solution .= $character;
         }
         // generate css scrambling
