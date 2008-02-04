@@ -57,7 +57,7 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
           $item_left = $code_struct[$i];
           $item_right = $code_struct[$i+1];
           // merge
-          $merged_size = $item_left['size'] + $item_right['size'];
+          $merged_size = $item_left['size'] + $item_right['size'] + .25;
           if (mt_rand(0, 1)) {
             // normal merge: $item_left first and $item_right second
             $merged_content = "<div style=\"width:{$item_left['size']}em;float:left;\">{$item_left['content']}</div>"
