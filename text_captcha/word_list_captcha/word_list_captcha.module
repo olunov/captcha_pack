@@ -9,8 +9,8 @@ define('WORD_LIST_CAPTCHA_WORD_POOL2', 'bird elephant dog cat crocodile lion fis
 /**
  * Implementation of hook_help().
  */
-function word_list_captcha_help($section) {
-  switch ($section) {
+function word_list_captcha_help($path, $arg) {
+  switch ($path) {
     case 'admin/user/captcha/word_list_captcha':
       return '<p>'. t('The unrelated word CAPTCHA consists of a list of closely related words with one non-related word, which the user has to select. To generate this list, two word pools are needed: one for the related words and one for the non-related word.') .'</p>';
   }
@@ -19,18 +19,15 @@ function word_list_captcha_help($section) {
 /**
  * Implementation of hook_menu().
  */
-function word_list_captcha_menu($may_cache) {
+function word_list_captcha_menu() {
   $items = array();
-  if ($may_cache) {
-    // add an administration tab for phrase_captcha
-    $items[] = array(
-      'path' => 'admin/user/captcha/word_list_captcha',
-      'title' => t('Unrelated word'),
-      'callback' => 'drupal_get_form',
-      'callback arguments' => array('word_list_captcha_settings_form'),
-      'type' => MENU_LOCAL_TASK,
-    );
-  }
+  // add an administration tab for phrase_captcha
+  $items['admin/user/captcha/word_list_captcha'] = array(
+    'title' => 'Unrelated word',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('word_list_captcha_settings_form'),
+    'type' => MENU_LOCAL_TASK,
+  );
   return $items;
 }
 
@@ -38,6 +35,7 @@ function word_list_captcha_menu($may_cache) {
  * Function for the settings form
  */
 function word_list_captcha_settings_form() {
+  drupal_set_message(t('WARNING: this module is not completely ported to Drupal 6 and does not work yet.'), 'warning');
   $form = array();
   // form element for the number of words in the word list
   $form['word_list_captcha_list_size'] = array(
@@ -61,6 +59,8 @@ function word_list_captcha_settings_form() {
     WORD_LIST_CAPTCHA_WORD_POOL2,
     2
   );
+  // add additional validation handler
+  $form['#validate'][] = 'word_list_captcha_settings_form_validate';
   // add buttons and return
   return system_settings_form($form);
 }
@@ -68,13 +68,11 @@ function word_list_captcha_settings_form() {
 /**
  * Validation function for the settings form
  */
-function word_list_captcha_settings_form_validate($form_id, $form_values) {
-  if ($form_id == 'word_list_captcha_settings_form') {
-    // check the number of words in the pools
-    $list_size = (int) variable_get('word_list_captcha_list_size', 5);
-    _text_captcha_word_pool_validate('word_list_captcha_word_pool_1', $form_values, $list_size, 0, '');
-    _text_captcha_word_pool_validate('word_list_captcha_word_pool_2', $form_values, $list_size, 0, '');
-  }
+function word_list_captcha_settings_form_validate($form, &$form_state) {
+  // check the number of words in the pools
+  $list_size = (int) $form_state['values']['word_list_captcha_list_size'];
+  _text_captcha_word_pool_validate('word_list_captcha_word_pool_1', $form_state['values'], $list_size, 0, '');
+  _text_captcha_word_pool_validate('word_list_captcha_word_pool_2', $form_state['values'], $list_size, 0, '');
 }
 
 /**
@@ -122,6 +120,9 @@ function word_list_captcha_captcha($op, $captcha_type='', $post_data=array()) {
           '#options' => $options,
           // extra class needed for additional CSS'ing of the options
           '#attributes' => array('class' => 'text-captcha-word-list-radios'),
+          // TODO: the following needs to be ported to Drupal 6, which does not
+          // support DANGEROUS_SKIP_CHECK anymore
+          //
           // The following entry '#DANGEROUS_SKIP_CHECK' is needed to prevent
           // that Drupal checks during validation phase if a submitted option
           // is in the list of possible options. (see includes/form.inc)
