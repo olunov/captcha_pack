@@ -17,8 +17,8 @@ define('PHRASE_CAPTCHA_USER_DEFINED_WORDS', 1);
 /**
  * Implementation of hook_help().
  */
-function phrase_captcha_help($section) {
-  switch ($section) {
+function phrase_captcha_help($path, $arg) {
+  switch ($path) {
     case 'admin/user/captcha/phrase_captcha':
       return '<p>'. t('This phrase based CAPTCHA presents a CAPTCHA phrase of a given number of words and asks to pick the right word (based on counting, alphabetical order, etc).') .'</p>';
   }
@@ -27,18 +27,15 @@ function phrase_captcha_help($section) {
 /**
  * Implementation of hook_menu().
  */
-function phrase_captcha_menu($may_cache) {
+function phrase_captcha_menu() {
   $items = array();
-  if ($may_cache) {
-    // add an administration tab for phrase_captcha
-    $items[] = array(
-      'path' => 'admin/user/captcha/phrase_captcha',
-      'title' => t('Phrase CAPTCHA'),
-      'callback' => 'drupal_get_form',
-      'callback arguments' => array('phrase_captcha_settings_form'),
-      'type' => MENU_LOCAL_TASK,
-    );
-  }
+  // add an administration tab for phrase_captcha
+  $items['admin/user/captcha/phrase_captcha'] = array(
+    'title' => 'Phrase CAPTCHA',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('phrase_captcha_settings_form'),
+    'type' => MENU_LOCAL_TASK,
+  );
   return $items;
 }
 
@@ -86,6 +83,9 @@ function phrase_captcha_settings_form() {
     '#options' => _phrase_captcha_available_word_challenges(),
     '#default_value' => _phrase_captcha_enabled_word_challenges(),
   );
+  // add additional validation handler
+  $form['#validate'][] = 'phrase_captcha_settings_form_validate';
+
   return system_settings_form($form);
 }
 
@@ -93,16 +93,14 @@ function phrase_captcha_settings_form() {
 /**
  * Validate function of the administration form
  */
-function phrase_captcha_settings_form_validate($form_id, $form_values) {
-  if ($form_id == 'phrase_captcha_settings_form') {
-    if ($form_values['phrase_captcha_words'] == PHRASE_CAPTCHA_USER_DEFINED_WORDS) {
-      $word_count_minimum = (int)$form_values['phrase_captcha_word_quantity'] + (int)$form_values['phrase_captcha_additional_word_quantity'] + 2;
-      _text_captcha_word_pool_validate('phrase_captcha_userdefined_word_pool', $form_values, $word_count_minimum, NULL, NULL);
-    }
-    // check word selection
-    if (count(array_filter($form_values['phrase_captcha_word_selection_challenges'])) < 1) {
-      form_set_error('phrase_captcha_word_selection_challenges', t('You need to select at least one word selection criterium'));
-    }
+function phrase_captcha_settings_form_validate($form, &$form_state) {
+  if ($form_state['values']['phrase_captcha_words'] == PHRASE_CAPTCHA_USER_DEFINED_WORDS) {
+    $word_count_minimum = (int) $form_state['values']['phrase_captcha_word_quantity'] + (int) $form_state['values']['phrase_captcha_additional_word_quantity'] + 2;
+    _text_captcha_word_pool_validate('phrase_captcha_userdefined_word_pool', $form_state['values'], $word_count_minimum, NULL, NULL);
+  }
+  // check word selection
+  if (count(array_filter($form_state['values']['phrase_captcha_word_selection_challenges'])) < 1) {
+    form_set_error('phrase_captcha_word_selection_challenges', t('You need to select at least one word selection criterium'));
   }
 }
 
@@ -240,7 +238,9 @@ function _phrase_captcha_word_question_double_occurence($words) {
   $key = array_rand($words, 1);
   $answer = $words[$key];
   // replace another word with it
-  while (($pos = array_rand($words, 1)) == $key) {}
+  while (($pos = array_rand($words, 1)) == $key) {
+    // NOP aka NOOP aka pass
+  }
   array_splice($words, $pos, 1, $answer);
   $description = t('Which word occurs two times in the CAPTCHA phrase above?');
   return array($words, $description, $answer);

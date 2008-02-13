@@ -2,4 +2,5 @@
 name = "Phrase CAPTCHA"
 description = "Provides CAPTCHA that requires to pick for the right word/character out of a CAPTCHA phrase."
 package = "Spam control"
-dependencies = captcha
+dependencies[] = captcha
+core = 6.x
