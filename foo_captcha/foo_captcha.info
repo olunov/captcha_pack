@@ -2,4 +2,5 @@
 name = "Foo CAPTCHA"
 description = "The foo CAPTCHA requires the user to enter the word 'foo'."
 package = "Spam control"
-dependencies = captcha
+dependencies[] = captcha
+core = 6.x
