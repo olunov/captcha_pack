@@ -17,7 +17,7 @@ function foo_captcha_help($path, $arg) {
 function foo_captcha_menu() {
   $items = array();
     $items['admin/user/captcha/foo_captcha'] = array(
-    'title' => t('Foo CAPTCHA'),
+    'title' => 'Foo CAPTCHA',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('foo_captcha_settings_form'),
     'type' => MENU_LOCAL_TASK,
@@ -28,7 +28,6 @@ function foo_captcha_menu() {
 /**
  * Function for the settings form
  */
-
 function foo_captcha_settings_form() {
   $form = array();
   $form['foo_captcha_case_insensitive'] = array(
