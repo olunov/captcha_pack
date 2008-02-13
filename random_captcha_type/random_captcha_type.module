@@ -9,8 +9,8 @@
 /**
  * Implementation of hook_help().
  */
-function random_captcha_type_help($section) {
-  switch ($section) {
+function random_captcha_type_help($path, $arg) {
+  switch ($path) {
     case 'admin/user/captcha/random_captcha_type':
       return '<p>'. t('This CAPTCHA type is a "meta" CAPTCHA type, which randomly picks one of the selected CAPTCHA types.') .'</p>';
   }
@@ -19,18 +19,15 @@ function random_captcha_type_help($section) {
 /**
  * Implementation of hook_menu().
  */
-function random_captcha_type_menu($may_cache) {
+function random_captcha_type_menu() {
   $items = array();
-  if ($may_cache) {
-    // add an administration tab for random_captcha_type
-    $items[] = array(
-      'path' => 'admin/user/captcha/random_captcha_type',
-      'title' => t('Random CAPTCHA type'),
-      'callback' => 'drupal_get_form',
-      'callback arguments' => array('random_captcha_type_settings_form'),
-      'type' => MENU_LOCAL_TASK,
-    );
-  }
+  // add an administration tab for random_captcha_type
+  $items['admin/user/captcha/random_captcha_type'] = array(
+    'title' => 'Random CAPTCHA type',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('random_captcha_type_settings_form'),
+    'type' => MENU_LOCAL_TASK,
+  );
   return $items;
 }
 
@@ -107,12 +104,10 @@ function random_captcha_type_settings_form() {
 /**
  * Implementation of form validation
  */
-function random_captcha_type_settings_form_validate($form_id, $form_values) {
-  if ($form_id == 'random_captcha_type_settings_form') {
-    // at least 2 CAPTCHA types should be selected
-    if (count(array_filter($form_values['random_captcha_type_enabled_types'])) < 2) {
-      form_set_error('random_captcha_type_enabled_types', t('You should select at least two CAPTCHA types.'));
-    }
+function random_captcha_type_settings_form_validate($form, &$form_state) {
+  // at least 2 CAPTCHA types should be selected
+  if (count(array_filter($form_state['values']['random_captcha_type_enabled_types'])) < 2) {
+    form_set_error('random_captcha_type_enabled_types', t('You should select at least two CAPTCHA types.'));
   }
 }
 
