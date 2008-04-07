@@ -24,6 +24,7 @@ function ascii_art_captcha_menu() {
     'file' => 'ascii_art_captcha.admin.inc',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ascii_art_captcha_settings_form'),
+    'access arguments' => array('administer CAPTCHA settings'),
     'type' => MENU_LOCAL_TASK,
   );
   return $items;

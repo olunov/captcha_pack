@@ -26,6 +26,7 @@ function lost_character_captcha_menu() {
     'file' => 'lost_character_captcha.admin.inc',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('lost_character_captcha_settings_form'),
+    'access arguments' => array('administer CAPTCHA settings'),
     'type' => MENU_LOCAL_TASK,
   );
   return $items;

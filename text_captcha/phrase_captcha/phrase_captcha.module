@@ -31,9 +31,10 @@ function phrase_captcha_menu() {
   // add an administration tab for phrase_captcha
   $items['admin/user/captcha/phrase_captcha'] = array(
     'title' => 'Phrase CAPTCHA',
+    'file' => 'phrase_captcha.admin.inc',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('phrase_captcha_settings_form'),
-    'file' => 'phrase_captcha.admin.inc',
+    'access arguments' => array('administer CAPTCHA settings'),
     'type' => MENU_LOCAL_TASK,
   );
   return $items;

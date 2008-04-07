@@ -24,9 +24,10 @@ function word_list_captcha_menu() {
   // add an administration tab for phrase_captcha
   $items['admin/user/captcha/word_list_captcha'] = array(
     'title' => 'Unrelated word',
+    'file' => 'word_list_captcha.admin.inc',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('word_list_captcha_settings_form'),
-    'file' => 'word_list_captcha.admin.inc',
+    'access arguments' => array('administer CAPTCHA settings'),
     'type' => MENU_LOCAL_TASK,
   );
   return $items;

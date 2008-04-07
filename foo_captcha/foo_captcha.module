@@ -20,6 +20,7 @@ function foo_captcha_menu() {
     'title' => 'Foo CAPTCHA',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('foo_captcha_settings_form'),
+    'access arguments' => array('administer CAPTCHA settings'),
     'type' => MENU_LOCAL_TASK,
   );
   return $items;

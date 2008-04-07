@@ -23,9 +23,10 @@ function random_captcha_type_menu() {
   // add an administration tab for random_captcha_type
   $items['admin/user/captcha/random_captcha_type'] = array(
     'title' => 'Random CAPTCHA type',
+    'file' => 'random_captcha_type.admin.inc',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('random_captcha_type_settings_form'),
-    'file' => 'random_captcha_type.admin.inc',
+    'access arguments' => array('administer CAPTCHA settings'),
     'type' => MENU_LOCAL_TASK,
   );
   return $items;
