@@ -68,5 +68,17 @@ function random_captcha_type_captcha($op, $captcha_type='', $arg3='') {
         );
         return $captcha;
       }
+    case 'preprocess':
+      if ($captcha_type == 'Random CAPTCHA type') {
+        // Get the module and type from $_POST.
+        // Yes this is very ugly: TODO: the preprocess op should be killed, there are better ways to solve this
+        if (isset($_POST['random_captcha_type'])) {
+          $module_and_type = $_POST['random_captcha_type'];
+          list($module, $type) = explode('/', $module_and_type);
+          // Call the preprocess CAPTCHA hook
+          return module_invoke($module, 'captcha', 'preprocess', $type, $arg3);
+        }
+      }
+      break;
   }
 }
