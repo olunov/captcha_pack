@@ -60,7 +60,7 @@ function _math_captcha_build_captcha($x, $y, $operator, $result) {
     '#title' => t('Math question'),
     '#required' => TRUE,
     '#size' => 3,
-    '#maxlength' => strlen("$result"),
+    '#maxlength' => max(strlen("$result"), strlen("$x"), strlen("$y")),
     '#description' => t('Solve this math question and enter the solution with digits. E.g. for "two plus four = ?" enter "6".'),
   );
   switch (mt_rand(0, 2)) {
