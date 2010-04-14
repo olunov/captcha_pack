@@ -86,7 +86,7 @@ function css_captcha_captcha($op, $captcha_type='', $response='') {
           '#type' => 'textfield',
           '#title' => t('Enter the code above'),
           '#size' => 10,
-          '#prefix' => $code_struct[0]['content'],
+          '#prefix' => '<div class="css-captcha-code">'. $code_struct[0]['content'] .'</div>',
           '#maxlength' => 10,
           '#required' => TRUE,
           '#description' => t('Enter the code without spaces.')
