@@ -1,4 +1,3 @@
-; $Id$
 name = "Math CAPTCHA"
 description = "Provide math CAPTCHAs like 'two + three = ?' and '2 times ? = 6'"
 package = "Spam control"

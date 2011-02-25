@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 require_once('random_captcha_type.inc');
 

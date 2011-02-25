@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Implementation of a "meta CAPTCHA" which randomly picks a CAPTCHA type

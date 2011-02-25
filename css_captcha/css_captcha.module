@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 define('CSS_CAPTCHA_DEFAULT_ALLOWED_CHARACTERS', 'aAbBcCdDeEfFgGhHijkKLmMnNpPqQrRsStTuUvVwWxXyYzZ123456789');
 

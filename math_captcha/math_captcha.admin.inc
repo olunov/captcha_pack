@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Math CAPTCHA settings form

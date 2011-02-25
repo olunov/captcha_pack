@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Function for getting all the possible CAPTCHA types to switch between.

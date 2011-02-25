@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * function for addition challenges

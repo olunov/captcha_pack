@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Function for the settings form

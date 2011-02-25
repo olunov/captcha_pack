@@ -1,4 +1,3 @@
-; $Id$
 name = "ASCII art CAPTCHA"
 description = "Provides an ASCII art based CAPTCHA type."
 package = "Spam control"

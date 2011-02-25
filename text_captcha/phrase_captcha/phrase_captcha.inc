@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * function for generating a random nonsense word of a given number of characters

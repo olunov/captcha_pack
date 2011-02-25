@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Helper function for splitting a string on white spaces.

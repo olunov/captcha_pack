@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Implementation of a phrase based CAPTCHA, for use with the CAPTCHA module

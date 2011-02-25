@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * On uninstall: remove module variables and clear variable cache

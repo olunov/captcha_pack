@@ -1,4 +1,3 @@
-; $Id$
 name = "Word list CAPTCHA"
 description = "Provides CAPTCHA like 'which word does not belong in the list [green red bird blue]?'."
 package = "Spam control"
