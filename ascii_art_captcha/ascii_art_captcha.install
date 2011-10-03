@@ -6,6 +6,7 @@
  */
 
 /**
+ * Implements hook_uninstall().
  * On uninstall: remove module variables and clear variables cache
  */
 function ascii_art_captcha_uninstall() {

@@ -1,24 +1,24 @@
 <?php
 
 /**
- * Implementation of hook_help().
+ * Implements hook_help().
  */
 function ascii_art_captcha_help($path, $arg) {
   switch ($path) {
-    case 'admin/user/captcha/ascii_art_captcha':
-      $output = '<p>'. t('The ASCII art CAPTCHA shows a random character code in ASCII art style. Example with current settings:') .'</p>';
+    case 'admin/config/people/captcha/ascii_art_captcha':
+      $output = '<p>' . t('The ASCII art CAPTCHA shows a random character code in ASCII art style. Example with current settings:') . '</p>';
       $captcha = ascii_art_captcha_captcha('generate', 'ASCII art CAPTCHA');
-      $output .= $captcha['form']['ascii']['#value'];
+      $output .= $captcha['form']['ascii']['#markup'];
       return $output;
   }
 }
 
 /**
- * Implementation of hook_menu().
+ * Implements hook_menu().
  */
 function ascii_art_captcha_menu() {
   $items = array();
-  $items['admin/user/captcha/ascii_art_captcha'] = array(
+  $items['admin/config/people/captcha/ascii_art_captcha'] = array(
     'title' => 'ASCII art CAPTCHA',
     'file' => 'ascii_art_captcha.admin.inc',
     'page callback' => 'drupal_get_form',
@@ -48,9 +48,9 @@ function _ascii_art_captcha_get_allowed_characters() {
 }
 
 /**
- * Implementation of hook_captcha
+ * Implements hook_captcha().
  */
-function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
+function ascii_art_captcha_captcha($op, $captcha_type = '') {
   switch ($op) {
     case 'list':
       return array('ASCII art CAPTCHA');
@@ -61,10 +61,10 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
         $code_length = (int) variable_get('ascii_art_captcha_code_length', 6);
         // load font
         $font_name = variable_get('ascii_art_captcha_font', 'standard');
-        if (!include_once('fonts/ascii_art_captcha_font_'. $font_name .'.inc')) {
+        if (!include_once('fonts/ascii_art_captcha_font_' . $font_name . '.inc')) {
           return;
         }
-        $font = call_user_func('ascii_art_captcha_font_'. $font_name);
+        $font = call_user_func('ascii_art_captcha_font_' . $font_name);
         if (!$font) {
           return;
         }
@@ -78,7 +78,7 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
           $character = $allowed_chars[array_rand($allowed_chars)];
           $solution .= $character;
           foreach ($font[$character] as $l => $cline) {
-            $ascii_lines[$l] .= ' '. check_plain($cline);
+            $ascii_lines[$l] .= ' ' . check_plain($cline);
           }
         }
         // build CAPTCHA array
@@ -86,11 +86,10 @@ function ascii_art_captcha_captcha($op, $captcha_type='', $response='') {
         $captcha['solution'] = $solution;
         $style = 'line-height:1.1;';
         if (variable_get('ascii_art_captcha_font_size', 0)) {
-          $style .= 'font-size:'. variable_get('ascii_art_captcha_font_size', 0) .'pt;';
+          $style .= 'font-size:' . variable_get('ascii_art_captcha_font_size', 0) . 'pt;';
         }
         $captcha['form']['ascii'] = array(
-          '#type' => 'markup',
-          '#value' => '<pre class="ascii_art_captcha" style="'. $style .'">'. implode('<br />', $ascii_lines) .'</pre>',
+          '#markup' => '<pre class="ascii_art_captcha" style="' . $style . '">' . implode('<br />', $ascii_lines) . '</pre>',
         );
         $captcha['form']['captcha_response'] = array(
           '#type' => 'textfield',

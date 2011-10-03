@@ -27,7 +27,7 @@ function ascii_art_captcha_settings_form() {
   // font size
   $font_sizes = array(0 => t('default'));
   foreach (array(4, 6, 8, 9, 10, 11, 12) as $pt) {
-    $font_sizes[$pt] = $pt .'pt';
+    $font_sizes[$pt] = $pt . 'pt';
   }
   $form['ascii_art_captcha_font_size'] = array(
     '#type' => 'select',
@@ -65,12 +65,12 @@ function ascii_art_captcha_settings_form_validate($form, &$form_state) {
  */
 function _ascii_art_captcha_available_fonts() {
   $available_fonts = array();
-  $fontsdirectory = drupal_get_path('module', 'ascii_art_captcha') .'/fonts';
-  $pattern = 'ascii_art_captcha_font_([a-zA-Z0-9]+)\.[iI][nN][cC]$';
+  $fontsdirectory = drupal_get_path('module', 'ascii_art_captcha') . '/fonts';
+  $pattern = '/ascii_art_captcha_font_([a-zA-Z0-9]+)\.[iI][nN][cC]$/';
   $directory_files = file_scan_directory($fontsdirectory, $pattern);
   foreach ($directory_files as $font) {
     $regs = array();
-    ereg($pattern, $font->basename, $regs);
+    preg_match($pattern, $font->filename, $regs);
     $available_fonts[$regs[1]] = $regs[1];
   }
   asort($available_fonts);
