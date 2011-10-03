@@ -34,7 +34,7 @@ function ascii_art_captcha_menu() {
  */
 function _ascii_art_captcha_get_allowed_characters() {
   $allowed_chars = array();
-  $allowed_chars_settings = variable_get('ascii_art_captcha_allowed_characters', array('upper' => 'upper', 'lower' => 'lower', 'digit' => 'digit'));
+  $allowed_chars_settings = variable_get('ascii_art_captcha_allowed_characters', drupal_map_assoc(array('upper', 'lower', 'digit')));
   if ($allowed_chars_settings['upper']) {
     $allowed_chars = array_merge($allowed_chars, array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'));
   }

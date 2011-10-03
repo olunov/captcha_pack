@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Functionality and helper functions for ASCII ART CAPTCHA administration.
+ */
+
+/**
  * Function for the settings form
  */
 function ascii_art_captcha_settings_form() {
@@ -9,8 +14,8 @@ function ascii_art_captcha_settings_form() {
   $form['ascii_art_captcha_code_length'] = array(
     '#type' => 'select',
     '#title' => t('Code length'),
-    '#options' => array(4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10),
-    '#default_value' => (int) variable_get('ascii_art_captcha_code_length', 6),
+    '#options' => drupal_map_assoc(array(4, 5, 6, 7, 8, 9, 10)),
+    '#default_value' => variable_get('ascii_art_captcha_code_length', 6),
   );
   $form['ascii_art_captcha_font'] = array(
     '#type' => 'select',
@@ -33,16 +38,16 @@ function ascii_art_captcha_settings_form() {
   );
   $form['ascii_art_captcha_allowed_characters'] = array(
     '#type' => 'checkboxes',
-    '#title' => 'Character sets to use',
+    '#title' => t('Character sets to use'),
     '#options' => array(
       'upper' => t('upper case characters'),
       'lower' => t('lower case characters'),
       'digit' => t('digits'),
     ),
-    '#default_value' => variable_get('ascii_art_captcha_allowed_characters', array('upper' => 'upper', 'lower' => 'lower', 'digit' => 'digit')),
+    '#default_value' => variable_get('ascii_art_captcha_allowed_characters', drupal_map_assoc(array('upper', 'lower', 'digit'))),
     '#description' => t('Enable the character sets to use in the code. Choose wisely by taking the recognizability of the used font into account.'),
   );
-  $form['#validate'] = array('ascii_art_captcha_settings_form_validate');
+  $form['#validate'][] = 'ascii_art_captcha_settings_form_validate';
   return system_settings_form($form);
 }
 
@@ -56,13 +61,14 @@ function ascii_art_captcha_settings_form_validate($form, &$form_state) {
 }
 
 /**
- * function to get a list of available fonts
+ * Function to get a list of available fonts
  */
 function _ascii_art_captcha_available_fonts() {
   $available_fonts = array();
   $fontsdirectory = drupal_get_path('module', 'ascii_art_captcha') .'/fonts';
   $pattern = 'ascii_art_captcha_font_([a-zA-Z0-9]+)\.[iI][nN][cC]$';
-  foreach (file_scan_directory($fontsdirectory, $pattern) as $filename => $font) {
+  $directory_files = file_scan_directory($fontsdirectory, $pattern);
+  foreach ($directory_files as $font) {
     $regs = array();
     ereg($pattern, $font->basename, $regs);
     $available_fonts[$regs[1]] = $regs[1];

@@ -1,7 +1,12 @@
 <?php
 
 /**
- * On uninstall: remove module variables and clear variable cache
+ * @file
+ * Install, update and uninstall functions for the ASCII ART CAPTCHA module.
+ */
+
+/**
+ * On uninstall: remove module variables and clear variables cache
  */
 function ascii_art_captcha_uninstall() {
   db_query("DELETE FROM {variable} WHERE name LIKE 'ascii_art_captcha_%'");
