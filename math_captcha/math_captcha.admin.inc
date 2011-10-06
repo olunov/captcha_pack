@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Functionality and helper functions for MATH CAPTCHA administration.
+ */
+
+/**
  * Math CAPTCHA settings form
  */
 function math_captcha_settings_form() {
@@ -46,7 +51,7 @@ function math_captcha_settings_form() {
     '#title' => t('Allow negative values.'),
     '#default_value' => variable_get('math_captcha_addition_allow_negative', FALSE),
   );
-  // subtraction challenge
+  // Subtraction challenge
   $form['math_captcha_subtraction'] = array(
     '#type' => 'fieldset',
     '#title' => t('Subtraction challenge: x - y = z'),
@@ -63,7 +68,7 @@ function math_captcha_settings_form() {
     '#title' => t('Allow negative values.'),
     '#default_value' => variable_get('math_captcha_subtraction_allow_negative', FALSE),
   );
-  // multiplication challenge
+  // Multiplication challenge
   $form['math_captcha_multiplication'] = array(
     '#type' => 'fieldset',
     '#title' => t('Multiplication challenge: x * y = z'),
@@ -80,8 +85,9 @@ function math_captcha_settings_form() {
     '#title' => t('Allow negative values.'),
     '#default_value' => variable_get('math_captcha_multiplication_allow_negative', FALSE),
   );
-  $form['#validate'] = array('math_captcha_settings_form_validate');
-  // add buttons and return
+
+  // Add validation function
+  $form['#validate'][] = 'math_captcha_settings_form_validate';
   return system_settings_form($form);
 }
 
@@ -89,14 +95,14 @@ function math_captcha_settings_form() {
  * Validation function for Math CAPTCHA settings form
  */
 function math_captcha_settings_form_validate($form, &$form_state) {
-  // check enabled challenges
+  // Check enabled challenges
   if (count(array_filter($form_state['values']['math_captcha_enabled_challenges'])) < 1) {
     form_set_error('math_captcha_enabled_challenges', t('You should select at least one type of math challenges.'));
   }
-  // check argmax's
+  // Check argmax's
   $argmaxs = array('math_captcha_addition_argmax', 'math_captcha_subtraction_argmax', 'math_captcha_multiplication_argmax');
   foreach ($argmaxs as $argmax) {
-    if (!is_numeric($form_state['values'][$argmax])) {
+    if (!ctype_digit($form_state['values'][$argmax])) {
       form_set_error($argmax, t('Maximum value should be an integer.'));
     }
     else {

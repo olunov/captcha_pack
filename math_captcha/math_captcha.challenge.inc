@@ -1,7 +1,12 @@
 <?php
 
 /**
- * function for addition challenges
+ * @file
+ * Provides challenge functions for MATH CAPTCHA administration.
+ */
+
+/**
+ * Function for addition challenges
  */
 function _math_captcha_addition_challenge() {
   $argmax = intval(variable_get('math_captcha_addition_argmax', 10));
@@ -19,7 +24,7 @@ function _math_captcha_addition_challenge() {
 }
 
 /**
- * function for subtraction challenges
+ * Function for subtraction challenges
  */
 function _math_captcha_subtraction_challenge() {
   $argmax = intval(variable_get('math_captcha_subtraction_argmax', 10));
@@ -37,7 +42,7 @@ function _math_captcha_subtraction_challenge() {
 }
 
 /**
- * function for multiplication challenges
+ * Function for multiplication challenges
  */
 function _math_captcha_multiplication_challenge() {
   $argmax = intval(variable_get('math_captcha_multiplication_argmax', 5));
@@ -53,9 +58,9 @@ function _math_captcha_multiplication_challenge() {
 }
 
 /**
- * helper function to build a math CAPTCHA form item
+ * Helper function to build a math CAPTCHA form item
  */
-function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength=3) {
+function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength = 3) {
   $form_item = array();
   $form_item['form']['captcha_response'] = array(
     '#type' => 'textfield',
@@ -68,16 +73,16 @@ function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength=3) {
   switch (mt_rand(0, 2)) {
     case 0: // question like "x + y = ?"
       $form_item['solution'] = "$result";
-      $form_item['form']['captcha_response']['#field_prefix'] = _math_captcha_repr($x, TRUE) .' '. _math_captcha_repr_op($operator) .' '. _math_captcha_repr($y, TRUE) .' '. _math_captcha_repr_op('=');
+      $form_item['form']['captcha_response']['#field_prefix'] = _math_captcha_repr($x, TRUE) . ' ' . _math_captcha_repr_op($operator) . ' ' . _math_captcha_repr($y, TRUE) . ' ' . _math_captcha_repr_op('=');
       break;
     case 1: // question like "x + ? = z"
       $form_item['solution'] = "$y";
-      $form_item['form']['captcha_response']['#field_prefix'] = _math_captcha_repr($x, TRUE) .' '. _math_captcha_repr_op($operator) .' ';
-      $form_item['form']['captcha_response']['#field_suffix'] = ' '. _math_captcha_repr_op('=') .' '. _math_captcha_repr($result);
+      $form_item['form']['captcha_response']['#field_prefix'] = _math_captcha_repr($x, TRUE) . ' ' . _math_captcha_repr_op($operator) . ' ';
+      $form_item['form']['captcha_response']['#field_suffix'] = ' ' . _math_captcha_repr_op('=') . ' ' . _math_captcha_repr($result);
       break;
     case 2: // question like "? + y = z"
       $form_item['solution'] = "$x";
-      $form_item['form']['captcha_response']['#field_suffix'] = ' '. _math_captcha_repr_op($operator) .' '. _math_captcha_repr($y, TRUE) .' '. _math_captcha_repr_op('=') .' '. _math_captcha_repr($result);
+      $form_item['form']['captcha_response']['#field_suffix'] = ' ' . _math_captcha_repr_op($operator) . ' ' . _math_captcha_repr($y, TRUE) . ' ' . _math_captcha_repr_op('=') . ' ' . _math_captcha_repr($result);
       break;
   }
   return $form_item;
@@ -86,10 +91,10 @@ function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength=3) {
 /**
  * Helper function for transforming a number to a textual representation
  */
-function _math_captcha_repr($n, $add_paratheses_when_negative=FALSE) {
-  // start with no textual representation
+function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
+  // Start with no textual representation
   $t = "$n";
-  // if enabled and available: do textual representation
+  // If enabled and available: do textual representation
   if (variable_get('math_captcha_textual_numbers', TRUE)) {
     $repr_map = array(
       0 => t('zero'), 1 => t('one'), 2 => t('two'), 3 => t('three'),
@@ -110,10 +115,13 @@ function _math_captcha_repr($n, $add_paratheses_when_negative=FALSE) {
   return $t;
 }
 
+/**
+ * Helper function for transforming a operator to a textual representation
+ */
 function _math_captcha_repr_op($op) {
-  // start with no textual representation
+  // Start with no textual representation
   $t = "$op";
-  // if enabled and available: do textual representation
+  // If enabled and available: do textual representation
   if (variable_get('math_captcha_textual_operators', FALSE)) {
     $repr_map = array('+' => t('plus'), '-' => t('minus'), '*' => t('times'), '=' => t('equals'));
     if (array_key_exists($op, $repr_map)) {

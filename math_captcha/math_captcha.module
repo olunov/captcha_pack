@@ -1,15 +1,11 @@
 <?php
 
 /**
- * Implementation of a math CAPTCHA, for use with the CAPTCHA module
- */
-
-/**
- * Implementation of hook_menu().
+ * Implements hook_menu().
  */
 function math_captcha_menu() {
   $items = array();
-  $items['admin/user/captcha/math_captcha'] = array(
+  $items['admin/config/people/captcha/math_captcha'] = array(
     'title' => 'Math CAPTCHA',
     'file' => 'math_captcha.admin.inc',
     'page callback' => 'drupal_get_form',
@@ -33,17 +29,18 @@ function _math_captcha_enabled_challenges() {
 }
 
 /**
- * Implementation of hook_captcha().
+ * Implements hook_captcha().
  */
-function math_captcha_captcha($op, $captcha_type='') {
+function math_captcha_captcha($op, $captcha_type = '') {
   switch ($op) {
     case 'list':
       return array('Math CAPTCHA');
     case 'generate':
       require_once('math_captcha.challenge.inc');
       if ($captcha_type == 'Math CAPTCHA') {
-        // get the available challenges
-        $challenges = array_filter(_math_captcha_enabled_challenges());
+        // Get the available challenges
+        $enabled_challenges = _math_captcha_enabled_challenges();
+        $challenges = array_filter($enabled_challenges);
         $challenge = $challenges[array_rand($challenges)];
         $form_item = call_user_func("_math_captcha_{$challenge}_challenge");
         return $form_item;
