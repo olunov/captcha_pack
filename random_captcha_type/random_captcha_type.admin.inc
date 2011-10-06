@@ -1,6 +1,9 @@
 <?php
 
-require_once('random_captcha_type.inc');
+/**
+ * @file
+ * Functionality and helper functions for RANDOM CAPTCHA administration.
+ */
 
 /**
  * Configuration form
@@ -25,7 +28,7 @@ function random_captcha_type_settings_form() {
  * Implementation of form validation
  */
 function random_captcha_type_settings_form_validate($form, &$form_state) {
-  // at least 2 CAPTCHA types should be selected
+  // At least 2 CAPTCHA types should be selected
   if (count(array_filter($form_state['values']['random_captcha_type_enabled_types'])) < 2) {
     form_set_error('random_captcha_type_enabled_types', t('You should select at least two CAPTCHA types.'));
   }
