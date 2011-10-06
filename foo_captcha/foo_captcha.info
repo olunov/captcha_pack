@@ -1,5 +1,6 @@
-name = "Foo CAPTCHA"
-description = "The foo CAPTCHA requires the user to enter the word 'foo'."
+name = Foo CAPTCHA
+description = The foo CAPTCHA requires the user to enter the word 'foo'.
 package = "Spam control"
 dependencies[] = captcha
-core = 6.x
+core = 7.x
+configure = admin/config/people/captcha/foo_captcha
