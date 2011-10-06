@@ -1,7 +1,13 @@
 <?php
 
 /**
- * On uninstall: remove module variables and clear variable cache
+ * @file
+ * Install, update and uninstall functions for the CSS CAPTCHA module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ * On uninstall: remove module variables and clear variables cache
  */
 function css_captcha_uninstall() {
   db_query("DELETE FROM {variable} WHERE name LIKE 'css_captcha_%'");

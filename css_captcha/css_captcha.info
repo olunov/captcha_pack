@@ -1,5 +1,6 @@
-name = "CSS CAPTCHA"
-description = "Provides a CSS based CAPTCHA type."
+name = CSS CAPTCHA
+description = Provides a CSS based CAPTCHA type.
 package = "Spam control"
 dependencies[] = captcha
-core = 6.x
+core = 7.x
+configure = admin/config/people/captcha/css_captcha
