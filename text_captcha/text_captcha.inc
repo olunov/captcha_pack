@@ -16,8 +16,8 @@ function _text_captcha_whitespace_explode($string) {
  */
 function _text_captcha_utf8_split($str) {
   $characters = array();
-  $len = strlen($str);
-  for ($i=0; $i < $len; ) {
+  $len = drupal_strlen($str);
+  for ($i = 0; $i < $len;) {
     $chr = ord($str[$i]);
     if (($chr & 0x80) == 0x00) { // one byte character (0zzzzzzz)
       $width = 1;
@@ -37,7 +37,7 @@ function _text_captcha_utf8_split($str) {
         return $characters;
       }
     }
-    $characters[] = substr($str, $i, $width);
+    $characters[] = drupal_substr($str, $i, $width);
     $i += $width;
   }
   return $characters;
@@ -48,7 +48,7 @@ function _text_captcha_utf8_split($str) {
  * Helper function for getting the content of a word pool
  * Locale dependent
  */
-function _text_captcha_word_pool_get_content($name_base, $lang_code, $default_value, $explode=FALSE) {
+function _text_captcha_word_pool_get_content($name_base, $lang_code, $default_value, $explode = FALSE) {
   if (module_exists('locale')) {
     if (!$lang_code) {
       global $language;
@@ -69,7 +69,7 @@ function _text_captcha_word_pool_get_content($name_base, $lang_code, $default_va
  * Helper function for setting word pool form items
  * Locale dependent
  */
-function _text_captcha_word_pool_form_items(&$form, $name_base, $title, $description, $default_value, $rows=3) {
+function _text_captcha_word_pool_form_items(&$form, $name_base, $title, $description, $default_value, $rows = 3) {
   if (module_exists('locale')) {
     // Locale available
     $langs = locale_language_list();
@@ -117,7 +117,7 @@ function _text_captcha_word_pool_validate_word_length($name, $words, $minimum_le
  * Helper function for validating the word pool
  * Locale dependent
  */
-function _text_captcha_word_pool_validate($name_base, $form_values, $minimum_count, $minimum_length=NULL, $too_short_message='') {
+function _text_captcha_word_pool_validate($name_base, $form_values, $minimum_count, $minimum_length = NULL, $too_short_message = '') {
   if (module_exists('locale')) {
     $langs = locale_language_list();
     foreach ($langs as $lang_code => $lang_name) {
@@ -125,7 +125,7 @@ function _text_captcha_word_pool_validate($name_base, $form_values, $minimum_cou
       if (count($words) < $minimum_count) {
         form_set_error("{$name_base}_{$lang_code}", t('You should provide at least @num words', array('@num' => $minimum_count)));
       }
-      // check the minimum word length (if needed)
+      // Check the minimum word length (if needed)
       if ($minimum_length) {
         _text_captcha_word_pool_validate_word_length("{$name_base}_{$lang_code}", $words, $minimum_length, $too_short_message);
       }
