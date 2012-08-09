@@ -36,8 +36,8 @@ function math_captcha_captcha($op, $captcha_type = '') {
     case 'list':
       return array('Math CAPTCHA');
     case 'generate':
-      require_once('math_captcha.challenge.inc');
       if ($captcha_type == 'Math CAPTCHA') {
+        require_once('math_captcha.challenge.inc');
         // Get the available challenges
         $enabled_challenges = _math_captcha_enabled_challenges();
         $challenges = array_filter($enabled_challenges);
