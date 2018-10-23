@@ -1,6 +1,0 @@
-name = Random CAPTCHA type
-description = Provides a 'meta' CAPTCHA that randomly picks a CAPTCHA type.
-package = "Spam control"
-dependencies[] = captcha
-core = 7.x
-configure = admin/config/people/captcha/random_captcha_type

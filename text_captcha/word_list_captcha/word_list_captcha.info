@@ -1,6 +1,0 @@
-name = Word list CAPTCHA
-description = Provides CAPTCHA like 'which word does not belong in the list [green red bird blue]?'.
-package = "Spam control"
-dependencies[] = captcha
-core = 7.x
-configure = admin/config/people/captcha/word_list_captcha

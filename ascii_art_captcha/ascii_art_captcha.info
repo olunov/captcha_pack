@@ -1,6 +1,0 @@
-name = ASCII art CAPTCHA
-description = Provides an ASCII art based CAPTCHA type.
-package = "Spam control"
-dependencies[] = captcha
-core = 7.x
-configure = admin/config/people/captcha/ascii_art_captcha

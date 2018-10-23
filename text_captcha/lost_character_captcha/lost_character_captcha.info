@@ -1,6 +1,0 @@
-name = Lost character CAPTCHA
-description = Provides CAPTCHA that asks for the lost character(s) in a given word.
-package = "Spam control"
-dependencies[] = captcha
-core = 7.x
-configure = admin/config/people/captcha/lost_character_captcha
