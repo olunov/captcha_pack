@@ -13,7 +13,7 @@ class AsciiArtCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    // TODO: Implement getEditableConfigNames() method.
+    return ['ascii_art_captcha.settings'];
   }
 
   /**
@@ -78,7 +78,6 @@ class AsciiArtCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-
     parent::validateForm($form, $form_state);
   }
 
@@ -86,8 +85,13 @@ class AsciiArtCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
-    parent::SubmitForm($form, $form_state);
+    $config = $this->config('ascii_art_captcha.settings');
+    $config->set('ascii_art_captcha_code_length', $form_state->getValue('ascii_art_captcha_code_length'));
+    $config->set('ascii_art_captcha_font', $form_state->getValue('ascii_art_captcha_font'));
+    $config->set('ascii_art_captcha_font_size', $form_state->getValue('ascii_art_captcha_font_size'));
+    $config->set('ascii_art_captcha_allowed_characters', $form_state->getValue('ascii_art_captcha_allowed_characters'));
+    $config->save();
+    parent::submitForm($form, $form_state);
   }
 
 }
