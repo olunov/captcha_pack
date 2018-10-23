@@ -1,0 +1,6 @@
+ascii_art_captcha.settings:
+  path: '/admin/config/people/captcha/ascii_art_captcha'
+  defaults:
+    _form: '\Drupal\ascii_art_captcha\Form\AsciiArtCaptchaSettingsForm'
+  requirements:
+    _permission: 'administer CAPTCHA settings'
