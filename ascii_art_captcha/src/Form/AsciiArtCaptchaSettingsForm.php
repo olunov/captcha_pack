@@ -78,6 +78,9 @@ class AsciiArtCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    if (count(array_filter($form_state->getValue('ascii_art_captcha_allowed_characters'))) < 1) {
+      $form_state->setErrorByName('ascii_art_captcha_allowed_characters', $this->t('You should select at least one type of characters to use.'));
+    }
     parent::validateForm($form, $form_state);
   }
 
