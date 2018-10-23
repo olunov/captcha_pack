@@ -27,8 +27,49 @@ class AsciiArtCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('image_captcha.settings');
-    // Add CSS and JS for theming and added usability on admin form.
+    $config = $this->config('ascii_art_captcha.settings');
+
+    $available_fonts = _ascii_art_captcha_available_fonts();
+    $code_length_options = [4, 5, 6, 7, 8, 9, 10];
+    $form['ascii_art_captcha_code_length'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Code length'),
+      '#options' => array_combine($code_length_options, $code_length_options),
+      '#default_value' => $config->get('ascii_art_captcha_code_length'),
+    ];
+
+    $form['ascii_art_captcha_font'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Font'),
+      '#options' => $available_fonts,
+      '#default_value' =>  $config->get('ascii_art_captcha_font'),
+      '#description' => $this->t('Define the ASCII art font to use. Note that some characters are not very recognizable in some (small/weird) fonts. Make sure to disable the right character sets in these cases.'),
+    ];
+
+    // Font size.
+    $font_sizes = [0 => $this->t('default')];
+    foreach ([4, 6, 8, 9, 10, 11, 12] as $pt) {
+      $font_sizes[$pt] = $pt . 'pt';
+    }
+    $form['ascii_art_captcha_font_size'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Font size'),
+      '#options' => $font_sizes,
+      '#default_value' => $config->get('ascii_art_captcha_font_size'),
+      '#description' => $this->t('Set the font size for the ASCII art.'),
+    ];
+
+    $form['ascii_art_captcha_allowed_characters'] = [
+      '#type' => 'checkboxes',
+      '#title' => $this->t('Character sets to use'),
+      '#options' => array(
+        'upper' => $this->t('upper case characters'),
+        'lower' => $this->t('lower case characters'),
+        'digit' => $this->t('digits'),
+      ),
+      '#default_value' => $config->get('ascii_art_captcha_allowed_characters'),
+      '#description' => $this->t('Enable the character sets to use in the code. Choose wisely by taking the recognizability of the used font into account.'),
+    ];
 
     return parent::buildForm($form, $form_state);
   }
