@@ -32,17 +32,17 @@ function _ascii_art_captcha_available_fonts() {
  * helper function for generating a code, taking the allowed characters into account
  */
 function _ascii_art_captcha_get_allowed_characters() {
-  $allowed_chars = array();
+  $allowed_chars = [];
   $config = Drupal::config('ascii_art_captcha.settings');
   $allowed_chars_settings = $config->get('ascii_art_captcha_allowed_characters');
   if ($allowed_chars_settings['upper']) {
-    $allowed_chars = array_merge($allowed_chars, array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'));
+    $allowed_chars = array_merge($allowed_chars, ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
   }
   if ($allowed_chars_settings['lower']) {
-    $allowed_chars = array_merge($allowed_chars, array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'));
+    $allowed_chars = array_merge($allowed_chars, ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']);
   }
   if ($allowed_chars_settings['digit']) {
-    $allowed_chars += array_merge($allowed_chars, array('1', '2', '3', '4', '5', '6', '7', '8', '9'));
+    $allowed_chars += array_merge($allowed_chars, ['1', '2', '3', '4', '5', '6', '7', '8', '9']);
   }
   return $allowed_chars;
 }
@@ -71,7 +71,7 @@ function ascii_art_captcha_captcha($op, $captcha_type = '') {
         }
         // build solution and ASCII art array
         $solution = '';
-        $ascii_lines = array();
+        $ascii_lines = [];
         for ($i = 0; $i < $font['height']; $i++) {
           $ascii_lines[$i] = '';
         }
@@ -83,23 +83,23 @@ function ascii_art_captcha_captcha($op, $captcha_type = '') {
           }
         }
         // build CAPTCHA array
-        $captcha = array();
+        $captcha = [];
         $captcha['solution'] = $solution;
         $style = 'line-height:1.1;';
         if ($config->get('ascii_art_captcha_font_size')) {
           $style .= 'font-size:' . $config->get('ascii_art_captcha_font_size') . 'pt;';
         }
-        $captcha['form']['ascii'] = array(
+        $captcha['form']['ascii'] = [
           '#markup' => '<pre class="ascii_art_captcha" style="' . $style . '">' . implode('<br />', $ascii_lines) . '</pre>',
-        );
-        $captcha['form']['captcha_response'] = array(
+        ];
+        $captcha['form']['captcha_response'] = [
           '#type' => 'textfield',
           '#title' => t('Enter the code above'),
           '#size' => 10,
           '#maxlength' => 10,
           '#required' => TRUE,
           '#description' => t('Enter the code depicted in ASCII art style.')
-        );
+        ];
         return $captcha;
       }
       break;
