@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * Implements hook_help().
+ */
+function foo_captcha_help($path, $arg) {
+  switch ($path) {
+    case 'admin/config/people/captcha/foo_captcha':
+      return '<p>' . t('This is a very simple CAPTCHA, which requires users to enter "foo" in a textfield.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_captcha().
+ */
+function foo_captcha_captcha($op, $captcha_type = '') {
+  switch ($op) {
+    case 'list':
+      return array('Foo CAPTCHA');
+    case 'generate':
+      if ($captcha_type == 'Foo CAPTCHA') {
+        $captcha = array();
+        $captcha['solution'] = 'foo';
+        $captcha['form']['captcha_response'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Enter "foo"'),
+          '#required' => TRUE,
+          '#process' => array('foo_captcha_process'),
+          '#cache' => ['max-age' => 0],
+        );
+        \Drupal::service('page_cache_kill_switch')->trigger();
+
+        return $captcha;
+      }
+      break;
+  }
+}
+
+/**
+ * Process the response to the foo CAPTCHA before validation.
+ */
+function foo_captcha_process($element, $edit) {
+  if (\Drupal::config('foo_captcha.settings')->get('foo_captcha_ignore_spaces')) {
+    $element['#value'] = preg_replace('/\s*/', '', $element['#value']);
+  }
+  return $element;
+}

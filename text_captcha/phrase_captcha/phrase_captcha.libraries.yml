@@ -1,0 +1,5 @@
+phrase-captcha:
+  version: 1.x
+  css:
+    theme:
+      ../text_captcha.css: {}
