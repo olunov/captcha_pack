@@ -49,7 +49,7 @@ class CSSCaptchaSettingsForm extends ConfigFormBase {
       '#type' => 'select',
       '#title' => t('Code length'),
       '#options' => array_combine(array(4, 5, 6, 7, 8, 9, 10), array(4, 5, 6, 7, 8, 9, 10)),
-      '#default_value' => !empty($config->get('css_captcha_code_length')),
+      '#default_value' => $config->get('css_captcha_code_length'),
     );
 
     return parent::buildForm($form, $form_state);
