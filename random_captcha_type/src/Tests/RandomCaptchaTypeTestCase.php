@@ -24,7 +24,7 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
   /**
    * Testing the protection of the user log in form.
    */
-  public function testAsciiArtCaptchaOnLoginForm() {
+  public function testRandomCaptchaTypeOnLoginForm() {
     // Create user and test log in without CAPTCHA.
     $user = $this->drupalCreateUser();
     $this->drupalLogin($user);
@@ -111,7 +111,7 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
   /**
    * Testing the case sensitive/insensitive validation.
    */
-  public function testAsciiArtCaseInsensitiveValidation() {
+  public function testRandomCaseInsensitiveValidation() {
     $config = $this->config('captcha.settings');
     // Set Test CAPTCHA on comment form.
     captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'random_captcha_type/Test');
@@ -145,7 +145,7 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
    *
    * @see testCaptchaSessionReuseOnNodeForms()
    */
-  public function testAsciiArtCaptchaDescriptionAfterCommentPreview() {
+  public function testRandomCaptchaTypeDescriptionAfterCommentPreview() {
     // Set Test CAPTCHA on comment form.
     captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'random_captcha_type/Test');
 
@@ -165,16 +165,16 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Test if the Ascii Art CAPTCHA session ID is reused when previewing nodes.
+   * Test if the Random CAPTCHA Type session ID is reused when previewing nodes.
    *
-   * Node preview after correct response should not show Ascii Art CAPTCHA anymore.
+   * Node preview after correct response should not show Random CAPTCHA Type anymore.
    * The preview functionality of comments and nodes works
    * slightly different under the hood.
    * CAPTCHA module should be able to handle both.
    *
    * @see testCaptchaDescriptionAfterCommentPreview()
    */
-  public function testAsciiArtCaptchaSessionReuseOnNodeForms() {
+  public function testRandomCaptchaTypeSessionReuseOnNodeForms() {
     // Set Test CAPTCHA on page form.
     captcha_set_form_id_setting('node_page_form', 'random_captcha_type/Test');
 
@@ -191,9 +191,9 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * AsciiArt CAPTCHA should be put on admin pages even if visitor has no access.
+   * Random CAPTCHA Type should be put on admin pages even if visitor has no access.
    */
-  public function testAsciiArtCaptchaOnLoginBlockOnAdminPagesIssue893810() {
+  public function testRandomCaptchaTypeOnLoginBlockOnAdminPagesIssue893810() {
     // Set a CAPTCHA on login block form.
     /* @var \Drupal\captcha\Entity\CaptchaPoint $captcha_point */
     $captcha_point = \Drupal::entityTypeManager()
@@ -215,7 +215,7 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Tests that the Ascii Art CAPTCHA is not changed on AJAX form rebuilds.
+   * Tests that the Random CAPTCHA Type is not changed on AJAX form rebuilds.
    */
   public function testAjaxFormRebuild() {
     // Setup captcha point for user edit form.

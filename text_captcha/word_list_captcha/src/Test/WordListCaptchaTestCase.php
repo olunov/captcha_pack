@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\css_captcha\Tests;
+namespace Drupal\word_list_captcha\Tests;
 
 use Drupal\captcha\Tests\CaptchaBaseWebTestCase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -8,11 +8,11 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 
 /**
- * Tests CSS CAPTCHA main test case sensitivity.
+ * Word list CAPTCHA main test case sensitivity.
  *
  * @group captcha
  */
-class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
+class WordListCaptchaTestCase extends CaptchaBaseWebTestCase {
 
   /**
    * Modules to enable.
@@ -24,7 +24,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   /**
    * Testing the protection of the user log in form.
    */
-  public function testCSSCaptchaOnLoginForm() {
+  public function testWordListCaptchaOnLoginForm() {
     // Create user and test log in without CAPTCHA.
     $user = $this->drupalCreateUser();
     $this->drupalLogin($user);
@@ -36,7 +36,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
     $captcha_point = \Drupal::entityTypeManager()
       ->getStorage('captcha_point')
       ->load('user_login_form');
-    $captcha_point->setCaptchaType('css_captcha/CSS CAPTCHA');
+    $captcha_point->setCaptchaType('word_list_captcha/Pick the unrelated word');
     $captcha_point->enable()->save();
 
     // Check if there is a CAPTCHA on the login form (look for the title).
@@ -51,7 +51,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
     ];
     $this->drupalPostForm(NULL, $edit, t('Log in'), [], [], self::LOGIN_HTML_FORM_ID);
     // Check for error message.
-    $this->assertText(self::CAPTCHA_WRONG_RESPONSE_ERROR_MESSAGE, 'CSS CAPTCHA should block user login form', 'CAPTCHA');
+    $this->assertText(self::CAPTCHA_WRONG_RESPONSE_ERROR_MESSAGE, 'Word list CAPTCHA should block user login form', 'CAPTCHA');
 
     // And make sure that user is not logged in:
     // check for name and password fields on ?q=user.
@@ -111,10 +111,10 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   /**
    * Testing the case sensitive/insensitive validation.
    */
-  public function testCSSCaseInsensitiveValidation() {
+  public function testWordListCaseInsensitiveValidation() {
     $config = $this->config('captcha.settings');
     // Set Test CAPTCHA on comment form.
-    captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'css_captcha/Test');
+    captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'word_list_captcha/Test');
 
     // Log in as normal user.
     $this->drupalLogin($this->normalUser);
@@ -145,9 +145,9 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
    *
    * @see testCaptchaSessionReuseOnNodeForms()
    */
-  public function testCSSCaptchaDescriptionAfterCommentPreview() {
+  public function testWordListCaptchaDescriptionAfterCommentPreview() {
     // Set Test CAPTCHA on comment form.
-    captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'css_captcha/Test');
+    captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'word_list_captcha/Test');
 
     // Log in as normal user.
     $this->drupalLogin($this->normalUser);
@@ -165,18 +165,18 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Test if the CSS CAPTCHA session ID is reused when previewing nodes.
+   * Test if the Word List CAPTCHA session ID is reused when previewing nodes.
    *
-   * Node preview after correct response should not show CSS CAPTCHA anymore.
+   * Node preview after correct response should not show Word List CAPTCHA anymore.
    * The preview functionality of comments and nodes works
    * slightly different under the hood.
    * CAPTCHA module should be able to handle both.
    *
    * @see testCaptchaDescriptionAfterCommentPreview()
    */
-  public function testCSSCaptchaSessionReuseOnNodeForms() {
+  public function testWordListCaptchaSessionReuseOnNodeForms() {
     // Set Test CAPTCHA on page form.
-    captcha_set_form_id_setting('node_page_form', 'css_captcha/Test');
+    captcha_set_form_id_setting('node_page_form', 'word_list_captcha/Test');
 
     // Log in as normal user.
     $this->drupalLogin($this->normalUser);
@@ -191,15 +191,15 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * CSS CAPTCHA should be put on admin pages even if visitor has no access.
+   * Word List CAPTCHA should be put on admin pages even if visitor has no access.
    */
-  public function testCSSCaptchaOnLoginBlockOnAdminPagesIssue893810() {
+  public function testWordListCaptchaOnLoginBlockOnAdminPagesIssue893810() {
     // Set a CAPTCHA on login block form.
     /* @var \Drupal\captcha\Entity\CaptchaPoint $captcha_point */
     $captcha_point = \Drupal::entityTypeManager()
       ->getStorage('captcha_point')
       ->load('user_login_form');
-    $captcha_point->setCaptchaType('css_captcha/CSS CAPTCHA');
+    $captcha_point->setCaptchaType('word_list_captcha/Pick the unrelated word');
     $captcha_point->enable()->save();
 
     // Enable the user login block.
@@ -215,7 +215,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Tests that the CSS CAPTCHA is not changed on AJAX form rebuilds.
+   * Tests that the Word List CAPTCHA is not changed on AJAX form rebuilds.
    */
   public function testAjaxFormRebuild() {
     // Setup captcha point for user edit form.
@@ -223,7 +223,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
       'id' => 'user_form',
       'formId' => 'user_form',
       'status' => TRUE,
-      'captchaType' => 'css_captcha/CSS CAPTCHA',
+      'captchaType' => 'word_list_captcha/Pick the unrelated word',
     ])->save();
 
     // Add multiple text field on user edit form.
