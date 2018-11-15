@@ -70,7 +70,8 @@ function phrase_captcha_captcha($op, $captcha_type = '') {
         );
         \Drupal::service('page_cache_kill_switch')->trigger();
         // Add css to form
-        $captcha['#attached']['library'][] = 'phrase_captcha/phrase-captcha';
+        $captcha['form']['captcha_response']['#attached']['library'][] = 'phrase_captcha/base';
+
         return $captcha;
       }
   }

@@ -76,9 +76,8 @@ function word_list_captcha_captcha($op, $captcha_type = '') {
         );
         \Drupal::service('page_cache_kill_switch')->trigger();
         // Add css to form
-        $captcha['#attached']['css'] = array(
-          drupal_get_path('module', 'word_list_captcha') . '/../text_captcha.css',
-        );
+        $captcha['form']['captcha_response']['#attached']['library'][] = 'word_list_captcha/base';
+
         return $captcha;
       }
   }
