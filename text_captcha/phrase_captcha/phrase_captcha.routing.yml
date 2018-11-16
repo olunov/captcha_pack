@@ -1,0 +1,6 @@
+phrase_captcha.settings:
+  path: '/admin/config/people/captcha/phrase_captcha'
+  defaults:
+    _form: '\Drupal\phrase_captcha\Form\PhraseCaptchaSettingsForm'
+  requirements:
+    _permission: 'administer CAPTCHA settings'
