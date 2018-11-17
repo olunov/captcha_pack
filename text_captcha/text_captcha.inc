@@ -2,10 +2,14 @@
 
 /**
  * @file
+ * Contains general functionality of the module.
  */
+
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Helper function for splitting a string on white spaces.
+ *
  * Using explode(' ', $string) is not enough because it returns empty elements
  * if $string contains consecutive spaces.
  */
@@ -15,6 +19,7 @@ function _text_captcha_whitespace_explode($string) {
 
 /**
  * Helper function for splitting an utf8 string correctly in characters.
+ *
  * Assumes the given utf8 string is well formed.
  * See http://en.wikipedia.org/wiki/Utf8 for more info.
  */
@@ -53,8 +58,7 @@ function _text_captcha_utf8_split($str) {
 }
 
 /**
- * Helper function for getting the content of a word pool
- * Locale dependent.
+ * Helper function for getting the content of a word pool locale dependent.
  */
 function _text_captcha_word_pool_get_content($name_base, $lang_code, $default_value, $explode = FALSE) {
   switch ($name_base) {
@@ -88,8 +92,7 @@ function _text_captcha_word_pool_get_content($name_base, $lang_code, $default_va
 }
 
 /**
- * Helper function for setting word pool form items
- * Locale dependent.
+ * Helper function for setting word pool form items locale dependent.
  */
 function _text_captcha_word_pool_form_items(&$form, $name_base, $title, $description, $default_value, $rows = 3) {
   if (Drupal::moduleHandler()->moduleExists('locale')) {
@@ -102,7 +105,6 @@ function _text_captcha_word_pool_form_items(&$form, $name_base, $title, $descrip
       '#collapsible' => TRUE,
     );
     foreach ($langs as $lang_code => $lang_name) {
-      $lang_content[] = _text_captcha_word_pool_get_content($name_base, $lang_code, $default_value);
       $form[$name_base]["{$name_base}_{$lang_code}"] = array(
         '#type' => 'textarea',
         '#title' => t('For language %lang_name (code %lang_code)', array('%lang_name' => $lang_name, '%lang_code' => $lang_code)),
@@ -124,35 +126,49 @@ function _text_captcha_word_pool_form_items(&$form, $name_base, $title, $descrip
 }
 
 /**
- * @param $name
- * @param $words
- * @param $minimum_length
- * @param $too_short_message
+ * Validates word length.
+ *
+ * @param string $name
+ *   Field name.
+ * @param array $words
+ *   Array of words.
+ * @param int $minimum_length
+ *   Minimal length.
+ * @param string $too_short_message
+ *   Message to be shown on validation.
  * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form state.
  */
-function _text_captcha_word_pool_validate_word_length($name, $words, $minimum_length, $too_short_message, $form_state) {
-  $too_short = array();
+function _text_captcha_word_pool_validate_word_length($name, array $words, $minimum_length, $too_short_message, FormStateInterface $form_state) {
+  $too_short = [];
   foreach ($words as $word) {
     if (count(_text_captcha_utf8_split($word)) < $minimum_length) {
       $too_short[] = $word;
     }
   }
   if (count($too_short)) {
-    $form_state->setErrorByName($name, t($too_short_message, array('@minimum_length' => $minimum_length, '@words' => implode(', ', $too_short))));
+    $form_state->setErrorByName($name, t($too_short_message, [
+      '@minimum_length' => $minimum_length,
+      '@words' => implode(', ', $too_short),
+    ]));
   }
 }
 
 /**
- * Helper function for validating the word pool
- * Locale dependent.
+ * Helper function for validating the word pool locale dependent.
  *
- * @param $name_base
+ * @param string $name_base
+ *   Field name.
  * @param \Drupal\Core\Form\FormStateInterface $form_state
- * @param $minimum_count
- * @param null $minimum_length
+ *   Form state.
+ * @param int $minimum_count
+ *   Minimal count.
+ * @param int $minimum_length
+ *   Minimal length.
  * @param string $too_short_message
+ *   Message to be shown on validating input.
  */
-function _text_captcha_word_pool_validate($name_base, $form_state, $minimum_count, $minimum_length = NULL, $too_short_message = '') {
+function _text_captcha_word_pool_validate($name_base, FormStateInterface $form_state, $minimum_count, $minimum_length = NULL, $too_short_message = '') {
   $form_values = $form_state->getValues();
   if (Drupal::moduleHandler()->moduleExists('locale')) {
     $langs = \Drupal::languageManager()->getLanguages();
