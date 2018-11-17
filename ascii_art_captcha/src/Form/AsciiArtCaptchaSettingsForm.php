@@ -1,6 +1,7 @@
 <?php
 
 namespace Drupal\ascii_art_captcha\Form;
+
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -42,7 +43,7 @@ class AsciiArtCaptchaSettingsForm extends ConfigFormBase {
       '#type' => 'select',
       '#title' => $this->t('Font'),
       '#options' => $available_fonts,
-      '#default_value' =>  $config->get('ascii_art_captcha_font'),
+      '#default_value' => $config->get('ascii_art_captcha_font'),
       '#description' => $this->t('Define the ASCII art font to use. Note that some characters are not very recognizable in some (small/weird) fonts. Make sure to disable the right character sets in these cases.'),
     ];
 
@@ -62,11 +63,11 @@ class AsciiArtCaptchaSettingsForm extends ConfigFormBase {
     $form['ascii_art_captcha_allowed_characters'] = [
       '#type' => 'checkboxes',
       '#title' => $this->t('Character sets to use'),
-      '#options' => array(
+      '#options' => [
         'upper' => $this->t('upper case characters'),
         'lower' => $this->t('lower case characters'),
         'digit' => $this->t('digits'),
-      ),
+      ],
       '#default_value' => $config->get('ascii_art_captcha_allowed_characters'),
       '#description' => $this->t('Enable the character sets to use in the code. Choose wisely by taking the recognizability of the used font into account.'),
     ];

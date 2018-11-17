@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "rounded" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_rounded() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "rounded" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_rounded() {
+  $font = [];
   $font['height'] = 7;
   $font['name'] = 'rounded';
   $font['comment'] = 'Rounded by Nick Miners N.M.Miners@durham.ac.ukMay 1994';
-  $font['a'] = array(
+  $font['a'] = [
     '       ',
     '       ',
     ' _____ ',
@@ -15,8 +21,8 @@ function ASCII_art_captcha_font_rounded() {
     '/ ___ |',
     '\\_____|',
     '       ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     ' _     ',
     '| |    ',
     '| |__  ',
@@ -24,8 +30,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_) )',
     '|____/ ',
     '       ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '       ',
     '       ',
     '  ____ ',
@@ -33,8 +39,8 @@ function ASCII_art_captcha_font_rounded() {
     '( (___ ',
     ' \\____)',
     '       ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '     _ ',
     '    | |',
     '  __| |',
@@ -42,8 +48,8 @@ function ASCII_art_captcha_font_rounded() {
     '( (_| |',
     ' \\____|',
     '       ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '       ',
     '       ',
     ' _____ ',
@@ -51,8 +57,8 @@ function ASCII_art_captcha_font_rounded() {
     '| ____|',
     '|_____)',
     '       ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '    ___ ',
     '   / __)',
     ' _| |__ ',
@@ -60,8 +66,8 @@ function ASCII_art_captcha_font_rounded() {
     '  | |   ',
     '  |_|   ',
     '        ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '       ',
     '       ',
     '  ____ ',
@@ -69,8 +75,8 @@ function ASCII_art_captcha_font_rounded() {
     '( (_| |',
     ' \\___ |',
     '(_____|',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     ' _     ',
     '| |    ',
     '| |__  ',
@@ -78,8 +84,8 @@ function ASCII_art_captcha_font_rounded() {
     '| | | |',
     '|_| |_|',
     '       ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     ' _ ',
     '(_)',
     ' _ ',
@@ -87,8 +93,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |',
     '|_|',
     '   ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '   _ ',
     '  (_)',
     '   _ ',
@@ -96,8 +102,8 @@ function ASCII_art_captcha_font_rounded() {
     '  | |',
     ' _| |',
     '(__/ ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     ' _     ',
     '| |    ',
     '| |  _ ',
@@ -105,8 +111,8 @@ function ASCII_art_captcha_font_rounded() {
     '|  _ ( ',
     '|_| \\_)',
     '       ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     ' _  ',
     '| | ',
     '| | ',
@@ -114,8 +120,8 @@ function ASCII_art_captcha_font_rounded() {
     '| | ',
     ' \\_)',
     '    ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '       ',
     '       ',
     ' ____  ',
@@ -123,8 +129,8 @@ function ASCII_art_captcha_font_rounded() {
     '| | | |',
     '|_|_|_|',
     '       ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '       ',
     '       ',
     ' ____  ',
@@ -132,8 +138,8 @@ function ASCII_art_captcha_font_rounded() {
     '| | | |',
     '|_| |_|',
     '       ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '       ',
     '       ',
     '  ___  ',
@@ -141,8 +147,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_| |',
     ' \\___/ ',
     '       ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '       ',
     '       ',
     ' ____  ',
@@ -150,8 +156,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_| |',
     '|  __/ ',
     '|_|    ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '       ',
     '       ',
     '  ____ ',
@@ -159,8 +165,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_| |',
     ' \\__  |',
     '    |_|',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '       ',
     '       ',
     '  ____ ',
@@ -168,8 +174,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |    ',
     '|_|    ',
     '       ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '      ',
     '      ',
     '  ___ ',
@@ -177,8 +183,8 @@ function ASCII_art_captcha_font_rounded() {
     '|___ |',
     '(___/ ',
     '      ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '       ',
     '   _   ',
     ' _| |_ ',
@@ -186,8 +192,8 @@ function ASCII_art_captcha_font_rounded() {
     '  | |_ ',
     '   \\__)',
     '       ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '       ',
     '       ',
     ' _   _ ',
@@ -195,8 +201,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_| |',
     '|____/ ',
     '       ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '       ',
     '       ',
     ' _   _ ',
@@ -204,8 +210,8 @@ function ASCII_art_captcha_font_rounded() {
     ' \\ V / ',
     '  \\_/  ',
     '       ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '       ',
     '       ',
     ' _ _ _ ',
@@ -213,8 +219,8 @@ function ASCII_art_captcha_font_rounded() {
     '| | | |',
     ' \\___/ ',
     '       ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '       ',
     '       ',
     ' _   _ ',
@@ -222,8 +228,8 @@ function ASCII_art_captcha_font_rounded() {
     ' ) X ( ',
     '(_/ \\_)',
     '       ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '       ',
     '       ',
     ' _   _ ',
@@ -231,8 +237,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_| |',
     ' \\__  |',
     '(____/ ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '       ',
     '       ',
     ' _____ ',
@@ -240,8 +246,8 @@ function ASCII_art_captcha_font_rounded() {
     ' / __/ ',
     '(_____)',
     '       ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     ' _______ ',
     '(_______)',
     ' _______ ',
@@ -249,8 +255,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |   | |',
     '|_|   |_|',
     '         ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     ' ______  ',
     '(____  \\ ',
     ' ____)  )',
@@ -258,8 +264,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |__)  )',
     '|______/ ',
     '         ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     ' _______ ',
     '(_______)',
     ' _       ',
@@ -267,8 +273,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_____ ',
     ' \\______)',
     '         ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     ' ______  ',
     '(______) ',
     ' _     _ ',
@@ -276,8 +282,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |__/ / ',
     '|_____/  ',
     '         ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     ' _______ ',
     '(_______)',
     ' _____   ',
@@ -285,8 +291,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_____ ',
     '|_______)',
     '         ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     ' _______ ',
     '(_______)',
     ' _____   ',
@@ -294,8 +300,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |      ',
     '|_|      ',
     '         ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     ' _______ ',
     '(_______)',
     ' _   ___ ',
@@ -303,8 +309,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |___) |',
     ' \\_____/ ',
     '         ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     ' _     _ ',
     '(_)   (_)',
     ' _______ ',
@@ -312,8 +318,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |   | |',
     '|_|   |_|',
     '         ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     ' _ ',
     '| |',
     '| |',
@@ -321,8 +327,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |',
     '|_|',
     '   ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     ' _______ ',
     '(_______)',
     '     _   ',
@@ -330,8 +336,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_| |  ',
     ' \\___/   ',
     '         ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     ' _     _ ',
     '(_)   | |',
     ' _____| |',
@@ -339,8 +345,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |  \\ \\ ',
     '|_|   \\_)',
     '         ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     ' _       ',
     '(_)      ',
     ' _       ',
@@ -348,8 +354,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |_____ ',
     '|_______)',
     '         ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     ' _______ ',
     '(_______)',
     ' _  _  _ ',
@@ -357,8 +363,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |   | |',
     '|_|   |_|',
     '         ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     ' _______ ',
     '(_______)',
     ' _     _ ',
@@ -366,8 +372,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |   | |',
     '|_|   |_|',
     '         ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     ' _______ ',
     '(_______)',
     ' _     _ ',
@@ -375,8 +381,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |___| |',
     ' \\_____/ ',
     '         ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     ' ______  ',
     '(_____ \\ ',
     ' _____) )',
@@ -384,8 +390,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |      ',
     '|_|      ',
     '         ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     ' _______ ',
     '(_______)',
     ' _    _  ',
@@ -393,8 +399,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |__| | ',
     ' \\______)',
     '         ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     ' ______  ',
     '(_____ \\ ',
     ' _____) )',
@@ -402,8 +408,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |  \\ \\ ',
     '|_|   |_|',
     '         ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '  ______ ',
     ' / _____)',
     '( (____  ',
@@ -411,8 +417,8 @@ function ASCII_art_captcha_font_rounded() {
     ' _____) )',
     '(______/ ',
     '         ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     ' _______ ',
     '(_______)',
     '    _    ',
@@ -420,8 +426,8 @@ function ASCII_art_captcha_font_rounded() {
     '   | |   ',
     '   |_|   ',
     '         ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     ' _     _ ',
     '(_)   (_)',
     ' _     _ ',
@@ -429,8 +435,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |___| |',
     ' \\_____/ ',
     '         ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     ' _     _ ',
     '(_)   (_)',
     ' _     _ ',
@@ -438,8 +444,8 @@ function ASCII_art_captcha_font_rounded() {
     ' \\ \\ / / ',
     '  \\___/  ',
     '         ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     ' _  _  _ ',
     '(_)(_)(_)',
     ' _  _  _ ',
@@ -447,8 +453,8 @@ function ASCII_art_captcha_font_rounded() {
     '| || || |',
     ' \\_____/ ',
     '         ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     ' _     _ ',
     '(_)   (_)',
     '   ___   ',
@@ -456,8 +462,8 @@ function ASCII_art_captcha_font_rounded() {
     ' / / \\ \\ ',
     '|_|   |_|',
     '         ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     ' _     _ ',
     '| |   | |',
     '| |___| |',
@@ -465,8 +471,8 @@ function ASCII_art_captcha_font_rounded() {
     ' _____| |',
     '(_______|',
     '         ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     ' _______ ',
     '(_______)',
     '   __    ',
@@ -474,8 +480,8 @@ function ASCII_art_captcha_font_rounded() {
     ' / /____ ',
     '(_______)',
     '         ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '  _____  ',
     ' (_____) ',
     ' _  __ _ ',
@@ -483,8 +489,8 @@ function ASCII_art_captcha_font_rounded() {
     '|   /_| |',
     ' \\_____/ ',
     '         ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     ' ___   ',
     '(___)  ',
     '   _   ',
@@ -492,8 +498,8 @@ function ASCII_art_captcha_font_rounded() {
     ' _| |_ ',
     '(_____)',
     '       ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     ' ______  ',
     '(_____ \\ ',
     '  ____) )',
@@ -501,8 +507,8 @@ function ASCII_art_captcha_font_rounded() {
     '| (_____ ',
     '|_______)',
     '         ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     ' ______  ',
     '(_____ \\ ',
     ' _____) )',
@@ -510,8 +516,8 @@ function ASCII_art_captcha_font_rounded() {
     ' _____) )',
     '(______/ ',
     '         ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     ' _     _ ',
     '| |   (_)',
     '| |_____ ',
@@ -519,8 +525,8 @@ function ASCII_art_captcha_font_rounded() {
     '      | |',
     '      |_|',
     '         ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     ' _______ ',
     '(_______)',
     ' ______  ',
@@ -528,8 +534,8 @@ function ASCII_art_captcha_font_rounded() {
     ' _____) )',
     '(______/ ',
     '         ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     ' _______ ',
     '(_______)',
     ' ______  ',
@@ -537,8 +543,8 @@ function ASCII_art_captcha_font_rounded() {
     '| |___) )',
     '|______/ ',
     '         ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     ' _______ ',
     '(_______)',
     '      _  ',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_rounded() {
     '    / /  ',
     '   (_/   ',
     '         ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '  _____  ',
     ' (_____) ',
     '  _____  ',
@@ -555,8 +561,8 @@ function ASCII_art_captcha_font_rounded() {
     '( (___) )',
     ' \\_____/ ',
     '         ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     ' _______ ',
     '(_______)',
     ' _______ ',
@@ -564,7 +570,7 @@ function ASCII_art_captcha_font_rounded() {
     '      | |',
     '      |_|',
     '         ',
-  );
+  ];
 
   return $font;
 }

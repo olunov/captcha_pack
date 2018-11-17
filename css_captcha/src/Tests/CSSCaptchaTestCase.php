@@ -24,7 +24,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   /**
    * Testing the protection of the user log in form.
    */
-  public function testCSSCaptchaOnLoginForm() {
+  public function testCssCaptchaOnLoginForm() {
     // Create user and test log in without CAPTCHA.
     $user = $this->drupalCreateUser();
     $this->drupalLogin($user);
@@ -111,7 +111,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   /**
    * Testing the case sensitive/insensitive validation.
    */
-  public function testCSSCaseInsensitiveValidation() {
+  public function testCssCaseInsensitiveValidation() {
     $config = $this->config('captcha.settings');
     // Set Test CAPTCHA on comment form.
     captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'css_captcha/Test');
@@ -145,7 +145,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
    *
    * @see testCaptchaSessionReuseOnNodeForms()
    */
-  public function testCSSCaptchaDescriptionAfterCommentPreview() {
+  public function testCssCaptchaDescriptionAfterCommentPreview() {
     // Set Test CAPTCHA on comment form.
     captcha_set_form_id_setting(self::COMMENT_FORM_ID, 'css_captcha/Test');
 
@@ -174,7 +174,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
    *
    * @see testCaptchaDescriptionAfterCommentPreview()
    */
-  public function testCSSCaptchaSessionReuseOnNodeForms() {
+  public function testCssCaptchaSessionReuseOnNodeForms() {
     // Set Test CAPTCHA on page form.
     captcha_set_form_id_setting('node_page_form', 'css_captcha/Test');
 
@@ -193,7 +193,7 @@ class CSSCaptchaTestCase extends CaptchaBaseWebTestCase {
   /**
    * CSS CAPTCHA should be put on admin pages even if visitor has no access.
    */
-  public function testCSSCaptchaOnLoginBlockOnAdminPagesIssue893810() {
+  public function testCssCaptchaOnLoginBlockOnAdminPagesIssue893810() {
     // Set a CAPTCHA on login block form.
     /* @var \Drupal\captcha\Entity\CaptchaPoint $captcha_point */
     $captcha_point = \Drupal::entityTypeManager()

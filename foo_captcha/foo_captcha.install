@@ -7,9 +7,9 @@
 
 /**
  * Implements hook_uninstall().
- * On uninstall: remove module variables and clear variables cache
  */
 function foo_captcha_uninstall() {
+  // On uninstall: remove module variables and clear variables cache.
   db_query("DELETE FROM {config} WHERE name LIKE 'foo_captcha_%'");
   drupal_flush_all_caches();
 }

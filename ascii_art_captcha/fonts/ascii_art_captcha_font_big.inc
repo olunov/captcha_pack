@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "big" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_big() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "big" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_big() {
+  $font = [];
   $font['height'] = 8;
   $font['name'] = 'big';
   $font['comment'] = 'Big by Glenn Chappell 4/93 -- based on StandardIncludes ISO Latin-1Greek characters by Bruce Jakeway <pbjakeway@neumann.uwaterloo.ca>figlet release 2.2 -- November 1996Permission is hereby given to modify this font, as long as themodifier\'s name is placed on a comment line.Modified by Paul Burton <solution@earthlink.net> 12/96 to include new parametersupported by FIGlet and FIGWin.  May also be slightly modified for better useof new full-width/kern/smush alternatives, but default output is NOT changed.';
-  $font['a'] = array(
+  $font['a'] = [
     '       ',
     '       ',
     '  __ _ ',
@@ -16,8 +22,8 @@ function ASCII_art_captcha_font_big() {
     ' \\__,_|',
     '       ',
     '       ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     ' _     ',
     '| |    ',
     '| |__  ',
@@ -26,8 +32,8 @@ function ASCII_art_captcha_font_big() {
     '|_.__/ ',
     '       ',
     '       ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '      ',
     '      ',
     '  ___ ',
@@ -36,8 +42,8 @@ function ASCII_art_captcha_font_big() {
     ' \\___|',
     '      ',
     '      ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '     _ ',
     '    | |',
     '  __| |',
@@ -46,8 +52,8 @@ function ASCII_art_captcha_font_big() {
     ' \\__,_|',
     '       ',
     '       ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '      ',
     '      ',
     '  ___ ',
@@ -56,8 +62,8 @@ function ASCII_art_captcha_font_big() {
     ' \\___|',
     '      ',
     '      ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '  __ ',
     ' / _|',
     '| |_ ',
@@ -66,8 +72,8 @@ function ASCII_art_captcha_font_big() {
     '|_|  ',
     '     ',
     '     ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '       ',
     '       ',
     '  __ _ ',
@@ -76,8 +82,8 @@ function ASCII_art_captcha_font_big() {
     ' \\__, |',
     '  __/ |',
     ' |___/ ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     ' _     ',
     '| |    ',
     '| |__  ',
@@ -86,8 +92,8 @@ function ASCII_art_captcha_font_big() {
     '|_| |_|',
     '       ',
     '       ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     ' _ ',
     '(_)',
     ' _ ',
@@ -96,8 +102,8 @@ function ASCII_art_captcha_font_big() {
     '|_|',
     '   ',
     '   ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '   _ ',
     '  (_)',
     '   _ ',
@@ -106,8 +112,8 @@ function ASCII_art_captcha_font_big() {
     '  | |',
     ' _/ |',
     '|__/ ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     ' _    ',
     '| |   ',
     '| | __',
@@ -116,8 +122,8 @@ function ASCII_art_captcha_font_big() {
     '|_|\\_\\',
     '      ',
     '      ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     ' _ ',
     '| |',
     '| |',
@@ -126,8 +132,8 @@ function ASCII_art_captcha_font_big() {
     '|_|',
     '   ',
     '   ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '           ',
     '           ',
     ' _ __ ___  ',
@@ -136,8 +142,8 @@ function ASCII_art_captcha_font_big() {
     '|_| |_| |_|',
     '           ',
     '           ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '       ',
     '       ',
     ' _ __  ',
@@ -146,8 +152,8 @@ function ASCII_art_captcha_font_big() {
     '|_| |_|',
     '       ',
     '       ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '       ',
     '       ',
     '  ___  ',
@@ -156,8 +162,8 @@ function ASCII_art_captcha_font_big() {
     ' \\___/ ',
     '       ',
     '       ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '       ',
     '       ',
     ' _ __  ',
@@ -166,8 +172,8 @@ function ASCII_art_captcha_font_big() {
     '| .__/ ',
     '| |    ',
     '|_|    ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '       ',
     '       ',
     '  __ _ ',
@@ -176,8 +182,8 @@ function ASCII_art_captcha_font_big() {
     ' \\__, |',
     '    | |',
     '    |_|',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '      ',
     '      ',
     ' _ __ ',
@@ -186,8 +192,8 @@ function ASCII_art_captcha_font_big() {
     '|_|   ',
     '      ',
     '      ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '     ',
     '     ',
     ' ___ ',
@@ -196,8 +202,8 @@ function ASCII_art_captcha_font_big() {
     '|___/',
     '     ',
     '     ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     ' _   ',
     '| |  ',
     '| |_ ',
@@ -206,8 +212,8 @@ function ASCII_art_captcha_font_big() {
     ' \\__|',
     '     ',
     '     ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '       ',
     '       ',
     ' _   _ ',
@@ -216,8 +222,8 @@ function ASCII_art_captcha_font_big() {
     ' \\__,_|',
     '       ',
     '       ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '       ',
     '       ',
     '__   __',
@@ -226,8 +232,8 @@ function ASCII_art_captcha_font_big() {
     '  \\_/  ',
     '       ',
     '       ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '          ',
     '          ',
     '__      __',
@@ -236,8 +242,8 @@ function ASCII_art_captcha_font_big() {
     '  \\_/\\_/  ',
     '          ',
     '          ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '      ',
     '      ',
     '__  __',
@@ -246,8 +252,8 @@ function ASCII_art_captcha_font_big() {
     '/_/\\_\\',
     '      ',
     '      ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '       ',
     '       ',
     ' _   _ ',
@@ -256,8 +262,8 @@ function ASCII_art_captcha_font_big() {
     ' \\__, |',
     '  __/ |',
     ' |___/ ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '     ',
     '     ',
     ' ____',
@@ -266,8 +272,8 @@ function ASCII_art_captcha_font_big() {
     '/___|',
     '     ',
     '     ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '          ',
     '    /\\    ',
     '   /  \\   ',
@@ -276,8 +282,8 @@ function ASCII_art_captcha_font_big() {
     '/_/    \\_\\',
     '          ',
     '          ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     ' ____  ',
     '|  _ \\ ',
     '| |_) |',
@@ -286,8 +292,8 @@ function ASCII_art_captcha_font_big() {
     '|____/ ',
     '       ',
     '       ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     '  _____ ',
     ' / ____|',
     '| |     ',
@@ -296,8 +302,8 @@ function ASCII_art_captcha_font_big() {
     ' \\_____|',
     '        ',
     '        ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     ' _____  ',
     '|  __ \\ ',
     '| |  | |',
@@ -306,8 +312,8 @@ function ASCII_art_captcha_font_big() {
     '|_____/ ',
     '        ',
     '        ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     ' ______ ',
     '|  ____|',
     '| |__   ',
@@ -316,8 +322,8 @@ function ASCII_art_captcha_font_big() {
     '|______|',
     '        ',
     '        ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     ' ______ ',
     '|  ____|',
     '| |__   ',
@@ -326,8 +332,8 @@ function ASCII_art_captcha_font_big() {
     '|_|     ',
     '        ',
     '        ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     '  _____ ',
     ' / ____|',
     '| |  __ ',
@@ -336,8 +342,8 @@ function ASCII_art_captcha_font_big() {
     ' \\_____|',
     '        ',
     '        ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     ' _    _ ',
     '| |  | |',
     '| |__| |',
@@ -346,8 +352,8 @@ function ASCII_art_captcha_font_big() {
     '|_|  |_|',
     '        ',
     '        ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     ' _____ ',
     '|_   _|',
     '  | |  ',
@@ -356,8 +362,8 @@ function ASCII_art_captcha_font_big() {
     '|_____|',
     '       ',
     '       ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '      _ ',
     '     | |',
     '     | |',
@@ -366,8 +372,8 @@ function ASCII_art_captcha_font_big() {
     ' \\____/ ',
     '        ',
     '        ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     ' _  __',
     '| |/ /',
     '| \' / ',
@@ -376,8 +382,8 @@ function ASCII_art_captcha_font_big() {
     '|_|\\_\\',
     '      ',
     '      ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     ' _      ',
     '| |     ',
     '| |     ',
@@ -386,8 +392,8 @@ function ASCII_art_captcha_font_big() {
     '|______|',
     '        ',
     '        ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     ' __  __ ',
     '|  \\/  |',
     '| \\  / |',
@@ -396,8 +402,8 @@ function ASCII_art_captcha_font_big() {
     '|_|  |_|',
     '        ',
     '        ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     ' _   _ ',
     '| \\ | |',
     '|  \\| |',
@@ -406,8 +412,8 @@ function ASCII_art_captcha_font_big() {
     '|_| \\_|',
     '       ',
     '       ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     '  ____  ',
     ' / __ \\ ',
     '| |  | |',
@@ -416,8 +422,8 @@ function ASCII_art_captcha_font_big() {
     ' \\____/ ',
     '        ',
     '        ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     ' _____  ',
     '|  __ \\ ',
     '| |__) |',
@@ -426,8 +432,8 @@ function ASCII_art_captcha_font_big() {
     '|_|     ',
     '        ',
     '        ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     '  ____  ',
     ' / __ \\ ',
     '| |  | |',
@@ -436,8 +442,8 @@ function ASCII_art_captcha_font_big() {
     ' \\___\\_\\',
     '        ',
     '        ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     ' _____  ',
     '|  __ \\ ',
     '| |__) |',
@@ -446,8 +452,8 @@ function ASCII_art_captcha_font_big() {
     '|_|  \\_\\',
     '        ',
     '        ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '  _____ ',
     ' / ____|',
     '| (___  ',
@@ -456,8 +462,8 @@ function ASCII_art_captcha_font_big() {
     '|_____/ ',
     '        ',
     '        ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     ' _______ ',
     '|__   __|',
     '   | |   ',
@@ -466,8 +472,8 @@ function ASCII_art_captcha_font_big() {
     '   |_|   ',
     '         ',
     '         ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     ' _    _ ',
     '| |  | |',
     '| |  | |',
@@ -476,8 +482,8 @@ function ASCII_art_captcha_font_big() {
     ' \\____/ ',
     '        ',
     '        ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     '__      __',
     '\\ \\    / /',
     ' \\ \\  / / ',
@@ -486,8 +492,8 @@ function ASCII_art_captcha_font_big() {
     '    \\/    ',
     '          ',
     '          ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     '__          __',
     '\\ \\        / /',
     ' \\ \\  /\\  / / ',
@@ -496,8 +502,8 @@ function ASCII_art_captcha_font_big() {
     '    \\/  \\/    ',
     '              ',
     '              ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     '__   __',
     '\\ \\ / /',
     ' \\ V / ',
@@ -506,8 +512,8 @@ function ASCII_art_captcha_font_big() {
     '/_/ \\_\\',
     '       ',
     '       ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     '__     __',
     '\\ \\   / /',
     ' \\ \\_/ / ',
@@ -516,8 +522,8 @@ function ASCII_art_captcha_font_big() {
     '   |_|   ',
     '         ',
     '         ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     ' ______',
     '|___  /',
     '   / / ',
@@ -526,8 +532,8 @@ function ASCII_art_captcha_font_big() {
     '/_____|',
     '       ',
     '       ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '  ___  ',
     ' / _ \\ ',
     '| | | |',
@@ -536,8 +542,8 @@ function ASCII_art_captcha_font_big() {
     ' \\___/ ',
     '       ',
     '       ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     ' __ ',
     '/_ |',
     ' | |',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_big() {
     ' |_|',
     '    ',
     '    ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     ' ___  ',
     '|__ \\ ',
     '   ) |',
@@ -556,8 +562,8 @@ function ASCII_art_captcha_font_big() {
     '|____|',
     '      ',
     '      ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     ' ____  ',
     '|___ \\ ',
     '  __) |',
@@ -566,8 +572,8 @@ function ASCII_art_captcha_font_big() {
     '|____/ ',
     '       ',
     '       ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     ' _  _   ',
     '| || |  ',
     '| || |_ ',
@@ -576,8 +582,8 @@ function ASCII_art_captcha_font_big() {
     '   |_|  ',
     '        ',
     '        ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     ' _____ ',
     '| ____|',
     '| |__  ',
@@ -586,8 +592,8 @@ function ASCII_art_captcha_font_big() {
     '|____/ ',
     '       ',
     '       ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '   __  ',
     '  / /  ',
     ' / /_  ',
@@ -596,8 +602,8 @@ function ASCII_art_captcha_font_big() {
     ' \\___/ ',
     '       ',
     '       ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     ' ______ ',
     '|____  |',
     '    / / ',
@@ -606,8 +612,8 @@ function ASCII_art_captcha_font_big() {
     ' /_/    ',
     '        ',
     '        ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '  ___  ',
     ' / _ \\ ',
     '| (_) |',
@@ -616,8 +622,8 @@ function ASCII_art_captcha_font_big() {
     ' \\___/ ',
     '       ',
     '       ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '  ___  ',
     ' / _ \\ ',
     '| (_) |',
@@ -626,7 +632,7 @@ function ASCII_art_captcha_font_big() {
     '  /_/  ',
     '       ',
     '       ',
-  );
+  ];
 
   return $font;
 }

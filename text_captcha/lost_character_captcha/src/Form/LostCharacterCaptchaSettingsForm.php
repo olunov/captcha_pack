@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Function for the settings form
+ * Function for the settings form.
  */
 class LostCharacterCaptchaSettingsForm extends ConfigFormBase {
 
@@ -31,7 +31,7 @@ class LostCharacterCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return array('lost_character_captcha.settings');
+    return ['lost_character_captcha.settings'];
   }
 
   /**
@@ -39,23 +39,23 @@ class LostCharacterCaptchaSettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('lost_character_captcha.settings');
-    $form = array();
-    // Form element for the number of characters to lose
-    $form['lost_character_captcha_quantity'] = array(
+    $form = [];
+    // Form element for the number of characters to lose.
+    $form['lost_character_captcha_quantity'] = [
       '#type' => 'select',
-      '#title' => t('Number of characters to lose'),
+      '#title' => $this->t('Number of characters to lose'),
       '#default_value' => $config->get('lost_character_captcha_quantity'),
-      '#description' => t('Select how many characters should be lost in the CAPTCHA.'),
-      '#options' => array_combine(array(1, 2, 3), array(1, 2, 3)),
-    );
-    // Form element for hinting
-    $form['lost_character_captcha_enable_hint'] = array(
+      '#description' => $this->t('Select how many characters should be lost in the CAPTCHA.'),
+      '#options' => array_combine([1, 2, 3], [1, 2, 3]),
+    ];
+    // Form element for hinting.
+    $form['lost_character_captcha_enable_hint'] = [
       '#type' => 'checkbox',
-      '#title' => t('Put "%hinter" where the characters are lost as a hint', array('%hinter' => LOST_CHARACTER_CAPTCHA_HINTER)),
+      '#title' => $this->t('Put "%hinter" where the characters are lost as a hint', ['%hinter' => LOST_CHARACTER_CAPTCHA_HINTER]),
       '#default_value' => $config->get('lost_character_captcha_enable_hint'),
-      '#description' => t('Enable this option to make it easier to determine the lost characters.'),
-    );
-    // Form elements for the word pool
+      '#description' => $this->t('Enable this option to make it easier to determine the lost characters.'),
+    ];
+    // Form elements for the word pool.
     _text_captcha_word_pool_form_items($form,
       'lost_character_captcha_word_pool',
       'Word pool',
@@ -88,10 +88,10 @@ class LostCharacterCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $lost_quantity = (int)$form_state->getValue('lost_character_captcha_quantity');
-    $hinting = (int)($form_state->getValue('lost_character_captcha_enable_hint'));
+    $lost_quantity = (int) $form_state->getValue('lost_character_captcha_quantity');
+    $hinting = (int) ($form_state->getValue('lost_character_captcha_enable_hint'));
     $min_length = 3 + 2 * $lost_quantity + (1 - $hinting);
-    // Check the number of words in the pool
+    // Check the number of words in the pool.
     _text_captcha_word_pool_validate(
       'lost_character_captcha_word_pool',
       $form_state,
@@ -102,4 +102,5 @@ class LostCharacterCaptchaSettingsForm extends ConfigFormBase {
 
     parent::validateForm($form, $form_state);
   }
+
 }

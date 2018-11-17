@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Administration form
+ * Administration form.
  */
 class WordListCaptchaSettingsForm extends ConfigFormBase {
 
@@ -31,7 +31,7 @@ class WordListCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return array('word_list_captcha.settings');
+    return ['word_list_captcha.settings'];
   }
 
   /**
@@ -39,16 +39,16 @@ class WordListCaptchaSettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('word_list_captcha.settings');
-    drupal_set_message(t('WARNING: this module is not completely ported to Drupal 8 and does not work yet.'), 'warning');
+    drupal_set_message($this->t('WARNING: this module is not completely ported to Drupal 8 and does not work yet.'), 'warning');
     $code_length_options = [4, 5, 6, 7, 8, 9, 10];
-    // Form element for the number of words in the word list
-    $form['word_list_captcha_list_size'] = array(
+    // Form element for the number of words in the word list.
+    $form['word_list_captcha_list_size'] = [
       '#type' => 'select',
-      '#title' => t('Number of words in word list'),
+      '#title' => $this->t('Number of words in word list'),
       '#default_value' => $config->get('word_list_captcha_list_size'),
       '#options' => array_combine($code_length_options, $code_length_options),
-    );
-    // Form elements for the word pools
+    ];
+    // Form elements for the word pools.
     _text_captcha_word_pool_form_items($form,
       'word_list_captcha_word_pool_1',
       'Word pool 1',
@@ -88,11 +88,12 @@ class WordListCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    // Check the number of words in the pools
+    // Check the number of words in the pools.
     $list_size = (int) $form_state->getValue('word_list_captcha_list_size');
     _text_captcha_word_pool_validate('word_list_captcha_word_pool_1', $form_state, $list_size, 0, '');
     _text_captcha_word_pool_validate('word_list_captcha_word_pool_2', $form_state, $list_size, 0, '');
 
     parent::validateForm($form, $form_state);
   }
+
 }

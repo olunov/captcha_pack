@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "colossal" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_colossal() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "colossal" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_colossal() {
+  $font = [];
   $font['height'] = 11;
   $font['name'] = 'colossal';
   $font['comment'] = 'Colossal.flf (Jonathon - jon@mq.edu.au)8 June 1994Explanation of first line:flf2 - "magic number" for file identificationa    - should always be `a\', for now$    - the "hardblank" -- prints as a blank, but can\'t be smushed11   - height of a character8    - height of a character, not including descenders20   - max line length (excluding comment lines) + a fudge factor32   - default smushmode for this font13   - number of comment lines';
-  $font['a'] = array(
+  $font['a'] = [
     '         ',
     '         ',
     '         ',
@@ -19,8 +25,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     '888      ',
     '888      ',
     '888      ',
@@ -32,8 +38,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '         ',
     '         ',
     '         ',
@@ -45,8 +51,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '     888 ',
     '     888 ',
     '     888 ',
@@ -58,8 +64,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '         ',
     '         ',
     '         ',
@@ -71,8 +77,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     ' .d888 ',
     'd88P"  ',
     '888    ',
@@ -84,8 +90,8 @@ function ASCII_art_captcha_font_colossal() {
     '       ',
     '       ',
     '       ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '         ',
     '         ',
     '         ',
@@ -97,8 +103,8 @@ function ASCII_art_captcha_font_colossal() {
     '     888 ',
     'Y8b d88P ',
     ' "Y88P"  ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     '888      ',
     '888      ',
     '888      ',
@@ -110,8 +116,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     'd8b ',
     'Y8P ',
     '    ',
@@ -123,8 +129,8 @@ function ASCII_art_captcha_font_colossal() {
     '    ',
     '    ',
     '    ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '   d8b ',
     '   Y8P ',
     '       ',
@@ -136,8 +142,8 @@ function ASCII_art_captcha_font_colossal() {
     '   888 ',
     '  d88P ',
     '888P"  ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     '888      ',
     '888      ',
     '888      ',
@@ -149,8 +155,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     '888 ',
     '888 ',
     '888 ',
@@ -162,8 +168,8 @@ function ASCII_art_captcha_font_colossal() {
     '    ',
     '    ',
     '    ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '              ',
     '              ',
     '              ',
@@ -175,8 +181,8 @@ function ASCII_art_captcha_font_colossal() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '         ',
     '         ',
     '         ',
@@ -188,8 +194,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '         ',
     '         ',
     '         ',
@@ -201,8 +207,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '         ',
     '         ',
     '         ',
@@ -214,8 +220,8 @@ function ASCII_art_captcha_font_colossal() {
     '888      ',
     '888      ',
     '888      ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '         ',
     '         ',
     '         ',
@@ -227,8 +233,8 @@ function ASCII_art_captcha_font_colossal() {
     '     888 ',
     '     888 ',
     '     888 ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '        ',
     '        ',
     '        ',
@@ -240,8 +246,8 @@ function ASCII_art_captcha_font_colossal() {
     '        ',
     '        ',
     '        ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '         ',
     '         ',
     '         ',
@@ -253,8 +259,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '888    ',
     '888    ',
     '888    ',
@@ -266,8 +272,8 @@ function ASCII_art_captcha_font_colossal() {
     '       ',
     '       ',
     '       ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '         ',
     '         ',
     '         ',
@@ -279,8 +285,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '         ',
     '         ',
     '         ',
@@ -292,8 +298,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '              ',
     '              ',
     '              ',
@@ -305,8 +311,8 @@ function ASCII_art_captcha_font_colossal() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '         ',
     '         ',
     '         ',
@@ -318,8 +324,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '         ',
     '         ',
     '         ',
@@ -331,8 +337,8 @@ function ASCII_art_captcha_font_colossal() {
     '     888 ',
     'Y8b d88P ',
     ' "Y88P"  ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '         ',
     '         ',
     '         ',
@@ -344,8 +350,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '       d8888 ',
     '      d88888 ',
     '     d88P888 ',
@@ -357,8 +363,8 @@ function ASCII_art_captcha_font_colossal() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     '888888b.   ',
     '888  "88b  ',
     '888  .88P  ',
@@ -370,8 +376,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     '888    888 ',
@@ -383,8 +389,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     '8888888b.  ',
     '888  "Y88b ',
     '888    888 ',
@@ -396,8 +402,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     '8888888888 ',
     '888        ',
     '888        ',
@@ -409,8 +415,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     '8888888888 ',
     '888        ',
     '888        ',
@@ -422,8 +428,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     '888    888 ',
@@ -435,8 +441,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     '888    888 ',
     '888    888 ',
     '888    888 ',
@@ -448,8 +454,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     '8888888 ',
     '  888   ',
     '  888   ',
@@ -461,8 +467,8 @@ function ASCII_art_captcha_font_colossal() {
     '        ',
     '        ',
     '        ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '  888888 ',
     '    "88b ',
     '     888 ',
@@ -474,8 +480,8 @@ function ASCII_art_captcha_font_colossal() {
     '   .d88P ',
     ' .d88P"  ',
     '888P"    ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     '888    d8P  ',
     '888   d8P   ',
     '888  d8P    ',
@@ -487,8 +493,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     '888      ',
     '888      ',
     '888      ',
@@ -500,8 +506,8 @@ function ASCII_art_captcha_font_colossal() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     '888b     d888 ',
     '8888b   d8888 ',
     '88888b.d88888 ',
@@ -513,8 +519,8 @@ function ASCII_art_captcha_font_colossal() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     '888b    888 ',
     '8888b   888 ',
     '88888b  888 ',
@@ -526,8 +532,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     ' .d88888b.  ',
     'd88P" "Y88b ',
     '888     888 ',
@@ -539,8 +545,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     '8888888b.  ',
     '888   Y88b ',
     '888    888 ',
@@ -552,8 +558,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     ' .d88888b.  ',
     'd88P" "Y88b ',
     '888     888 ',
@@ -565,8 +571,8 @@ function ASCII_art_captcha_font_colossal() {
     '       Y8b  ',
     '            ',
     '            ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     '8888888b.  ',
     '888   Y88b ',
     '888    888 ',
@@ -578,8 +584,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     'Y88b.      ',
@@ -591,8 +597,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     '88888888888 ',
     '    888     ',
     '    888     ',
@@ -604,8 +610,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     '888     888 ',
     '888     888 ',
     '888     888 ',
@@ -617,8 +623,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     '888     888 ',
     '888     888 ',
     '888     888 ',
@@ -630,8 +636,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     '888       888 ',
     '888   o   888 ',
     '888  d8b  888 ',
@@ -643,8 +649,8 @@ function ASCII_art_captcha_font_colossal() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     'Y88b   d88P ',
     ' Y88b d88P  ',
     '  Y88o88P   ',
@@ -656,8 +662,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     'Y88b   d88P ',
     ' Y88b d88P  ',
     '  Y88o88P   ',
@@ -669,8 +675,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     '8888888888P ',
     '      d88P  ',
     '     d88P   ',
@@ -682,8 +688,8 @@ function ASCII_art_captcha_font_colossal() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     '888    888 ',
@@ -695,8 +701,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     ' d888   ',
     'd8888   ',
     '  888   ',
@@ -708,8 +714,8 @@ function ASCII_art_captcha_font_colossal() {
     '        ',
     '        ',
     '        ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     '       888 ',
@@ -721,8 +727,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     '     .d88P ',
@@ -734,8 +740,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     '    d8888  ',
     '   d8P888  ',
     '  d8P 888  ',
@@ -747,8 +753,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     '888888888  ',
     '888        ',
     '888        ',
@@ -760,8 +766,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     '888        ',
@@ -773,8 +779,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     '8888888888 ',
     '      d88P ',
     '     d88P  ',
@@ -786,8 +792,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     'Y88b. d88P ',
@@ -799,8 +805,8 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     ' .d8888b.  ',
     'd88P  Y88b ',
     '888    888 ',
@@ -812,7 +818,7 @@ function ASCII_art_captcha_font_colossal() {
     '           ',
     '           ',
     '           ',
-  );
+  ];
 
   return $font;
 }

@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "roman" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_roman() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "roman" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_roman() {
+  $font = [];
   $font['height'] = 10;
   $font['name'] = 'roman';
   $font['comment'] = 'Roman by Nick Miners N.M.Miners@durham.ac.ukJune 1994';
-  $font['a'] = array(
+  $font['a'] = [
     '          ',
     '          ',
     ' .oooo.   ',
@@ -18,8 +24,8 @@ function ASCII_art_captcha_font_roman() {
     '          ',
     '          ',
     '          ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     ' .o8       ',
     '"888       ',
     ' 888oooo.  ',
@@ -30,8 +36,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '          ',
     '          ',
     ' .ooooo.  ',
@@ -42,8 +48,8 @@ function ASCII_art_captcha_font_roman() {
     '          ',
     '          ',
     '          ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '      .o8  ',
     '     "888  ',
     ' .oooo888  ',
@@ -54,8 +60,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '          ',
     '          ',
     ' .ooooo.  ',
@@ -66,8 +72,8 @@ function ASCII_art_captcha_font_roman() {
     '          ',
     '          ',
     '          ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     ' .o88o. ',
     ' 888 `" ',
     'o888oo  ',
@@ -78,8 +84,8 @@ function ASCII_art_captcha_font_roman() {
     '        ',
     '        ',
     '        ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '           ',
     '           ',
     ' .oooooooo ',
@@ -90,8 +96,8 @@ function ASCII_art_captcha_font_roman() {
     'd"     YD  ',
     '"Y88888P\'  ',
     '           ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     'oooo        ',
     '`888        ',
     ' 888 .oo.   ',
@@ -102,8 +108,8 @@ function ASCII_art_captcha_font_roman() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     ' o8o  ',
     ' `"\'  ',
     'oooo  ',
@@ -114,8 +120,8 @@ function ASCII_art_captcha_font_roman() {
     '      ',
     '      ',
     '      ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '    o8o ',
     '    `"\' ',
     '   oooo ',
@@ -126,8 +132,8 @@ function ASCII_art_captcha_font_roman() {
     '    888 ',
     '.o. 88P ',
     '`Y888P  ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     'oooo        ',
     '`888        ',
     ' 888  oooo  ',
@@ -138,8 +144,8 @@ function ASCII_art_captcha_font_roman() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     'oooo  ',
     '`888  ',
     ' 888  ',
@@ -150,8 +156,8 @@ function ASCII_art_captcha_font_roman() {
     '      ',
     '      ',
     '      ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '                  ',
     '                  ',
     'ooo. .oo.  .oo.   ',
@@ -162,8 +168,8 @@ function ASCII_art_captcha_font_roman() {
     '                  ',
     '                  ',
     '                  ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '            ',
     '            ',
     'ooo. .oo.   ',
@@ -174,8 +180,8 @@ function ASCII_art_captcha_font_roman() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '          ',
     '          ',
     ' .ooooo.  ',
@@ -186,8 +192,8 @@ function ASCII_art_captcha_font_roman() {
     '          ',
     '          ',
     '          ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '           ',
     '           ',
     'oo.ooooo.  ',
@@ -198,8 +204,8 @@ function ASCII_art_captcha_font_roman() {
     ' 888       ',
     'o888o      ',
     '           ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '           ',
     '           ',
     ' .ooooo oo ',
@@ -210,8 +216,8 @@ function ASCII_art_captcha_font_roman() {
     '      888. ',
     '      8P\'  ',
     '      "    ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '         ',
     '         ',
     'oooo d8b ',
@@ -222,8 +228,8 @@ function ASCII_art_captcha_font_roman() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '         ',
     '         ',
     ' .oooo.o ',
@@ -234,8 +240,8 @@ function ASCII_art_captcha_font_roman() {
     '         ',
     '         ',
     '         ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '    .   ',
     '  .o8   ',
     '.o888oo ',
@@ -246,8 +252,8 @@ function ASCII_art_captcha_font_roman() {
     '        ',
     '        ',
     '        ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '            ',
     '            ',
     'oooo  oooo  ',
@@ -258,8 +264,8 @@ function ASCII_art_captcha_font_roman() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '            ',
     '            ',
     'oooo    ooo ',
@@ -270,8 +276,8 @@ function ASCII_art_captcha_font_roman() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '                 ',
     '                 ',
     'oooo oooo    ooo ',
@@ -282,8 +288,8 @@ function ASCII_art_captcha_font_roman() {
     '                 ',
     '                 ',
     '                 ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '            ',
     '            ',
     'oooo    ooo ',
@@ -294,8 +300,8 @@ function ASCII_art_captcha_font_roman() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '            ',
     '            ',
     'oooo    ooo ',
@@ -306,8 +312,8 @@ function ASCII_art_captcha_font_roman() {
     '.o..P\'      ',
     '`Y8P\'       ',
     '            ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '           ',
     '           ',
     '  oooooooo ',
@@ -318,8 +324,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '      .o.       ',
     '     .888.      ',
     '    .8"888.     ',
@@ -330,8 +336,8 @@ function ASCII_art_captcha_font_roman() {
     '                ',
     '                ',
     '                ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     'oooooooooo.  ',
     '`888\'   `Y8b ',
     ' 888     888 ',
@@ -342,8 +348,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     '  .oooooo.   ',
     ' d8P\'  `Y8b  ',
     '888          ',
@@ -354,8 +360,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     'oooooooooo.   ',
     '`888\'   `Y8b  ',
     ' 888      888 ',
@@ -366,8 +372,8 @@ function ASCII_art_captcha_font_roman() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     'oooooooooooo ',
     '`888\'     `8 ',
     ' 888         ',
@@ -378,8 +384,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     'oooooooooooo ',
     '`888\'     `8 ',
     ' 888         ',
@@ -390,8 +396,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     '  .oooooo.    ',
     ' d8P\'  `Y8b   ',
     '888           ',
@@ -402,8 +408,8 @@ function ASCII_art_captcha_font_roman() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     'ooooo   ooooo ',
     '`888\'   `888\' ',
     ' 888     888  ',
@@ -414,8 +420,8 @@ function ASCII_art_captcha_font_roman() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     'ooooo ',
     '`888\' ',
     ' 888  ',
@@ -426,8 +432,8 @@ function ASCII_art_captcha_font_roman() {
     '      ',
     '      ',
     '      ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '   oooo ',
     '   `888 ',
     '    888 ',
@@ -438,8 +444,8 @@ function ASCII_art_captcha_font_roman() {
     '`Y888P  ',
     '        ',
     '        ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     'oooo    oooo ',
     '`888   .8P\'  ',
     ' 888  d8\'    ',
@@ -450,8 +456,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     'ooooo        ',
     '`888\'        ',
     ' 888         ',
@@ -462,8 +468,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     'ooo        ooooo ',
     '`88.       .888\' ',
     ' 888b     d\'888  ',
@@ -474,8 +480,8 @@ function ASCII_art_captcha_font_roman() {
     '                 ',
     '                 ',
     '                 ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     'ooooo      ooo ',
     '`888b.     `8\' ',
     ' 8 `88b.    8  ',
@@ -486,8 +492,8 @@ function ASCII_art_captcha_font_roman() {
     '               ',
     '               ',
     '               ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     '  .oooooo.   ',
     ' d8P\'  `Y8b  ',
     '888      888 ',
@@ -498,8 +504,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     'ooooooooo.   ',
     '`888   `Y88. ',
     ' 888   .d88\' ',
@@ -510,8 +516,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     '  .oooooo.      ',
     ' d8P\'  `Y8b     ',
     '888      888    ',
@@ -522,8 +528,8 @@ function ASCII_art_captcha_font_roman() {
     '                ',
     '                ',
     '                ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     'ooooooooo.   ',
     '`888   `Y88. ',
     ' 888   .d88\' ',
@@ -534,8 +540,8 @@ function ASCII_art_captcha_font_roman() {
     '             ',
     '             ',
     '             ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     ' .oooooo..o ',
     'd8P\'    `Y8 ',
     'Y88bo.      ',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_roman() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     'ooooooooooooo ',
     '8\'   888   `8 ',
     '     888      ',
@@ -558,8 +564,8 @@ function ASCII_art_captcha_font_roman() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     'ooooo     ooo ',
     '`888\'     `8\' ',
     ' 888       8  ',
@@ -570,8 +576,8 @@ function ASCII_art_captcha_font_roman() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     'oooooo     oooo ',
     ' `888.     .8\'  ',
     '  `888.   .8\'   ',
@@ -582,8 +588,8 @@ function ASCII_art_captcha_font_roman() {
     '                ',
     '                ',
     '                ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     'oooooo   oooooo     oooo ',
     ' `888.    `888.     .8\'  ',
     '  `888.   .8888.   .8\'   ',
@@ -594,8 +600,8 @@ function ASCII_art_captcha_font_roman() {
     '                         ',
     '                         ',
     '                         ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     'ooooooo  ooooo ',
     ' `8888    d8\'  ',
     '   Y888..8P    ',
@@ -606,8 +612,8 @@ function ASCII_art_captcha_font_roman() {
     '               ',
     '               ',
     '               ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     'oooooo   oooo ',
     ' `888.   .8\'  ',
     '  `888. .8\'   ',
@@ -618,8 +624,8 @@ function ASCII_art_captcha_font_roman() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     ' oooooooooooo ',
     'd\'""""""d888\' ',
     '      .888P   ',
@@ -630,8 +636,8 @@ function ASCII_art_captcha_font_roman() {
     '              ',
     '              ',
     '              ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '  .oooo.   ',
     ' d8P\'`Y8b  ',
     '888    888 ',
@@ -642,8 +648,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '  .o  ',
     'o888  ',
     ' 888  ',
@@ -654,8 +660,8 @@ function ASCII_art_captcha_font_roman() {
     '      ',
     '      ',
     '      ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     '  .oooo.   ',
     '.dP""Y88b  ',
     '      ]8P\' ',
@@ -666,8 +672,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     '  .oooo.   ',
     '.dP""Y88b  ',
     '      ]8P\' ',
@@ -678,8 +684,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     '      .o   ',
     '    .d88   ',
     '  .d\'888   ',
@@ -690,8 +696,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     '  oooooooo ',
     ' dP""""""" ',
     'd88888b.   ',
@@ -702,8 +708,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '    .ooo   ',
     '  .88\'     ',
     ' d88\'      ',
@@ -714,8 +720,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     ' ooooooooo ',
     'd"""""""8\' ',
     '      .8\'  ',
@@ -726,8 +732,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     ' .ooooo.   ',
     'd88\'   `8. ',
     'Y88..  .8\' ',
@@ -738,8 +744,8 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     ' .ooooo.   ',
     '888\' `Y88. ',
     '888    888 ',
@@ -750,7 +756,7 @@ function ASCII_art_captcha_font_roman() {
     '           ',
     '           ',
     '           ',
-  );
+  ];
 
   return $font;
 }

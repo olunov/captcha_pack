@@ -1,6 +1,11 @@
 <?php
 
-require_once(drupal_get_path('module', 'word_list_captcha') . '/../text_captcha.inc');
+/**
+ * @file
+ * Contains general functionality for the module.
+ */
+
+require_once drupal_get_path('module', 'word_list_captcha') . '/../text_captcha.inc';
 
 define('WORD_LIST_CAPTCHA_WORD_POOL1', 'green red blue yellow black white magenta cyan orange violet purple gold brown pink');
 define('WORD_LIST_CAPTCHA_WORD_POOL2', 'bird elephant dog cat crocodile lion fish cow horse sheep frog beetle worm spider bat giraffe lizard goat monkey rabbit chimpanzee');
@@ -16,7 +21,7 @@ function word_list_captcha_help($path, $arg) {
 }
 
 /**
- * Helper function for generating a word list CAPTCHA
+ * Helper function for generating a word list CAPTCHA.
  */
 function _word_list_captcha_get_word_list_captcha($list_size) {
   if (mt_rand(0, 1)) {
@@ -32,7 +37,7 @@ function _word_list_captcha_get_word_list_captcha($list_size) {
   $wrong_word = $other_words[array_rand($other_words)];
   $word_list[] = $wrong_word;
   shuffle($word_list);
-  return array($word_list, $wrong_word);
+  return [$word_list, $wrong_word];
 }
 
 /**
@@ -42,25 +47,25 @@ function word_list_captcha_captcha($op, $captcha_type = '') {
   $config = \Drupal::config('word_list_captcha.settings');
   switch ($op) {
     case 'list':
-      return array('Pick the unrelated word');
-      break;
+      return ['Pick the unrelated word'];
+
     case 'generate':
       if ($captcha_type == 'Pick the unrelated word') {
         $list_size = $config->get('word_list_captcha_list_size');
         list($word_list, $wrong_word) = _word_list_captcha_get_word_list_captcha($list_size);
-        // Build options list
-        $options = array();
+        // Build options list.
+        $options = [];
         foreach ($word_list as $word) {
           $options[$word] = $word;
         }
-        $captcha = array();
+        $captcha = [];
         $captcha['solution'] = $wrong_word;
-        $captcha['form']['captcha_response'] = array(
+        $captcha['form']['captcha_response'] = [
           '#type' => 'radios',
           '#title' => t('Which word does not belong to the list?'),
           '#options' => $options,
-          // Extra class needed for additional CSS'ing of the options
-          '#attributes' => array('class' => array('text-captcha-word-list-radios')),
+          // Extra class needed for additional CSS'ing of the options.
+          '#attributes' => ['class' => ['text-captcha-word-list-radios']],
           // TODO: the following needs to be ported to Drupal 6, which does not
           // Support DANGEROUS_SKIP_CHECK anymore
           //
@@ -70,12 +75,13 @@ function word_list_captcha_captcha($op, $captcha_type = '') {
           // The options are randomly generated on each call and consequently
           // almost never the same during the generate phase and the validation
           // phase.
-          '#DANGEROUS_SKIP_CHECK' => TRUE, //
+        //
+          '#DANGEROUS_SKIP_CHECK' => TRUE,
           '#required' => TRUE,
           '#cache' => ['max-age' => 0],
-        );
+        ];
         \Drupal::service('page_cache_kill_switch')->trigger();
-        // Add css to form
+        // Add css to form.
         $captcha['form']['captcha_response']['#attached']['library'][] = 'word_list_captcha/base';
 
         return $captcha;

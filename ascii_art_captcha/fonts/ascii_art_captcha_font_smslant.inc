@@ -1,446 +1,452 @@
 <?php
-// Font definition based on figlet font "smslant" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_smslant() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "smslant" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_smslant() {
+  $font = [];
   $font['height'] = 5;
   $font['name'] = 'smslant';
   $font['comment'] = 'SmSlant by Glenn Chappell 6/93 - based on Small & SlantIncludes ISO Latin-1figlet release 2.1 -- 12 Aug 1994Permission is hereby given to modify this font, as long as themodifier\'s name is placed on a comment line.Modified by Paul Burton <solution@earthlink.net> 12/96 to include new parametersupported by FIGlet and FIGWin.  May also be slightly modified for better useof new full-width/kern/smush alternatives, but default output is NOT changed.';
-  $font['a'] = array(
+  $font['a'] = [
     '      ',
     ' ___ _',
     '/ _ `/',
     '\\_,_/ ',
     '      ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     '   __ ',
     '  / / ',
     ' / _ \\',
     '/_.__/',
     '      ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '     ',
     ' ____',
     '/ __/',
     '\\__/ ',
     '     ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '     __',
     ' ___/ /',
     '/ _  / ',
     '\\_,_/  ',
     '       ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '     ',
     ' ___ ',
     '/ -_)',
     '\\__/ ',
     '     ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '   ___',
     '  / _/',
     ' / _/ ',
     '/_/   ',
     '      ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '       ',
     '  ___ _',
     ' / _ `/',
     ' \\_, / ',
     '/___/  ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     '   __ ',
     '  / / ',
     ' / _ \\',
     '/_//_/',
     '      ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     '   _ ',
     '  (_)',
     ' / / ',
     '/_/  ',
     '     ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '      _ ',
     '     (_)',
     '    / / ',
     ' __/ /  ',
     '|___/   ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     '   __  ',
     '  / /__',
     ' /  \'_/',
     '/_/\\_\\ ',
     '       ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     '   __',
     '  / /',
     ' / / ',
     '/_/  ',
     '     ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '       ',
     '  __ _ ',
     ' /  \' \\',
     '/_/_/_/',
     '       ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '      ',
     '  ___ ',
     ' / _ \\',
     '/_//_/',
     '      ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '     ',
     ' ___ ',
     '/ _ \\',
     '\\___/',
     '     ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '       ',
     '   ___ ',
     '  / _ \\',
     ' / .__/',
     '/_/    ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '      ',
     ' ___ _',
     '/ _ `/',
     '\\_, / ',
     ' /_/  ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '      ',
     '  ____',
     ' / __/',
     '/_/   ',
     '      ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '     ',
     '  ___',
     ' (_-<',
     '/___/',
     '     ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '  __ ',
     ' / /_',
     '/ __/',
     '\\__/ ',
     '     ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '      ',
     ' __ __',
     '/ // /',
     '\\_,_/ ',
     '      ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '      ',
     ' _  __',
     '| |/ /',
     '|___/ ',
     '      ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '        ',
     ' _    __',
     '| |/|/ /',
     '|__,__/ ',
     '        ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '      ',
     ' __ __',
     ' \\ \\ /',
     '/_\\_\\ ',
     '      ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '       ',
     '  __ __',
     ' / // /',
     ' \\_, / ',
     '/___/  ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '    ',
     ' ___',
     '/_ /',
     '/__/',
     '    ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '   ___ ',
     '  / _ |',
     ' / __ |',
     '/_/ |_|',
     '       ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     '   ___ ',
     '  / _ )',
     ' / _  |',
     '/____/ ',
     '       ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     '  _____',
     ' / ___/',
     '/ /__  ',
     '\\___/  ',
     '       ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     '   ___ ',
     '  / _ \\',
     ' / // /',
     '/____/ ',
     '       ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     '   ____',
     '  / __/',
     ' / _/  ',
     '/___/  ',
     '       ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     '   ____',
     '  / __/',
     ' / _/  ',
     '/_/    ',
     '       ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     '  _____',
     ' / ___/',
     '/ (_ / ',
     '\\___/  ',
     '       ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     '   __ __',
     '  / // /',
     ' / _  / ',
     '/_//_/  ',
     '        ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     '   ____',
     '  /  _/',
     ' _/ /  ',
     '/___/  ',
     '       ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '     __',
     ' __ / /',
     '/ // / ',
     '\\___/  ',
     '       ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     '   __ __',
     '  / //_/',
     ' / ,<   ',
     '/_/|_|  ',
     '        ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     '   __ ',
     '  / / ',
     ' / /__',
     '/____/',
     '      ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     '   __  ___',
     '  /  |/  /',
     ' / /|_/ / ',
     '/_/  /_/  ',
     '          ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     '   _  __',
     '  / |/ /',
     ' /    / ',
     '/_/|_/  ',
     '        ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     '  ____ ',
     ' / __ \\',
     '/ /_/ /',
     '\\____/ ',
     '       ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     '   ___ ',
     '  / _ \\',
     ' / ___/',
     '/_/    ',
     '       ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     '  ____ ',
     ' / __ \\',
     '/ /_/ /',
     '\\___\\_\\',
     '       ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     '   ___ ',
     '  / _ \\',
     ' / , _/',
     '/_/|_| ',
     '       ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '   ____',
     '  / __/',
     ' _\\ \\  ',
     '/___/  ',
     '       ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     ' ______',
     '/_  __/',
     ' / /   ',
     '/_/    ',
     '       ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     '  __  __',
     ' / / / /',
     '/ /_/ / ',
     '\\____/  ',
     '        ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     ' _   __',
     '| | / /',
     '| |/ / ',
     '|___/  ',
     '       ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     ' _      __',
     '| | /| / /',
     '| |/ |/ / ',
     '|__/|__/  ',
     '          ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     '   _  __',
     '  | |/_/',
     ' _>  <  ',
     '/_/|_|  ',
     '        ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     '__  __',
     '\\ \\/ /',
     ' \\  / ',
     ' /_/  ',
     '      ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     ' ____',
     '/_  /',
     ' / /_',
     '/___/',
     '     ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '  ___ ',
     ' / _ \\',
     '/ // /',
     '\\___/ ',
     '      ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '  ___',
     ' <  /',
     ' / / ',
     '/_/  ',
     '     ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     '   ___ ',
     '  |_  |',
     ' / __/ ',
     '/____/ ',
     '       ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     '   ____',
     '  |_  /',
     ' _/_ < ',
     '/____/ ',
     '       ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     '  ____',
     ' / / /',
     '/_  _/',
     ' /_/  ',
     '      ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     '   ____',
     '  / __/',
     ' /__ \\ ',
     '/____/ ',
     '       ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '  ____',
     ' / __/',
     '/ _ \\ ',
     '\\___/ ',
     '      ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     ' ____',
     '/_  /',
     ' / / ',
     '/_/  ',
     '     ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '  ___ ',
     ' ( _ )',
     '/ _  |',
     '\\___/ ',
     '      ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '  ___ ',
     ' / _ \\',
     ' \\_, /',
     '/___/ ',
     '      ',
-  );
+  ];
 
   return $font;
 }

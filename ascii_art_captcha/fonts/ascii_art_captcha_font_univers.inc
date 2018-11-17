@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "univers" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_univers() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "univers" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_univers() {
+  $font = [];
   $font['height'] = 11;
   $font['name'] = 'univers';
   $font['comment'] = 'Univers by Normand Veilleux <nveilleu@emr.ca>figletized by Glenn Chappell <ggc@uiuc.edu> January 12, 1994Date: 5 Mar 1994Explanation of first line:flf2 - "magic number" for file identificationa    - should always be `a\', for now$    - the "hardblank" -- prints as a blank, but can\'t be smushed11   - height of a character9    - height of a character, not including descenders40   - max line length (excluding comment lines) + a fudge factor32   - default smushmode for this font14   - number of comment lines';
-  $font['a'] = array(
+  $font['a'] = [
     '            ',
     '            ',
     '            ',
@@ -19,8 +25,8 @@ function ASCII_art_captcha_font_univers() {
     '`"8bbdP"Y8  ',
     '            ',
     '            ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     '             ',
     '88           ',
     '88           ',
@@ -32,8 +38,8 @@ function ASCII_art_captcha_font_univers() {
     '8Y"Ybbd8"\'   ',
     '             ',
     '             ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '            ',
     '            ',
     '            ',
@@ -45,8 +51,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"Ybbd8"\'  ',
     '            ',
     '            ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '             ',
     '         88  ',
     '         88  ',
@@ -58,8 +64,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"8bbdP"Y8  ',
     '             ',
     '             ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '            ',
     '            ',
     '            ',
@@ -71,8 +77,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"Ybbd8"\'  ',
     '            ',
     '            ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '         ',
     '   ad88  ',
     '  d8"    ',
@@ -84,8 +90,8 @@ function ASCII_art_captcha_font_univers() {
     '  88     ',
     '         ',
     '         ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '             ',
     '             ',
     '             ',
@@ -97,8 +103,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"YbbdP"Y8  ',
     ' aa,    ,88  ',
     '  "Y8bbdP"   ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     '             ',
     '88           ',
     '88           ',
@@ -110,8 +116,8 @@ function ASCII_art_captcha_font_univers() {
     '88       88  ',
     '             ',
     '             ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     '    ',
     '88  ',
     '""  ',
@@ -123,8 +129,8 @@ function ASCII_art_captcha_font_univers() {
     '88  ',
     '    ',
     '    ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '       ',
     '   88  ',
     '   ""  ',
@@ -136,8 +142,8 @@ function ASCII_art_captcha_font_univers() {
     '   88  ',
     '  ,88  ',
     '888P"  ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     '           ',
     '88         ',
     '88         ',
@@ -149,8 +155,8 @@ function ASCII_art_captcha_font_univers() {
     '88   `Y8a  ',
     '           ',
     '           ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     '    ',
     '88  ',
     '88  ',
@@ -162,8 +168,8 @@ function ASCII_art_captcha_font_univers() {
     '88  ',
     '    ',
     '    ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -175,8 +181,8 @@ function ASCII_art_captcha_font_univers() {
     '88      88      88  ',
     '                    ',
     '                    ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '             ',
     '             ',
     '             ',
@@ -188,8 +194,8 @@ function ASCII_art_captcha_font_univers() {
     '88       88  ',
     '             ',
     '             ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '             ',
     '             ',
     '             ',
@@ -201,8 +207,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"YbbdP"\'   ',
     '             ',
     '             ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '             ',
     '             ',
     '             ',
@@ -214,8 +220,8 @@ function ASCII_art_captcha_font_univers() {
     '88`YbbdP"\'   ',
     '88           ',
     '88           ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '             ',
     '             ',
     '             ',
@@ -227,8 +233,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"YbbdP\'88  ',
     '         88  ',
     '         88  ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '            ',
     '            ',
     '            ',
@@ -240,8 +246,8 @@ function ASCII_art_captcha_font_univers() {
     '88          ',
     '            ',
     '            ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '           ',
     '           ',
     '           ',
@@ -253,8 +259,8 @@ function ASCII_art_captcha_font_univers() {
     '`"YbbdP"\'  ',
     '           ',
     '           ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '         ',
     '         ',
     '  ,d     ',
@@ -266,8 +272,8 @@ function ASCII_art_captcha_font_univers() {
     '  "Y888  ',
     '         ',
     '         ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '             ',
     '             ',
     '             ',
@@ -279,8 +285,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"YbbdP\'Y8  ',
     '             ',
     '             ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '             ',
     '             ',
     '             ',
@@ -292,8 +298,8 @@ function ASCII_art_captcha_font_univers() {
     '    "8"      ',
     '             ',
     '             ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -305,8 +311,8 @@ function ASCII_art_captcha_font_univers() {
     '    YP      YP      ',
     '                    ',
     '                    ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '             ',
     '             ',
     '             ',
@@ -318,8 +324,8 @@ function ASCII_art_captcha_font_univers() {
     '8P\'     `Y8  ',
     '             ',
     '             ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '             ',
     '             ',
     '             ',
@@ -331,8 +337,8 @@ function ASCII_art_captcha_font_univers() {
     '    Y88\'     ',
     '    d8\'      ',
     '   d8\'       ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '           ',
     '           ',
     '           ',
@@ -344,8 +350,8 @@ function ASCII_art_captcha_font_univers() {
     '888888888  ',
     '           ',
     '           ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '                  ',
     '       db         ',
     '      d88b        ',
@@ -357,8 +363,8 @@ function ASCII_art_captcha_font_univers() {
     'd8\'          `8b  ',
     '                  ',
     '                  ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     '             ',
     '88888888ba   ',
     '88      "8b  ',
@@ -370,8 +376,8 @@ function ASCII_art_captcha_font_univers() {
     '88888888P"   ',
     '             ',
     '             ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     '               ',
     '  ,ad8888ba,   ',
     ' d8"\'    `"8b  ',
@@ -383,8 +389,8 @@ function ASCII_art_captcha_font_univers() {
     '  `"Y8888Y"\'   ',
     '               ',
     '               ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     '               ',
     '88888888ba,    ',
     '88      `"8b   ',
@@ -396,8 +402,8 @@ function ASCII_art_captcha_font_univers() {
     '88888888Y"\'    ',
     '               ',
     '               ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     '             ',
     '88888888888  ',
     '88           ',
@@ -409,8 +415,8 @@ function ASCII_art_captcha_font_univers() {
     '88888888888  ',
     '             ',
     '             ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     '             ',
     '88888888888  ',
     '88           ',
@@ -422,8 +428,8 @@ function ASCII_art_captcha_font_univers() {
     '88           ',
     '             ',
     '             ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     '               ',
     '  ,ad8888ba,   ',
     ' d8"\'    `"8b  ',
@@ -435,8 +441,8 @@ function ASCII_art_captcha_font_univers() {
     '  `"Y88888P"   ',
     '               ',
     '               ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     '              ',
     '88        88  ',
     '88        88  ',
@@ -448,8 +454,8 @@ function ASCII_art_captcha_font_univers() {
     '88        88  ',
     '              ',
     '              ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     '    ',
     '88  ',
     '88  ',
@@ -461,8 +467,8 @@ function ASCII_art_captcha_font_univers() {
     '88  ',
     '    ',
     '    ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '            ',
     '        88  ',
     '        88  ',
@@ -474,8 +480,8 @@ function ASCII_art_captcha_font_univers() {
     ' "Y8888P"   ',
     '            ',
     '            ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     '              ',
     '88      a8P   ',
     '88    ,88\'    ',
@@ -487,8 +493,8 @@ function ASCII_art_captcha_font_univers() {
     '88       Y8b  ',
     '              ',
     '              ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     '             ',
     '88           ',
     '88           ',
@@ -500,8 +506,8 @@ function ASCII_art_captcha_font_univers() {
     '88888888888  ',
     '             ',
     '             ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     '                   ',
     '88b           d88  ',
     '888b         d888  ',
@@ -513,8 +519,8 @@ function ASCII_art_captcha_font_univers() {
     '88     `8\'     88  ',
     '                   ',
     '                   ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     '              ',
     '888b      88  ',
     '8888b     88  ',
@@ -526,8 +532,8 @@ function ASCII_art_captcha_font_univers() {
     '88      `888  ',
     '              ',
     '              ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     '                ',
     '  ,ad8888ba,    ',
     ' d8"\'    `"8b   ',
@@ -539,8 +545,8 @@ function ASCII_art_captcha_font_univers() {
     '  `"Y8888Y"\'    ',
     '                ',
     '                ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     '             ',
     '88888888ba   ',
     '88      "8b  ',
@@ -552,8 +558,8 @@ function ASCII_art_captcha_font_univers() {
     '88           ',
     '             ',
     '             ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     '                ',
     '  ,ad8888ba,    ',
     ' d8"\'    `"8b   ',
@@ -565,8 +571,8 @@ function ASCII_art_captcha_font_univers() {
     '  `"Y8888Y"Y8a  ',
     '                ',
     '                ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     '             ',
     '88888888ba   ',
     '88      "8b  ',
@@ -578,8 +584,8 @@ function ASCII_art_captcha_font_univers() {
     '88      `8b  ',
     '             ',
     '             ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '             ',
     ' ad88888ba   ',
     'd8"     "8b  ',
@@ -591,8 +597,8 @@ function ASCII_art_captcha_font_univers() {
     ' "Y88888P"   ',
     '             ',
     '             ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     '              ',
     '888888888888  ',
     '     88       ',
@@ -604,8 +610,8 @@ function ASCII_art_captcha_font_univers() {
     '     88       ',
     '              ',
     '              ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     '              ',
     '88        88  ',
     '88        88  ',
@@ -617,8 +623,8 @@ function ASCII_art_captcha_font_univers() {
     ' `"Y8888Y"\'   ',
     '              ',
     '              ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     '                 ',
     '8b           d8  ',
     '`8b         d8\'  ',
@@ -630,8 +636,8 @@ function ASCII_art_captcha_font_univers() {
     '      `8\'        ',
     '                 ',
     '                 ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     '                         ',
     'I8,        8        ,8I  ',
     '`8b       d8b       d8\'  ',
@@ -643,8 +649,8 @@ function ASCII_art_captcha_font_univers() {
     '     `8\'       `8\'       ',
     '                         ',
     '                         ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     '              ',
     '8b        d8  ',
     ' Y8,    ,8P   ',
@@ -656,8 +662,8 @@ function ASCII_art_captcha_font_univers() {
     '8P        Y8  ',
     '              ',
     '              ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     '              ',
     '8b        d8  ',
     ' Y8,    ,8P   ',
@@ -669,8 +675,8 @@ function ASCII_art_captcha_font_univers() {
     '     88       ',
     '              ',
     '              ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     '              ',
     '888888888888  ',
     '         ,88  ',
@@ -682,8 +688,8 @@ function ASCII_art_captcha_font_univers() {
     '888888888888  ',
     '              ',
     '              ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '                ',
     '   ,a8888a,     ',
     ' ,8P"\'  `"Y8,   ',
@@ -695,8 +701,8 @@ function ASCII_art_captcha_font_univers() {
     '   "Y8888P"     ',
     '                ',
     '                ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '        ',
     '    88  ',
     '  ,d88  ',
@@ -708,8 +714,8 @@ function ASCII_art_captcha_font_univers() {
     '    88  ',
     '        ',
     '        ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     '             ',
     ' ad888888b,  ',
     'd8"     "88  ',
@@ -721,8 +727,8 @@ function ASCII_art_captcha_font_univers() {
     '88888888888  ',
     '             ',
     '             ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     '             ',
     ' ad888888b,  ',
     'd8"     "88  ',
@@ -734,8 +740,8 @@ function ASCII_art_captcha_font_univers() {
     ' "Y888888P\'  ',
     '             ',
     '             ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     '               ',
     '        ,d8    ',
     '      ,d888    ',
@@ -747,8 +753,8 @@ function ASCII_art_captcha_font_univers() {
     '         88    ',
     '               ',
     '               ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     '             ',
     '8888888888   ',
     '88           ',
@@ -760,8 +766,8 @@ function ASCII_art_captcha_font_univers() {
     ' "Y88888P"   ',
     '             ',
     '             ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '             ',
     '  ad8888ba,  ',
     ' 8P\'    "Y8  ',
@@ -773,8 +779,8 @@ function ASCII_art_captcha_font_univers() {
     ' "Y88888P"   ',
     '             ',
     '             ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     '              ',
     '888888888888  ',
     '        ,8P\'  ',
@@ -786,8 +792,8 @@ function ASCII_art_captcha_font_univers() {
     '8P\'           ',
     '              ',
     '              ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '             ',
     ' ad88888ba   ',
     'd8"     "8b  ',
@@ -799,8 +805,8 @@ function ASCII_art_captcha_font_univers() {
     ' "Y88888P"   ',
     '             ',
     '             ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '             ',
     ' ad88888ba   ',
     'd8"     "88  ',
@@ -812,7 +818,7 @@ function ASCII_art_captcha_font_univers() {
     '`"Y8888P\'    ',
     '             ',
     '             ',
-  );
+  ];
 
   return $font;
 }

@@ -167,7 +167,7 @@ class WordListCaptchaTestCase extends CaptchaBaseWebTestCase {
   /**
    * Test if the Word List CAPTCHA session ID is reused when previewing nodes.
    *
-   * Node preview after correct response should not show Word List CAPTCHA anymore.
+   * Node preview after correct response should not show Word List CAPTCHA.
    * The preview functionality of comments and nodes works
    * slightly different under the hood.
    * CAPTCHA module should be able to handle both.
@@ -191,7 +191,7 @@ class WordListCaptchaTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Word List CAPTCHA should be put on admin pages even if visitor has no access.
+   * Word List CAPTCHA should be put on admin pages even if user has no access.
    */
   public function testWordListCaptchaOnLoginBlockOnAdminPagesIssue893810() {
     // Set a CAPTCHA on login block form.
