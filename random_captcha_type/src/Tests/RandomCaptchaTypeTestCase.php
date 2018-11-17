@@ -167,7 +167,7 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
   /**
    * Test if the Random CAPTCHA Type session ID is reused when previewing nodes.
    *
-   * Node preview after correct response should not show Random CAPTCHA Type anymore.
+   * Node preview after correct response should not show Random CAPTCHA Type.
    * The preview functionality of comments and nodes works
    * slightly different under the hood.
    * CAPTCHA module should be able to handle both.
@@ -191,7 +191,7 @@ class RandomCaptchaTypeTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Random CAPTCHA Type should be put on admin pages even if visitor has no access.
+   * Random CAPTCHA Type is put on admin pages even if user has no access.
    */
   public function testRandomCaptchaTypeOnLoginBlockOnAdminPagesIssue893810() {
     // Set a CAPTCHA on login block form.
