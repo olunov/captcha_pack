@@ -81,7 +81,7 @@ function phrase_captcha_captcha($op, $captcha_type = '') {
 }
 
 /**
- * Function for generating a random nonsense word of a given number of characters.
+ * Function for generating a random nonsense word of a given number of chars.
  */
 function _phrase_captcha_generate_nonsense_word($characters) {
   $vowels = 'bcdfghjklmnpqrstvwxyz';
@@ -136,7 +136,7 @@ function _phrase_captcha_generate_words($num) {
 }
 
 /**
- * Function that returns a textual represention of an ordinal.
+ * Function that returns a textual representation of an ordinal.
  */
 function _phrase_captcha_ordinal($n) {
   $ordinalmap = [
@@ -160,7 +160,7 @@ function _phrase_captcha_ordinal($n) {
 }
 
 /**
- * Return array with availible word challenges.
+ * Return array with available word challenges.
  */
 function _phrase_captcha_available_word_challenges() {
   return [
@@ -171,7 +171,7 @@ function _phrase_captcha_available_word_challenges() {
 }
 
 /**
- *
+ * Return enabled challenges.
  */
 function _phrase_captcha_enabled_word_challenges() {
   $word_challenges = \Drupal::config('phrase_captcha.settings')->get('phrase_captcha_word_selection_challenges');
@@ -184,7 +184,7 @@ function _phrase_captcha_enabled_word_challenges() {
 }
 
 /**
- *
+ * Return details of 'word index' challenge.
  */
 function _phrase_captcha_word_question_word_index($words) {
   $key = array_rand($words, 1);
@@ -207,7 +207,7 @@ function _phrase_captcha_word_question_word_index($words) {
 }
 
 /**
- *
+ * Return details of 'alphabetical misplaced' challenge.
  */
 function _phrase_captcha_word_question_alphabetical_misplaced($words) {
   // Sort the words.
@@ -233,7 +233,7 @@ function _phrase_captcha_word_question_alphabetical_misplaced($words) {
 }
 
 /**
- *
+ * Return details of 'double occurrence' challenge.
  */
 function _phrase_captcha_word_question_double_occurence($words) {
   // Assure single occurence of each word.
