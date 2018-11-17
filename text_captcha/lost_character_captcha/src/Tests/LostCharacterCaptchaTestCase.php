@@ -165,9 +165,9 @@ class LostCharacterCaptchaTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Test if the Lost Character CAPTCHA session ID is reused when previewing nodes.
+   * Test if the Lost Character CAPTCHA sessionID is reused on previewing nodes.
    *
-   * Node preview after correct response should not show Lost character CAPTCHA anymore.
+   * Node preview after correct response should not show Lost character CAPTCHA.
    * The preview functionality of comments and nodes works
    * slightly different under the hood.
    * CAPTCHA module should be able to handle both.
@@ -191,7 +191,7 @@ class LostCharacterCaptchaTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * Lost Character CAPTCHA should be put on admin pages even if visitor has no access.
+   * Lost Character CAPTCHA is put on admin pages even if user has no access.
    */
   public function testLostCharacterCaptchaOnLoginBlockOnAdminPagesIssue893810() {
     // Set a CAPTCHA on login block form.

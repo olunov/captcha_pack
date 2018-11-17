@@ -43,17 +43,17 @@ class LostCharacterCaptchaSettingsForm extends ConfigFormBase {
     // Form element for the number of characters to lose.
     $form['lost_character_captcha_quantity'] = [
       '#type' => 'select',
-      '#title' => t('Number of characters to lose'),
+      '#title' => $this->t('Number of characters to lose'),
       '#default_value' => $config->get('lost_character_captcha_quantity'),
-      '#description' => t('Select how many characters should be lost in the CAPTCHA.'),
+      '#description' => $this->t('Select how many characters should be lost in the CAPTCHA.'),
       '#options' => array_combine([1, 2, 3], [1, 2, 3]),
     ];
     // Form element for hinting.
     $form['lost_character_captcha_enable_hint'] = [
       '#type' => 'checkbox',
-      '#title' => t('Put "%hinter" where the characters are lost as a hint', ['%hinter' => LOST_CHARACTER_CAPTCHA_HINTER]),
+      '#title' => $this->t('Put "%hinter" where the characters are lost as a hint', ['%hinter' => LOST_CHARACTER_CAPTCHA_HINTER]),
       '#default_value' => $config->get('lost_character_captcha_enable_hint'),
-      '#description' => t('Enable this option to make it easier to determine the lost characters.'),
+      '#description' => $this->t('Enable this option to make it easier to determine the lost characters.'),
     ];
     // Form elements for the word pool.
     _text_captcha_word_pool_form_items($form,
