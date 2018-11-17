@@ -167,7 +167,7 @@ class AsciiArtCaptchaTestCase extends CaptchaBaseWebTestCase {
   /**
    * Test if the Ascii Art CAPTCHA session ID is reused when previewing nodes.
    *
-   * Node preview after correct response should not show Ascii Art CAPTCHA anymore.
+   * Node preview after correct response should not show Ascii Art CAPTCHA.
    * The preview functionality of comments and nodes works
    * slightly different under the hood.
    * CAPTCHA module should be able to handle both.
@@ -191,7 +191,7 @@ class AsciiArtCaptchaTestCase extends CaptchaBaseWebTestCase {
   }
 
   /**
-   * AsciiArt CAPTCHA should be put on admin pages even if visitor has no access.
+   * AsciiArt CAPTCHA should be put on admin pages even if user has no access.
    */
   public function testAsciiArtCaptchaOnLoginBlockOnAdminPagesIssue893810() {
     // Set a CAPTCHA on login block form.

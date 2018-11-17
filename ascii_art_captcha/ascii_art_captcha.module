@@ -13,6 +13,7 @@ use Drupal\Component\Utility\Html;
  * @TODO: Rebuild loading fonts with plugins.
  *
  * @return array
+ *   returns list of available fonts.
  */
 function _ascii_art_captcha_available_fonts() {
   $available_fonts = [];
@@ -29,20 +30,30 @@ function _ascii_art_captcha_available_fonts() {
 }
 
 /**
- * Helper function for generating a code, taking the allowed characters into account.
+ * Helper function for generating a code, taking the allowed chars into account.
  */
 function _ascii_art_captcha_get_allowed_characters() {
   $allowed_chars = [];
   $config = Drupal::config('ascii_art_captcha.settings');
   $allowed_chars_settings = $config->get('ascii_art_captcha_allowed_characters');
   if ($allowed_chars_settings['upper']) {
-    $allowed_chars = array_merge($allowed_chars, ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
+    $allowed_chars = array_merge($allowed_chars, [
+      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P',
+      'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    ]);
   }
+
   if ($allowed_chars_settings['lower']) {
-    $allowed_chars = array_merge($allowed_chars, ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']);
+    $allowed_chars = array_merge($allowed_chars, [
+      'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p',
+      'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    ]);
   }
+
   if ($allowed_chars_settings['digit']) {
-    $allowed_chars += array_merge($allowed_chars, ['1', '2', '3', '4', '5', '6', '7', '8', '9']);
+    $allowed_chars += array_merge($allowed_chars, [
+      '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    ]);
   }
   return $allowed_chars;
 }
