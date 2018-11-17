@@ -1,0 +1,9 @@
+random_captcha_type_enabled_types:
+  'ascii_art_captcha/ASCII art CAPTCHA': 'ascii_art_captcha/ASCII art CAPTCHA'
+  captcha/Math: captcha/Math
+  'css_captcha/CSS CAPTCHA': 'css_captcha/CSS CAPTCHA'
+  'foo_captcha/Foo CAPTCHA': 'foo_captcha/Foo CAPTCHA'
+  image_captcha/Image: image_captcha/Image
+  'lost_character_captcha/Lost characters': 'lost_character_captcha/Lost characters'
+  'phrase_captcha/Phrase CAPTCHA': 'phrase_captcha/Phrase CAPTCHA'
+  'word_list_captcha/Pick the unrelated word': 'word_list_captcha/Pick the unrelated word'
