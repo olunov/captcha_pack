@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "dotmatrix" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_dotmatrix() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "dotmatrix" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_dotmatrix() {
+  $font = [];
   $font['height'] = 10;
   $font['name'] = 'dotmatrix';
   $font['comment'] = 'dotmatrix.flf by Curtis Wanner (cwanner@acs.bu.edu)last revision - 8/21/95';
-  $font['a'] = array(
+  $font['a'] = [
     '                  ',
     '                  ',
     '   _  _  _        ',
@@ -18,8 +24,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)  (_)  ',
     '                  ',
     '                  ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     ' _               ',
     '(_)              ',
     '(_) _  _  _      ',
@@ -30,8 +36,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)     ',
     '                 ',
     '                 ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '                 ',
     '                 ',
     '   _  _  _       ',
@@ -42,8 +48,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)      ',
     '                 ',
     '                 ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '            _    ',
     '           (_)   ',
     '   _  _  _ (_)   ',
@@ -54,8 +60,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)   ',
     '                 ',
     '                 ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '                  ',
     '                  ',
     '  _  _  _  _      ',
@@ -66,8 +72,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '                  ',
     '                  ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '      _  _      ',
     '    _(_)(_)     ',
     ' _ (_) _        ',
@@ -78,8 +84,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '   (_)          ',
     '                ',
     '                ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '                 ',
     '                 ',
     '   _  _  _  _    ',
@@ -90,8 +96,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)   ',
     '   _  _  _ (_)   ',
     '  (_)(_)(_)      ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     ' _               ',
     '(_)              ',
     '(_) _  _  _      ',
@@ -102,8 +108,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)        (_)   ',
     '                 ',
     '                 ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     '    _          ',
     '   (_)         ',
     ' _  _          ',
@@ -114,8 +120,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)      ',
     '               ',
     '               ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '          _      ',
     '         (_)     ',
     '       _  _      ',
@@ -126,8 +132,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     ' _      _(_)     ',
     '(_)_  _(_)       ',
     '  (_)(_)         ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     ' _               ',
     '(_)              ',
     '(_)     _        ',
@@ -138,8 +144,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)    (_)       ',
     '                 ',
     '                 ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     ' _  _          ',
     '(_)(_)         ',
     '   (_)         ',
@@ -150,8 +156,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)      ',
     '               ',
     '               ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '                  ',
     '                  ',
     '  _  _   _  _     ',
@@ -162,8 +168,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)   (_)   (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '                 ',
     '                 ',
     ' _  _  _  _      ',
@@ -174,8 +180,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)        (_)   ',
     '                 ',
     '                 ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '                  ',
     '                  ',
     '    _  _  _       ',
@@ -186,8 +192,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '   (_)(_)(_)      ',
     '                  ',
     '                  ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '                  ',
     '                  ',
     ' _  _  _  _       ',
@@ -198,8 +204,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)      ',
     '(_)               ',
     '(_)               ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '                  ',
     '                  ',
     '   _  _  _  _     ',
@@ -210,8 +216,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '           (_)    ',
     '           (_)    ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '                  ',
     '                  ',
     ' _       _  _     ',
@@ -222,8 +228,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)             ',
     '                  ',
     '                  ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '                  ',
     '                  ',
     '   _  _  _  _     ',
@@ -234,8 +240,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '                  ',
     '                  ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '    _            ',
     '   (_)           ',
     ' _ (_) _  _      ',
@@ -246,8 +252,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '     (_)(_)      ',
     '                 ',
     '                 ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '                  ',
     '                  ',
     ' _         _      ',
@@ -258,8 +264,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_) (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '                    ',
     '                    ',
     ' _               _  ',
@@ -270,8 +276,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '        (_)         ',
     '                    ',
     '                    ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '                   ',
     '                   ',
     ' _             _   ',
@@ -282,8 +288,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '    (_)   (_)      ',
     '                   ',
     '                   ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '                 ',
     '                 ',
     ' _         _     ',
@@ -294,8 +300,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)       (_)    ',
     '                 ',
     '                 ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '                    ',
     '                    ',
     ' _               _  ',
@@ -306,8 +312,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '       _(_)         ',
     '  _  _(_)           ',
     ' (_)(_)             ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '                ',
     '                ',
     ' _  _  _  _     ',
@@ -318,8 +324,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)    ',
     '                ',
     '                ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '       _          ',
     '     _(_)_        ',
     '   _(_) (_)_      ',
@@ -330,8 +336,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)         (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     ' _  _  _  _       ',
     '(_)(_)(_)(_) _    ',
     ' (_)        (_)   ',
@@ -342,8 +348,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)      ',
     '                  ',
     '                  ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     '    _  _  _       ',
     ' _ (_)(_)(_) _    ',
     '(_)         (_)   ',
@@ -354,8 +360,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '   (_)(_)(_)      ',
     '                  ',
     '                  ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     ' _  _  _  _       ',
     '(_)(_)(_)(_)      ',
     ' (_)      (_)_    ',
@@ -366,8 +372,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)      ',
     '                  ',
     '                  ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     ' _  _  _  _  _    ',
     '(_)(_)(_)(_)(_)   ',
     '(_)               ',
@@ -378,8 +384,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)(_)   ',
     '                  ',
     '                  ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     ' _  _  _  _  _    ',
     '(_)(_)(_)(_)(_)   ',
     '(_)               ',
@@ -390,8 +396,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)               ',
     '                  ',
     '                  ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     '    _  _  _       ',
     ' _ (_)(_)(_) _    ',
     '(_)         (_)   ',
@@ -402,8 +408,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '   (_)(_)(_)(_)   ',
     '                  ',
     '                  ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     ' _           _    ',
     '(_)         (_)   ',
     '(_)         (_)   ',
@@ -414,8 +420,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)         (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     ' _  _  _       ',
     '(_)(_)(_)      ',
     '   (_)         ',
@@ -426,8 +432,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)      ',
     '               ',
     '               ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '      _  _  _    ',
     '     (_)(_)(_)   ',
     '        (_)      ',
@@ -438,8 +444,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     ' (_)(_)(_)       ',
     '                 ',
     '                 ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     ' _           _    ',
     '(_)       _ (_)   ',
     '(_)    _ (_)      ',
@@ -450,8 +456,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)         (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     ' _                ',
     '(_)               ',
     '(_)               ',
@@ -462,8 +468,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)(_)   ',
     '                  ',
     '                  ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     ' _           _    ',
     '(_) _     _ (_)   ',
     '(_)(_)   (_)(_)   ',
@@ -474,8 +480,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)         (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     ' _           _    ',
     '(_) _       (_)   ',
     '(_)(_)_     (_)   ',
@@ -486,8 +492,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)         (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     '   _  _  _  _     ',
     ' _(_)(_)(_)(_)_   ',
     '(_)          (_)  ',
@@ -498,8 +504,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '                  ',
     '                  ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     ' _  _  _  _      ',
     '(_)(_)(_)(_)_    ',
     '(_)        (_)   ',
@@ -510,8 +516,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)              ',
     '                 ',
     '                 ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     '   _  _  _  _     ',
     ' _(_)(_)(_)(_)_   ',
     '(_)          (_)  ',
@@ -522,8 +528,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)  (_)  ',
     '                  ',
     '                  ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     ' _  _  _  _       ',
     '(_)(_)(_)(_) _    ',
     '(_)         (_)   ',
@@ -534,8 +540,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)         (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '   _  _  _  _     ',
     ' _(_)(_)(_)(_)_   ',
     '(_)          (_)  ',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '                  ',
     '                  ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     ' _  _  _  _  _    ',
     '(_)(_)(_)(_)(_)   ',
     '      (_)         ',
@@ -558,8 +564,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '      (_)         ',
     '                  ',
     '                  ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     ' _            _   ',
     '(_)          (_)  ',
     '(_)          (_)  ',
@@ -570,8 +576,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '                  ',
     '                  ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     ' _           _    ',
     '(_)         (_)   ',
     '(_)         (_)   ',
@@ -582,8 +588,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '      (_)         ',
     '                  ',
     '                  ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     ' _             _   ',
     '(_)           (_)  ',
     '(_)           (_)  ',
@@ -594,8 +600,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)       (_)    ',
     '                   ',
     '                   ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     ' _           _    ',
     '(_)_       _(_)   ',
     '  (_)_   _(_)     ',
@@ -606,8 +612,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)         (_)   ',
     '                  ',
     '                  ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     ' _           _    ',
     '(_)_       _(_)   ',
     '  (_)_   _(_)     ',
@@ -618,8 +624,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '      (_)         ',
     '                  ',
     '                  ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     ' _  _  _  _  _    ',
     '(_)(_)(_)(_)(_)   ',
     '          _(_)    ',
@@ -630,8 +636,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)(_)   ',
     '                  ',
     '                  ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '     _  _        ',
     '  _ (_)(_) _     ',
     ' (_)      (_)    ',
@@ -642,8 +648,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '    (_)(_)       ',
     '                 ',
     '                 ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '    _          ',
     ' _ (_)         ',
     '(_)(_)         ',
@@ -654,8 +660,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)      ',
     '               ',
     '               ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     '    _  _  _       ',
     ' _ (_)(_)(_) _    ',
     '(_)         (_)   ',
@@ -666,8 +672,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '(_)(_)(_)(_)(_)   ',
     '                  ',
     '                  ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     '   _  _  _  _     ',
     ' _(_)(_)(_)(_)_   ',
     '(_)          (_)  ',
@@ -678,8 +684,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '                  ',
     '                  ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     '          _       ',
     '       _ (_)      ',
     '    _ (_)(_)      ',
@@ -690,8 +696,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '         (_)      ',
     '                  ',
     '                  ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     ' _  _  _  _  _    ',
     '(_)(_)(_)(_)(_)   ',
     '(_) _  _  _       ',
@@ -702,8 +708,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '   (_)(_)(_)      ',
     '                  ',
     '                  ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '     _  _  _     ',
     '   _(_)(_)(_)    ',
     ' _(_)            ',
@@ -714,8 +720,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)      ',
     '                 ',
     '                 ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     ' _  _  _  _  _    ',
     '(_)(_)(_)(_)(_)   ',
     '          _(_)    ',
@@ -726,8 +732,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     ' (_)              ',
     '                  ',
     '                  ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '   _  _  _  _     ',
     ' _(_)(_)(_)(_)_   ',
     '(_)          (_)  ',
@@ -738,8 +744,8 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)(_)    ',
     '                  ',
     '                  ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '    _  _  _       ',
     ' _ (_)(_)(_) _    ',
     '(_)         (_)   ',
@@ -750,7 +756,7 @@ function ASCII_art_captcha_font_dotmatrix() {
     '  (_)(_)(_)       ',
     '                  ',
     '                  ',
-  );
+  ];
 
   return $font;
 }

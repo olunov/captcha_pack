@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "pebbles" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_pebbles() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "pebbles" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_pebbles() {
+  $font = [];
   $font['height'] = 10;
   $font['name'] = 'pebbles';
   $font['comment'] = 'Pebbles, figletized by Empath <hades@u.washington.edu> 7/94completed by Ryan Youck (youck@cs.uregina.ca) 8/94~From: flee@cse.psu.edu (Felix Lee)Here\'s an ascii font I\'ve been working on.  I started with the idea ofusing bubbles (. o O) to build a font, using the motif .oOo. toexpress a curve.  When I sketched out the lowercase letters, it endedup looking more like pebbles than bubbles, so I renamed it.';
-  $font['a'] = array(
+  $font['a'] = [
     '       ',
     '       ',
     '       ',
@@ -18,8 +24,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\'o ',
     '       ',
     '       ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     ' o    ',
     'O     ',
     'O     ',
@@ -30,8 +36,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\' ',
     '      ',
     '      ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '      ',
     '      ',
     '      ',
@@ -42,8 +48,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\' ',
     '      ',
     '      ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '     o ',
     '    O  ',
     '    o  ',
@@ -54,8 +60,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\'o ',
     '       ',
     '       ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '      ',
     '      ',
     '      ',
@@ -66,8 +72,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\' ',
     '      ',
     '      ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '.oOo ',
     'O    ',
     'o    ',
@@ -78,8 +84,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O\'   ',
     '     ',
     '     ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '      ',
     '      ',
     '      ',
@@ -90,8 +96,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoOo ',
     '    O ',
     ' OoO\' ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     ' o    ',
     'O     ',
     'o     ',
@@ -102,8 +108,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O   o ',
     '      ',
     '      ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     '   ',
     'o  ',
     '   ',
@@ -114,8 +120,8 @@ function ASCII_art_captcha_font_pebbles() {
     'o\' ',
     '   ',
     '   ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '    ',
     '  O ',
     '    ',
@@ -126,8 +132,8 @@ function ASCII_art_captcha_font_pebbles() {
     '  O ',
     '  o ',
     'oO\' ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     'o     ',
     'O     ',
     'o     ',
@@ -138,8 +144,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O   o ',
     '      ',
     '      ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     ' o ',
     'O  ',
     'o  ',
@@ -150,8 +156,8 @@ function ASCII_art_captcha_font_pebbles() {
     'Oo ',
     '   ',
     '   ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '         ',
     '         ',
     '         ',
@@ -162,8 +168,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' O  o  o ',
     '         ',
     '         ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '       ',
     '       ',
     '       ',
@@ -174,8 +180,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' o   O ',
     '       ',
     '       ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '      ',
     '      ',
     '      ',
@@ -186,8 +192,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\' ',
     '      ',
     '      ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '      ',
     '      ',
     '      ',
@@ -198,8 +204,8 @@ function ASCII_art_captcha_font_pebbles() {
     'oOoO\' ',
     'O     ',
     'o\'    ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '       ',
     '       ',
     '       ',
@@ -210,8 +216,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoOo  ',
     '    O  ',
     '    `o ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '       ',
     '       ',
     '       ',
@@ -222,8 +228,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' o     ',
     '       ',
     '       ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '      ',
     '      ',
     '      ',
@@ -234,8 +240,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\' ',
     '      ',
     '      ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '      ',
     '      ',
     '  O   ',
@@ -246,8 +252,8 @@ function ASCII_art_captcha_font_pebbles() {
     '  `oO ',
     '      ',
     '      ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '       ',
     '       ',
     '       ',
@@ -258,8 +264,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoO\'o ',
     '       ',
     '       ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '       ',
     '       ',
     '       ',
@@ -270,8 +276,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `o\'   ',
     '       ',
     '       ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '         ',
     '         ',
     '         ',
@@ -282,8 +288,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `Oo\'oO\' ',
     '         ',
     '         ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '      ',
     '      ',
     '      ',
@@ -294,8 +300,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O   O ',
     '      ',
     '      ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '      ',
     '      ',
     '      ',
@@ -306,8 +312,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OoOO ',
     '    o ',
     ' OoO\' ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '     ',
     '     ',
     '     ',
@@ -318,8 +324,8 @@ function ASCII_art_captcha_font_pebbles() {
     'OooO ',
     '     ',
     '     ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '   Oo    ',
     '  o  O   ',
     ' O    o  ',
@@ -330,8 +336,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O.     O ',
     '         ',
     '         ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     'o.oOOOo.  ',
     ' o     o  ',
     ' O     O  ',
@@ -342,8 +348,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `OooOO\'  ',
     '          ',
     '          ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     ' .oOOOo.  ',
     '.O     o  ',
     'o         ',
@@ -354,8 +360,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `OoooO\'  ',
     '          ',
     '          ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     'o.OOOo.   ',
     ' O    `o  ',
     ' o      O ',
@@ -366,8 +372,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' OooOO\'   ',
     '          ',
     '          ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     'o.OOoOoo ',
     ' O       ',
     ' o       ',
@@ -378,8 +384,8 @@ function ASCII_art_captcha_font_pebbles() {
     'ooOooOoO ',
     '         ',
     '         ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     'OOooOoO ',
     'o       ',
     'O       ',
@@ -390,8 +396,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O\'      ',
     '        ',
     '        ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     ' .oOOOo.  ',
     '.O     o  ',
     'o         ',
@@ -402,8 +408,8 @@ function ASCII_art_captcha_font_pebbles() {
     '  `OooO\'  ',
     '          ',
     '          ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     'o      O ',
     'O      o ',
     'o      O ',
@@ -414,8 +420,8 @@ function ASCII_art_captcha_font_pebbles() {
     'o      O ',
     '         ',
     '         ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     'ooOoOOo ',
     '   O    ',
     '   o    ',
@@ -426,8 +432,8 @@ function ASCII_art_captcha_font_pebbles() {
     'ooOOoOo ',
     '        ',
     '        ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '  OooOoo ',
     '      O  ',
     '      o  ',
@@ -438,8 +444,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OooOO\'  ',
     '         ',
     '         ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     '`o    O  ',
     ' o   O   ',
     ' O  O    ',
@@ -450,8 +456,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' O     O ',
     '         ',
     '         ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     ' o      ',
     'O       ',
     'o       ',
@@ -462,8 +468,8 @@ function ASCII_art_captcha_font_pebbles() {
     'OOoOooO ',
     '        ',
     '        ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     'Oo      oO ',
     'O O    o o ',
     'o  o  O  O ',
@@ -474,8 +480,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O        o ',
     '           ',
     '           ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     'o.     O ',
     'Oo     o ',
     'O O    O ',
@@ -486,8 +492,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O     `o ',
     '         ',
     '         ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     ' .oOOOo.  ',
     '.O     o. ',
     'O       o ',
@@ -498,8 +504,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `OoooO\'  ',
     '          ',
     '          ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     'OooOOo.  ',
     'O     `O ',
     'o      O ',
@@ -510,8 +516,8 @@ function ASCII_art_captcha_font_pebbles() {
     'o\'       ',
     '         ',
     '         ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     ' .oOOOo.   ',
     '.O     o.  ',
     'o       O  ',
@@ -522,8 +528,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `OoooO Oo ',
     '           ',
     '           ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     '`OooOOo.  ',
     ' o     `o ',
     ' O      O ',
@@ -534,8 +540,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' O      o ',
     '          ',
     '          ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '.oOOOo.  ',
     'o     o  ',
     'O.       ',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `oooO\'  ',
     '         ',
     '         ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     'oOoOOoOOo ',
     '    o     ',
     '    o     ',
@@ -558,8 +564,8 @@ function ASCII_art_captcha_font_pebbles() {
     '    o\'    ',
     '          ',
     '          ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     'O       o ',
     'o       O ',
     'O       o ',
@@ -570,8 +576,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `OoooO\'O ',
     '          ',
     '          ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     'o      \'O ',
     'O       o ',
     'o       O ',
@@ -582,8 +588,8 @@ function ASCII_art_captcha_font_pebbles() {
     '  `o\'     ',
     '          ',
     '          ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     'o          `O ',
     'O           o ',
     'o           O ',
@@ -594,8 +600,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' `OoO\' `OoO\'  ',
     '              ',
     '              ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     'o      O ',
     ' O    o  ',
     '  o  O   ',
@@ -606,8 +612,8 @@ function ASCII_art_captcha_font_pebbles() {
     'O      o ',
     '         ',
     '         ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     'o       O ',
     'O       o ',
     '`o     O\' ',
@@ -618,8 +624,8 @@ function ASCII_art_captcha_font_pebbles() {
     '    O     ',
     '          ',
     '          ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     'OoooOOoO ',
     '      o  ',
     '     O   ',
@@ -630,8 +636,8 @@ function ASCII_art_captcha_font_pebbles() {
     'OOooOooO ',
     '         ',
     '         ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '       ',
     '.oOOo. ',
     'O    o ',
@@ -642,8 +648,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OooO\' ',
     '       ',
     '       ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '      ',
     ' oO   ',
     '  O   ',
@@ -654,8 +660,8 @@ function ASCII_art_captcha_font_pebbles() {
     'OooOO ',
     '      ',
     '      ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     '       ',
     '.oOOo. ',
     '     O ',
@@ -666,8 +672,8 @@ function ASCII_art_captcha_font_pebbles() {
     'oOoOoO ',
     '       ',
     '       ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     '       ',
     '.oOOo. ',
     '     O ',
@@ -678,8 +684,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OooO\' ',
     '       ',
     '       ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     '       ',
     'o   O  ',
     'O   o  ',
@@ -690,8 +696,8 @@ function ASCII_art_captcha_font_pebbles() {
     '    O  ',
     '       ',
     '       ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     '       ',
     'OooOOo ',
     'o      ',
@@ -702,8 +708,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OooO\' ',
     '       ',
     '       ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '       ',
     '.oOOo. ',
     'O      ',
@@ -714,8 +720,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OooO\' ',
     '       ',
     '       ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     '       ',
     'OooOoO ',
     '     o ',
@@ -726,8 +732,8 @@ function ASCII_art_captcha_font_pebbles() {
     ' O     ',
     '       ',
     '       ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '       ',
     '.oOOo. ',
     'O    o ',
@@ -738,8 +744,8 @@ function ASCII_art_captcha_font_pebbles() {
     '`OooO\' ',
     '       ',
     '       ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '       ',
     '.oOOo. ',
     'O    o ',
@@ -750,7 +756,7 @@ function ASCII_art_captcha_font_pebbles() {
     '`OooO\' ',
     '       ',
     '       ',
-  );
+  ];
 
   return $font;
 }

@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "tinker-toy" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_tinkertoy() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "tinker-toy" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_tinkertoy() {
+  $font = [];
   $font['height'] = 7;
   $font['name'] = 'tinker-toy';
   $font['comment'] = 'Tinker-toy by Wendell Hicken 11/93 (whicken@parasoft.com)Explanation of first line:flf2 - "magic number" for file identificationa    - should always be `a\', for now$    - the "hardblank" -- prints as a blank, but can\'t be smushed7    - height of a character5    - height of a character, not including descenders5    - max line length (excluding comment lines) + a fudge factor15   - default smushmode for this font (like "-m 15" on command line)12   - number of comment lines';
-  $font['a'] = array(
+  $font['a'] = [
     '    ',
     '    ',
     ' oo ',
@@ -15,8 +21,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o-',
     '    ',
     '    ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     'o    ',
     '|    ',
     'O-o  ',
@@ -24,8 +30,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o  ',
     '     ',
     '     ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '     ',
     '     ',
     ' o-o ',
@@ -33,8 +39,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o ',
     '     ',
     '     ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '   o ',
     '   | ',
     ' o-O ',
@@ -42,8 +48,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o ',
     '     ',
     '     ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '    ',
     '    ',
     'o-o ',
@@ -51,8 +57,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o ',
     '    ',
     '    ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     ' o-o',
     ' |  ',
     '-O- ',
@@ -60,8 +66,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o  ',
     '    ',
     '    ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '     ',
     '     ',
     'o--o ',
@@ -69,8 +75,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o--O ',
     '   | ',
     'o--o ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     'o    ',
     '|    ',
     'O--o ',
@@ -78,8 +84,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o  o ',
     '     ',
     '     ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     '  ',
     'o ',
     '  ',
@@ -87,8 +93,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '| ',
     '  ',
     '  ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '      ',
     '    o ',
     '      ',
@@ -96,8 +102,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '    | ',
     'o   o ',
     ' o-o  ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     'o    ',
     '| /  ',
     'OO   ',
@@ -105,8 +111,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o  o ',
     '     ',
     '     ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     'o ',
     '| ',
     '| ',
@@ -114,8 +120,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o ',
     '  ',
     '  ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '      ',
     '      ',
     'o-O-o ',
@@ -123,8 +129,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o o o ',
     '      ',
     '      ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '     ',
     '     ',
     'o-o  ',
@@ -132,8 +138,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o  o ',
     '     ',
     '     ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '    ',
     '    ',
     'o-o ',
@@ -141,8 +147,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o ',
     '    ',
     '    ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '     ',
     '     ',
     'o-o  ',
@@ -150,8 +156,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'O-o  ',
     '|    ',
     'o    ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '     ',
     '     ',
     ' o-o ',
@@ -159,8 +165,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-O ',
     '   | ',
     '   o ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '    ',
     '    ',
     'o-o ',
@@ -168,8 +174,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o   ',
     '    ',
     '    ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '    ',
     '    ',
     'o-o ',
@@ -177,8 +183,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o ',
     '    ',
     '    ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     ' o  ',
     ' |  ',
     '-o- ',
@@ -186,8 +192,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o  ',
     '    ',
     '    ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '     ',
     '     ',
     'o  o ',
@@ -195,8 +201,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o--o ',
     '     ',
     '     ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '      ',
     '      ',
     'o   o ',
@@ -204,8 +210,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   ',
     '      ',
     '      ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '         ',
     '         ',
     'o   o   o',
@@ -213,8 +219,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   o  ',
     '         ',
     '         ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '    ',
     '    ',
     '\\ / ',
@@ -222,8 +228,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '/ \\ ',
     '    ',
     '    ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '     ',
     '     ',
     'o  o ',
@@ -231,8 +237,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o--O ',
     '   | ',
     'o--o ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '    ',
     '    ',
     'o-o ',
@@ -240,8 +246,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o ',
     '    ',
     '    ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '  O  ',
     ' / \\ ',
     'o---o',
@@ -249,8 +255,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o   o',
     '     ',
     '     ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     'o--o  ',
     '|   | ',
     'O--o  ',
@@ -258,8 +264,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o--o  ',
     '      ',
     '      ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     '  o-o ',
     ' /    ',
     'O     ',
@@ -267,8 +273,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o-o ',
     '      ',
     '      ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     'o-o   ',
     '|  \\  ',
     '|   O ',
@@ -276,8 +282,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o   ',
     '      ',
     '      ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     'o--o ',
     '|    ',
     'O-o  ',
@@ -285,8 +291,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o--o ',
     '     ',
     '     ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     'o--o ',
     '|    ',
     'O-o  ',
@@ -294,8 +300,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o    ',
     '     ',
     '     ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     ' o-o  ',
     'o     ',
     '|  -o ',
@@ -303,8 +309,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o  ',
     '      ',
     '      ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     'o  o ',
     '|  | ',
     'O--O ',
@@ -312,8 +318,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o  o ',
     '     ',
     '     ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     'o-O-o ',
     '  |   ',
     '  |   ',
@@ -321,8 +327,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-O-o ',
     '      ',
     '      ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '    o ',
     '    | ',
     '    | ',
@@ -330,8 +336,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o  ',
     '      ',
     '      ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     'o  o ',
     '| /  ',
     'OO   ',
@@ -339,8 +345,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o  o ',
     '     ',
     '     ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     'o    ',
     '|    ',
     '|    ',
@@ -348,8 +354,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'O---o',
     '     ',
     '     ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     'o   o ',
     '|\\ /| ',
     '| O | ',
@@ -357,8 +363,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o   o ',
     '      ',
     '      ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     'o   o ',
     '|\\  | ',
     '| \\ | ',
@@ -366,8 +372,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o   o ',
     '      ',
     '      ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     ' o-o  ',
     'o   o ',
     '|   | ',
@@ -375,8 +381,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o  ',
     '      ',
     '      ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     'o--o  ',
     '|   | ',
     'O--o  ',
@@ -384,8 +390,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o     ',
     '      ',
     '      ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     ' o-o  ',
     'o   o ',
     '|   | ',
@@ -393,8 +399,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-O\\ ',
     '      ',
     '      ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     'o--o  ',
     '|   | ',
     'O-Oo  ',
@@ -402,8 +408,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o   o ',
     '      ',
     '      ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     ' o-o  ',
     '|     ',
     ' o-o  ',
@@ -411,8 +417,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o--o  ',
     '      ',
     '      ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     'o-O-o ',
     '  |   ',
     '  |   ',
@@ -420,8 +426,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   ',
     '      ',
     '      ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     'o   o ',
     '|   | ',
     '|   | ',
@@ -429,8 +435,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o  ',
     '      ',
     '      ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     'o   o ',
     '|   | ',
     'o   o ',
@@ -438,8 +444,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   ',
     '      ',
     '      ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     'o       o ',
     '|       | ',
     'o   o   o ',
@@ -447,8 +453,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   o   ',
     '          ',
     '          ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     'o   o ',
     ' \\ /  ',
     '  O   ',
@@ -456,8 +462,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o   o ',
     '      ',
     '      ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     'o   o ',
     ' \\ /  ',
     '  O   ',
@@ -465,8 +471,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   ',
     '      ',
     '      ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     'o---o ',
     '   /  ',
     ' -O-  ',
@@ -474,8 +480,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o---o ',
     '      ',
     '      ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     ' o-o  ',
     'o  /o ',
     '| / | ',
@@ -483,8 +489,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o  ',
     '      ',
     '      ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '  0   ',
     ' /|   ',
     'o |   ',
@@ -492,8 +498,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o-o ',
     '      ',
     '      ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     ' --  ',
     'o  o ',
     '  /  ',
@@ -501,8 +507,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o--o ',
     '     ',
     '     ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     'o-o  ',
     '   | ',
     ' oo  ',
@@ -510,8 +516,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o  ',
     '     ',
     '     ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     'o  o ',
     '|  | ',
     'o--O ',
@@ -519,8 +525,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '   o ',
     '     ',
     '     ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     'o--o ',
     '|    ',
     'o-o  ',
@@ -528,8 +534,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     'o-o  ',
     '     ',
     '     ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '  o   ',
     ' /    ',
     'O--o  ',
@@ -537,8 +543,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o  ',
     '      ',
     '      ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     'o---o ',
     '   /  ',
     '  o   ',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   ',
     '      ',
     '      ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     ' o-o  ',
     '|   | ',
     ' o-o  ',
@@ -555,8 +561,8 @@ function ASCII_art_captcha_font_tinkertoy() {
     ' o-o  ',
     '      ',
     '      ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     ' o-o  ',
     '|   o ',
     ' o--O ',
@@ -564,7 +570,7 @@ function ASCII_art_captcha_font_tinkertoy() {
     '  o   ',
     '      ',
     '      ',
-  );
+  ];
 
   return $font;
 }

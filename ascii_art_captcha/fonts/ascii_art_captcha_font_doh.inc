@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "doh" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_doh() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "doh" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_doh() {
+  $font = [];
   $font['height'] = 25;
   $font['name'] = 'doh';
   $font['comment'] = 'doh.flf by Curtis Wanner (cwanner@acs.bu.edu)latest revision - 4/95';
-  $font['a'] = array(
+  $font['a'] = [
     '                  ',
     '                  ',
     '                  ',
@@ -33,8 +39,8 @@ function ASCII_art_captcha_font_doh() {
     '                  ',
     '                  ',
     '                  ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     '                    ',
     'bbbbbbbb            ',
     'b::::::b            ',
@@ -60,8 +66,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -87,8 +93,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '                    ',
     '            dddddddd',
     '            d::::::d',
@@ -114,8 +120,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -141,8 +147,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '                     ',
     '                     ',
     '   ffffffffffffffff  ',
@@ -168,8 +174,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -195,8 +201,8 @@ function ASCII_art_captcha_font_doh() {
     '  gg:::::::::::::g  ',
     '    ggg::::::ggg    ',
     '       gggggg       ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     '                    ',
     '                    ',
     'hhhhhhh             ',
@@ -222,8 +228,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     '        ',
     '        ',
     '  iiii  ',
@@ -249,8 +255,8 @@ function ASCII_art_captcha_font_doh() {
     '        ',
     '        ',
     '        ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '                 ',
     '                 ',
     '            jjjj ',
@@ -276,8 +282,8 @@ function ASCII_art_captcha_font_doh() {
     ' jj::::::::::::j ',
     '   jjj::::::jjj  ',
     '      jjjjjj     ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     '                   ',
     '                   ',
     'kkkkkkkk           ',
@@ -303,8 +309,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     '        ',
     '        ',
     'lllllll ',
@@ -330,8 +336,8 @@ function ASCII_art_captcha_font_doh() {
     '        ',
     '        ',
     '        ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '                        ',
     '                        ',
     '                        ',
@@ -357,8 +363,8 @@ function ASCII_art_captcha_font_doh() {
     '                        ',
     '                        ',
     '                        ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '                  ',
     '                  ',
     '                  ',
@@ -384,8 +390,8 @@ function ASCII_art_captcha_font_doh() {
     '                  ',
     '                  ',
     '                  ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '                 ',
     '                 ',
     '                 ',
@@ -411,8 +417,8 @@ function ASCII_art_captcha_font_doh() {
     '                 ',
     '                 ',
     '                 ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -438,8 +444,8 @@ function ASCII_art_captcha_font_doh() {
     'p:::::::p           ',
     'ppppppppp           ',
     '                    ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -465,8 +471,8 @@ function ASCII_art_captcha_font_doh() {
     '           q:::::::q',
     '           qqqqqqqqq',
     '                    ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -492,8 +498,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '                 ',
     '                 ',
     '                 ',
@@ -519,8 +525,8 @@ function ASCII_art_captcha_font_doh() {
     '                 ',
     '                 ',
     '                 ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '                       ',
     '                       ',
     '         tttt          ',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_doh() {
     '                       ',
     '                       ',
     '                       ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '                  ',
     '                  ',
     '                  ',
@@ -573,8 +579,8 @@ function ASCII_art_captcha_font_doh() {
     '                  ',
     '                  ',
     '                  ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '                         ',
     '                         ',
     '                         ',
@@ -600,8 +606,8 @@ function ASCII_art_captcha_font_doh() {
     '                         ',
     '                         ',
     '                         ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '                                         ',
     '                                         ',
     '                                         ',
@@ -627,8 +633,8 @@ function ASCII_art_captcha_font_doh() {
     '                                         ',
     '                                         ',
     '                                         ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '                    ',
     '                    ',
     '                    ',
@@ -654,8 +660,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '                         ',
     '                         ',
     '                         ',
@@ -681,8 +687,8 @@ function ASCII_art_captcha_font_doh() {
     '  yyyyyyy                ',
     '                         ',
     '                         ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '                 ',
     '                 ',
     '                 ',
@@ -708,8 +714,8 @@ function ASCII_art_captcha_font_doh() {
     '                 ',
     '                 ',
     '                 ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     '                                 ',
     '                                 ',
     '               AAA               ',
@@ -735,8 +741,8 @@ function ASCII_art_captcha_font_doh() {
     '                                 ',
     '                                 ',
     '                                 ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     '                    ',
     '                    ',
     'BBBBBBBBBBBBBBBBB   ',
@@ -762,8 +768,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     '                     ',
     '                     ',
     '        CCCCCCCCCCCCC',
@@ -789,8 +795,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     '                     ',
     '                     ',
     'DDDDDDDDDDDDD        ',
@@ -816,8 +822,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     '                      ',
     '                      ',
     'EEEEEEEEEEEEEEEEEEEEEE',
@@ -843,8 +849,8 @@ function ASCII_art_captcha_font_doh() {
     '                      ',
     '                      ',
     '                      ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     '                      ',
     '                      ',
     'FFFFFFFFFFFFFFFFFFFFFF',
@@ -870,8 +876,8 @@ function ASCII_art_captcha_font_doh() {
     '                      ',
     '                      ',
     '                      ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     '                     ',
     '                     ',
     '        GGGGGGGGGGGGG',
@@ -897,8 +903,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     '                       ',
     '                       ',
     'HHHHHHHHH     HHHHHHHHH',
@@ -924,8 +930,8 @@ function ASCII_art_captcha_font_doh() {
     '                       ',
     '                       ',
     '                       ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     '          ',
     '          ',
     'IIIIIIIIII',
@@ -951,8 +957,8 @@ function ASCII_art_captcha_font_doh() {
     '          ',
     '          ',
     '          ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '                     ',
     '                     ',
     '          JJJJJJJJJJJ',
@@ -978,8 +984,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     '                    ',
     '                    ',
     'KKKKKKKKK    KKKKKKK',
@@ -1005,8 +1011,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     '                        ',
     '                        ',
     'LLLLLLLLLLL             ',
@@ -1032,8 +1038,8 @@ function ASCII_art_captcha_font_doh() {
     '                        ',
     '                        ',
     '                        ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     '                               ',
     '                               ',
     'MMMMMMMM               MMMMMMMM',
@@ -1059,8 +1065,8 @@ function ASCII_art_captcha_font_doh() {
     '                               ',
     '                               ',
     '                               ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     '                        ',
     '                        ',
     'NNNNNNNN        NNNNNNNN',
@@ -1086,8 +1092,8 @@ function ASCII_art_captcha_font_doh() {
     '                        ',
     '                        ',
     '                        ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     '                   ',
     '                   ',
     '     OOOOOOOOO     ',
@@ -1113,8 +1119,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     '                    ',
     '                    ',
     'PPPPPPPPPPPPPPPPP   ',
@@ -1140,8 +1146,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     '                    ',
     '                    ',
     '     QQQQQQQQQ      ',
@@ -1167,8 +1173,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     '                    ',
     '                    ',
     'RRRRRRRRRRRRRRRRR   ',
@@ -1194,8 +1200,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '                   ',
     '                   ',
     '   SSSSSSSSSSSSSSS ',
@@ -1221,8 +1227,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     '                       ',
     '                       ',
     'TTTTTTTTTTTTTTTTTTTTTTT',
@@ -1248,8 +1254,8 @@ function ASCII_art_captcha_font_doh() {
     '                       ',
     '                       ',
     '                       ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     '                     ',
     '                     ',
     'UUUUUUUU     UUUUUUUU',
@@ -1275,8 +1281,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     '                           ',
     '                           ',
     'VVVVVVVV           VVVVVVVV',
@@ -1302,8 +1308,8 @@ function ASCII_art_captcha_font_doh() {
     '                           ',
     '                           ',
     '                           ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     '                                           ',
     '                                           ',
     'WWWWWWWW                           WWWWWWWW',
@@ -1329,8 +1335,8 @@ function ASCII_art_captcha_font_doh() {
     '                                           ',
     '                                           ',
     '                                           ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     '                     ',
     '                     ',
     'XXXXXXX       XXXXXXX',
@@ -1356,8 +1362,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     '                     ',
     '                     ',
     'YYYYYYY       YYYYYYY',
@@ -1383,8 +1389,8 @@ function ASCII_art_captcha_font_doh() {
     '                     ',
     '                     ',
     '                     ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     '                   ',
     '                   ',
     'ZZZZZZZZZZZZZZZZZZZ',
@@ -1410,8 +1416,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '                   ',
     '                   ',
     '     000000000     ',
@@ -1437,8 +1443,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '            ',
     '            ',
     '  1111111   ',
@@ -1464,8 +1470,8 @@ function ASCII_art_captcha_font_doh() {
     '            ',
     '            ',
     '            ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     '                    ',
     '                    ',
     ' 222222222222222    ',
@@ -1491,8 +1497,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     '                   ',
     '                   ',
     ' 333333333333333   ',
@@ -1518,8 +1524,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     '                  ',
     '                  ',
     '       444444444  ',
@@ -1545,8 +1551,8 @@ function ASCII_art_captcha_font_doh() {
     '                  ',
     '                  ',
     '                  ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     '                   ',
     '                   ',
     '555555555555555555 ',
@@ -1572,8 +1578,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '                   ',
     '                   ',
     '        66666666   ',
@@ -1599,8 +1605,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     '                    ',
     '                    ',
     '77777777777777777777',
@@ -1626,8 +1632,8 @@ function ASCII_art_captcha_font_doh() {
     '                    ',
     '                    ',
     '                    ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '                   ',
     '                   ',
     '     888888888     ',
@@ -1653,8 +1659,8 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '                   ',
     '                   ',
     '     999999999     ',
@@ -1680,7 +1686,7 @@ function ASCII_art_captcha_font_doh() {
     '                   ',
     '                   ',
     '                   ',
-  );
+  ];
 
   return $font;
 }

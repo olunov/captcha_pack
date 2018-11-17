@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "nancyj" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_nancyj() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "nancyj" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_nancyj() {
+  $font = [];
   $font['height'] = 8;
   $font['name'] = 'nancyj';
   $font['comment'] = '\t\t\t\t   nancyj.flf\t  named after the login of a woman who  asked me to make her a\t  sig. this is the font that came out of it.  this is my first\t\t  attempt at a figlet font, so leave me alone.\t\t\t       vampyr@acs.bu.edu';
-  $font['a'] = array(
+  $font['a'] = [
     '         ',
     '         ',
     '.d8888b. ',
@@ -16,8 +22,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`88888P8 ',
     '         ',
     '         ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     'dP       ',
     '88       ',
     '88d888b. ',
@@ -26,8 +32,8 @@ function ASCII_art_captcha_font_nancyj() {
     '88Y8888\' ',
     '         ',
     '         ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '         ',
     '         ',
     '.d8888b. ',
@@ -36,8 +42,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`88888P\' ',
     '         ',
     '         ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '      dP ',
     '      88 ',
     '.d888b88 ',
@@ -46,8 +52,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`88888P8 ',
     '         ',
     '         ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '         ',
     '         ',
     '.d8888b. ',
@@ -56,8 +62,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`88888P\' ',
     '         ',
     '         ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '.8888b ',
     '88   " ',
     '88aaa  ',
@@ -66,8 +72,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP     ',
     '       ',
     '       ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '         ',
     '         ',
     '.d8888b. ',
@@ -76,8 +82,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`8888P88 ',
     '     .88 ',
     ' d8888P  ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     'dP       ',
     '88       ',
     '88d888b. ',
@@ -86,8 +92,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP    dP ',
     '         ',
     '         ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     'oo ',
     '   ',
     'dP ',
@@ -96,8 +102,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP ',
     '   ',
     '   ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     'oo ',
     '   ',
     'dP ',
@@ -106,8 +112,8 @@ function ASCII_art_captcha_font_nancyj() {
     '88 ',
     '88 ',
     'dP ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     'dP       ',
     '88       ',
     '88  .dP  ',
@@ -116,8 +122,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP   `YP ',
     '         ',
     '         ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     'dP ',
     '88 ',
     '88 ',
@@ -126,8 +132,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP ',
     '   ',
     '   ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '           ',
     '           ',
     '88d8b.d8b. ',
@@ -136,8 +142,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP  dP  dP ',
     '           ',
     '           ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '         ',
     '         ',
     '88d888b. ',
@@ -146,8 +152,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP    dP ',
     '         ',
     '         ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '         ',
     '         ',
     '.d8888b. ',
@@ -156,8 +162,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`88888P\' ',
     '         ',
     '         ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '         ',
     '         ',
     '88d888b. ',
@@ -166,8 +172,8 @@ function ASCII_art_captcha_font_nancyj() {
     '88Y888P\' ',
     '88       ',
     'dP       ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '         ',
     '         ',
     '.d8888b. ',
@@ -176,8 +182,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`8888P88 ',
     '      88 ',
     '      dP ',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '         ',
     '         ',
     '88d888b. ',
@@ -186,8 +192,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP       ',
     '         ',
     '         ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '         ',
     '         ',
     '.d8888b. ',
@@ -196,8 +202,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`88888P\' ',
     '         ',
     '         ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     '  dP   ',
     '  88   ',
     'd8888P ',
@@ -206,8 +212,8 @@ function ASCII_art_captcha_font_nancyj() {
     '  dP   ',
     '       ',
     '       ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '         ',
     '         ',
     'dP    dP ',
@@ -216,8 +222,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`88888P\' ',
     '         ',
     '         ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '         ',
     '         ',
     'dP   .dP ',
@@ -226,8 +232,8 @@ function ASCII_art_captcha_font_nancyj() {
     '8888P\'   ',
     '         ',
     '         ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '           ',
     '           ',
     'dP  dP  dP ',
@@ -236,8 +242,8 @@ function ASCII_art_captcha_font_nancyj() {
     '8888P Y8P  ',
     '           ',
     '           ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '         ',
     '         ',
     'dP.  .dP ',
@@ -246,8 +252,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP\'  `dP ',
     '         ',
     '         ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '         ',
     '         ',
     'dP    dP ',
@@ -256,8 +262,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`8888P88 ',
     '     .88 ',
     ' d8888P  ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '         ',
     '         ',
     'd888888b ',
@@ -266,8 +272,8 @@ function ASCII_art_captcha_font_nancyj() {
     'd888888P ',
     '         ',
     '         ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     ' .d888888  ',
     'd8\'    88  ',
     '88aaaaa88a ',
@@ -276,8 +282,8 @@ function ASCII_art_captcha_font_nancyj() {
     '88     88  ',
     '           ',
     '           ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     ' 888888ba  ',
     ' 88    `8b ',
     'a88aaaa8P\' ',
@@ -286,8 +292,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' 88888888P ',
     '           ',
     '           ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     ' a88888b. ',
     'd8\'   `88 ',
     '88        ',
@@ -296,8 +302,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' Y88888P\' ',
     '          ',
     '          ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     '888888ba  ',
     '88    `8b ',
     '88     88 ',
@@ -306,8 +312,8 @@ function ASCII_art_captcha_font_nancyj() {
     '8888888P  ',
     '          ',
     '          ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     ' 88888888b ',
     ' 88        ',
     'a88aaaa    ',
@@ -316,8 +322,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' 88888888P ',
     '           ',
     '           ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     ' 88888888b ',
     ' 88        ',
     'a88aaaa    ',
@@ -326,8 +332,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' dP        ',
     '           ',
     '           ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     ' .88888.  ',
     'd8\'   `88 ',
     '88        ',
@@ -336,8 +342,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' `88888\'  ',
     '          ',
     '          ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     'dP     dP  ',
     '88     88  ',
     '88aaaaa88a ',
@@ -346,8 +352,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP     dP  ',
     '           ',
     '           ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     'dP ',
     '88 ',
     '88 ',
@@ -356,8 +362,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP ',
     '   ',
     '   ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     '       dP ',
     '       88 ',
     '       88 ',
@@ -366,8 +372,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' `Y8888\'  ',
     '          ',
     '          ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     'dP     dP ',
     '88   .d8\' ',
     '88aaa8P\'  ',
@@ -376,8 +382,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP     dP ',
     '          ',
     '          ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     'dP        ',
     '88        ',
     '88        ',
@@ -386,8 +392,8 @@ function ASCII_art_captcha_font_nancyj() {
     '88888888P ',
     '          ',
     '          ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     '8888ba.88ba  ',
     '88  `8b  `8b ',
     '88   88   88 ',
@@ -396,8 +402,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP   dP   dP ',
     '             ',
     '             ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     '888888ba  ',
     '88    `8b ',
     '88     88 ',
@@ -406,8 +412,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP     dP ',
     '          ',
     '          ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     ' .88888.  ',
     'd8\'   `8b ',
     '88     88 ',
@@ -416,8 +422,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' `8888P\'  ',
     '          ',
     '          ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     ' 888888ba  ',
     ' 88    `8b ',
     'a88aaaa8P\' ',
@@ -426,8 +432,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' dP        ',
     '           ',
     '           ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     ' .88888.   ',
     'd8\'   `8b  ',
     '88     88  ',
@@ -436,8 +442,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' `8888PY8b ',
     '           ',
     '           ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     ' 888888ba  ',
     ' 88    `8b ',
     'a88aaaa8P\' ',
@@ -446,8 +452,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' dP     dP ',
     '           ',
     '           ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     '.d88888b  ',
     '88.    "\' ',
     '`Y88888b. ',
@@ -456,8 +462,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' Y88888P  ',
     '          ',
     '          ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     'd888888P ',
     '   88    ',
     '   88    ',
@@ -466,8 +472,8 @@ function ASCII_art_captcha_font_nancyj() {
     '   dP    ',
     '         ',
     '         ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     'dP     dP ',
     '88     88 ',
     '88     88 ',
@@ -476,8 +482,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`Y88888P\' ',
     '          ',
     '          ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     'dP     dP ',
     '88     88 ',
     '88    .8P ',
@@ -486,8 +492,8 @@ function ASCII_art_captcha_font_nancyj() {
     '888888\'   ',
     '          ',
     '          ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     'dP   dP   dP ',
     '88   88   88 ',
     '88  .8P  .8P ',
@@ -496,8 +502,8 @@ function ASCII_art_captcha_font_nancyj() {
     '8888\' Y88\'   ',
     '             ',
     '             ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     'dP    dP ',
     'Y8.  .8P ',
     ' Y8aa8P  ',
@@ -506,8 +512,8 @@ function ASCII_art_captcha_font_nancyj() {
     'dP    dP ',
     '         ',
     '         ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     'dP    dP ',
     'Y8.  .8P ',
     ' Y8aa8P  ',
@@ -516,8 +522,8 @@ function ASCII_art_captcha_font_nancyj() {
     '   dP    ',
     '         ',
     '         ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     'd8888888P ',
     '     .d8\' ',
     '   .d8\'   ',
@@ -526,8 +532,8 @@ function ASCII_art_captcha_font_nancyj() {
     'Y8888888P ',
     '          ',
     '          ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     ' a8888a  ',
     'd8\' ..8b ',
     '88 .P 88 ',
@@ -536,8 +542,8 @@ function ASCII_art_captcha_font_nancyj() {
     ' Y8888P  ',
     '         ',
     '         ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     'd88  ',
     ' 88  ',
     ' 88  ',
@@ -546,8 +552,8 @@ function ASCII_art_captcha_font_nancyj() {
     'd88P ',
     '     ',
     '     ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     'd8888b. ',
     '    `88 ',
     '.aaadP\' ',
@@ -556,8 +562,8 @@ function ASCII_art_captcha_font_nancyj() {
     'Y88888P ',
     '        ',
     '        ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     'd8888b. ',
     '    `88 ',
     ' aaad8\' ',
@@ -566,8 +572,8 @@ function ASCII_art_captcha_font_nancyj() {
     'd88888P ',
     '        ',
     '        ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     'dP   dP ',
     '88   88 ',
     '88aaa88 ',
@@ -576,8 +582,8 @@ function ASCII_art_captcha_font_nancyj() {
     '     dP ',
     '        ',
     '        ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     '888888P ',
     '88\'     ',
     '88baaa. ',
@@ -586,8 +592,8 @@ function ASCII_art_captcha_font_nancyj() {
     'd88888P ',
     '        ',
     '        ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '.d8888P ',
     '88\'     ',
     '88baaa. ',
@@ -596,8 +602,8 @@ function ASCII_art_captcha_font_nancyj() {
     '`Y888P\' ',
     '        ',
     '        ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     'd88888P ',
     '    d8\' ',
     '   d8\'  ',
@@ -606,8 +612,8 @@ function ASCII_art_captcha_font_nancyj() {
     'd8\'     ',
     '        ',
     '        ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '.d888b. ',
     'Y8\' `8P ',
     'd8bad8b ',
@@ -616,8 +622,8 @@ function ASCII_art_captcha_font_nancyj() {
     'Y88888P ',
     '        ',
     '        ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '.d888b. ',
     'Y8\' `88 ',
     '`8bad88 ',
@@ -626,7 +632,7 @@ function ASCII_art_captcha_font_nancyj() {
     '`8888P  ',
     '        ',
     '        ',
-  );
+  ];
 
   return $font;
 }

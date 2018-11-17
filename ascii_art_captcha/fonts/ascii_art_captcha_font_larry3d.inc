@@ -1,13 +1,19 @@
 <?php
-// Font definition based on figlet font "larry3d" (http://www.figlet.org/)
-// as distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
 
-function ASCII_art_captcha_font_larry3d() {
-  $font = array();
+/**
+ * @file
+ * Font definition based on figlet font "larry3d" (http://www.figlet.org/)
+ */
+
+/**
+ * As distributed by pyfiglet (http://sourceforge.net/projects/pyfiglet/)
+ */
+function ascii_art_captcha_font_larry3d() {
+  $font = [];
   $font['height'] = 9;
   $font['name'] = 'larry3d';
   $font['comment'] = 'larry3d.flf by Larry Gelberg (larryg@avs.com)(stolen liberally from Juan Car\'s puffy.flf)tweaked by Glenn Chappell <ggc@uiuc.edu>Version 1.2 2/24/94';
-  $font['a'] = array(
+  $font['a'] = [
     '          ',
     '          ',
     '   __     ',
@@ -17,8 +23,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/__/\\/_/',
     '          ',
     '          ',
-  );
-  $font['b'] = array(
+  ];
+  $font['b'] = [
     ' __        ',
     '/\\ \\       ',
     '\\ \\ \\____  ',
@@ -28,8 +34,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['c'] = array(
+  ];
+  $font['c'] = [
     '        ',
     '        ',
     '  ___   ',
@@ -39,8 +45,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/____/',
     '        ',
     '        ',
-  );
-  $font['d'] = array(
+  ];
+  $font['d'] = [
     '  __     ',
     ' /\\ \\    ',
     ' \\_\\ \\   ',
@@ -50,8 +56,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/__,_ /',
     '         ',
     '         ',
-  );
-  $font['e'] = array(
+  ];
+  $font['e'] = [
     '        ',
     '        ',
     '   __   ',
@@ -61,8 +67,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/____/',
     '        ',
     '        ',
-  );
-  $font['f'] = array(
+  ];
+  $font['f'] = [
     '   ___  ',
     ' /\'___\\ ',
     '/\\ \\__/ ',
@@ -72,8 +78,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/_/ ',
     '        ',
     '        ',
-  );
-  $font['g'] = array(
+  ];
+  $font['g'] = [
     '          ',
     '          ',
     '   __     ',
@@ -83,8 +89,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/___L\\ \\',
     '   /\\____/',
     '   \\_/__/ ',
-  );
-  $font['h'] = array(
+  ];
+  $font['h'] = [
     ' __         ',
     '/\\ \\        ',
     '\\ \\ \\___    ',
@@ -94,8 +100,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/\\/_/',
     '            ',
     '            ',
-  );
-  $font['i'] = array(
+  ];
+  $font['i'] = [
     '       ',
     ' __    ',
     '/\\_\\   ',
@@ -105,8 +111,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/_/',
     '       ',
     '       ',
-  );
-  $font['j'] = array(
+  ];
+  $font['j'] = [
     '        ',
     ' __     ',
     '/\\_\\    ',
@@ -116,8 +122,8 @@ function ASCII_art_captcha_font_larry3d() {
     '/\\ \\_\\ \\',
     '\\ \\____/',
     ' \\/___/ ',
-  );
-  $font['k'] = array(
+  ];
+  $font['k'] = [
     ' __         ',
     '/\\ \\        ',
     '\\ \\ \\/\'\\    ',
@@ -127,8 +133,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/\\/_/',
     '            ',
     '            ',
-  );
-  $font['l'] = array(
+  ];
+  $font['l'] = [
     ' ___      ',
     '/\\_ \\     ',
     '\\//\\ \\    ',
@@ -138,8 +144,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/____/',
     '          ',
     '          ',
-  );
-  $font['m'] = array(
+  ];
+  $font['m'] = [
     '             ',
     '             ',
     '  ___ ___    ',
@@ -149,8 +155,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/_/\\/_/\\/_/',
     '             ',
     '             ',
-  );
-  $font['n'] = array(
+  ];
+  $font['n'] = [
     '         ',
     '         ',
     '  ___    ',
@@ -160,8 +166,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/_/\\/_/',
     '         ',
     '         ',
-  );
-  $font['o'] = array(
+  ];
+  $font['o'] = [
     '        ',
     '        ',
     '  ___   ',
@@ -171,8 +177,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/___/ ',
     '        ',
     '        ',
-  );
-  $font['p'] = array(
+  ];
+  $font['p'] = [
     '         ',
     '         ',
     ' _____   ',
@@ -182,8 +188,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  \\ \\ \\/ ',
     '   \\ \\_\\ ',
     '    \\/_/ ',
-  );
-  $font['q'] = array(
+  ];
+  $font['q'] = [
     '           ',
     '           ',
     '   __      ',
@@ -193,8 +199,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/___/\\ \\ ',
     '      \\ \\_\\',
     '       \\/_/',
-  );
-  $font['r'] = array(
+  ];
+  $font['r'] = [
     '       ',
     '       ',
     ' _ __  ',
@@ -204,8 +210,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  \\/_/ ',
     '       ',
     '       ',
-  );
-  $font['s'] = array(
+  ];
+  $font['s'] = [
     '        ',
     '        ',
     '  ____  ',
@@ -215,8 +221,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\/___/ ',
     '        ',
     '        ',
-  );
-  $font['t'] = array(
+  ];
+  $font['t'] = [
     ' __      ',
     '/\\ \\__   ',
     '\\ \\ ,_\\  ',
@@ -226,8 +232,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/__/',
     '         ',
     '         ',
-  );
-  $font['u'] = array(
+  ];
+  $font['u'] = [
     '         ',
     '         ',
     ' __  __  ',
@@ -237,8 +243,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  \\/___/ ',
     '         ',
     '         ',
-  );
-  $font['v'] = array(
+  ];
+  $font['v'] = [
     '         ',
     '         ',
     ' __  __  ',
@@ -248,8 +254,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  \\/__/  ',
     '         ',
     '         ',
-  );
-  $font['w'] = array(
+  ];
+  $font['w'] = [
     '             ',
     '             ',
     ' __  __  __  ',
@@ -259,8 +265,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  \\/__//__/  ',
     '             ',
     '             ',
-  );
-  $font['x'] = array(
+  ];
+  $font['x'] = [
     '        ',
     '        ',
     ' __  _  ',
@@ -270,8 +276,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\//\\/_/',
     '        ',
     '        ',
-  );
-  $font['y'] = array(
+  ];
+  $font['y'] = [
     '           ',
     '           ',
     ' __  __    ',
@@ -281,8 +287,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  `/___/> \\',
     '     /\\___/',
     '     \\/__/ ',
-  );
-  $font['z'] = array(
+  ];
+  $font['z'] = [
     '         ',
     '         ',
     ' ____    ',
@@ -292,8 +298,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  \\/____/',
     '         ',
     '         ',
-  );
-  $font['A'] = array(
+  ];
+  $font['A'] = [
     ' ______     ',
     '/\\  _  \\    ',
     '\\ \\ \\L\\ \\   ',
@@ -303,8 +309,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/\\/_/',
     '            ',
     '            ',
-  );
-  $font['B'] = array(
+  ];
+  $font['B'] = [
     ' ____      ',
     '/\\  _`\\    ',
     '\\ \\ \\L\\ \\  ',
@@ -314,8 +320,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['C'] = array(
+  ];
+  $font['C'] = [
     ' ____      ',
     '/\\  _`\\    ',
     '\\ \\ \\/\\_\\  ',
@@ -325,8 +331,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['D'] = array(
+  ];
+  $font['D'] = [
     ' ____      ',
     '/\\  _`\\    ',
     '\\ \\ \\/\\ \\  ',
@@ -336,8 +342,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['E'] = array(
+  ];
+  $font['E'] = [
     ' ____      ',
     '/\\  _`\\    ',
     '\\ \\ \\L\\_\\  ',
@@ -347,8 +353,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['F'] = array(
+  ];
+  $font['F'] = [
     ' ____    ',
     '/\\  _`\\  ',
     '\\ \\ \\L\\_\\',
@@ -358,8 +364,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/ ',
     '         ',
     '         ',
-  );
-  $font['G'] = array(
+  ];
+  $font['G'] = [
     ' ____      ',
     '/\\  _`\\    ',
     '\\ \\ \\L\\_\\  ',
@@ -369,8 +375,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['H'] = array(
+  ];
+  $font['H'] = [
     ' __  __     ',
     '/\\ \\/\\ \\    ',
     '\\ \\ \\_\\ \\   ',
@@ -380,8 +386,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/\\/_/',
     '            ',
     '            ',
-  );
-  $font['I'] = array(
+  ];
+  $font['I'] = [
     ' ______     ',
     '/\\__  _\\    ',
     '\\/_/\\ \\/    ',
@@ -391,8 +397,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_____/',
     '            ',
     '            ',
-  );
-  $font['J'] = array(
+  ];
+  $font['J'] = [
     ' _____    ',
     '/\\___ \\   ',
     '\\/__/\\ \\  ',
@@ -402,8 +408,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/___/ ',
     '          ',
     '          ',
-  );
-  $font['K'] = array(
+  ];
+  $font['K'] = [
     ' __  __     ',
     '/\\ \\/\\ \\    ',
     '\\ \\ \\/\'/\'   ',
@@ -413,8 +419,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/\\/_/',
     '            ',
     '            ',
-  );
-  $font['L'] = array(
+  ];
+  $font['L'] = [
     ' __        ',
     '/\\ \\       ',
     '\\ \\ \\      ',
@@ -424,8 +430,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['M'] = array(
+  ];
+  $font['M'] = [
     '            ',
     ' /\'\\_/`\\    ',
     '/\\      \\   ',
@@ -435,8 +441,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/_/ \\/_/',
     '            ',
     '            ',
-  );
-  $font['N'] = array(
+  ];
+  $font['N'] = [
     ' __  __     ',
     '/\\ \\/\\ \\    ',
     '\\ \\ `\\\\ \\   ',
@@ -446,8 +452,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/\\/_/',
     '            ',
     '            ',
-  );
-  $font['O'] = array(
+  ];
+  $font['O'] = [
     ' _____      ',
     '/\\  __`\\    ',
     '\\ \\ \\/\\ \\   ',
@@ -457,8 +463,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_____/',
     '            ',
     '            ',
-  );
-  $font['P'] = array(
+  ];
+  $font['P'] = [
     ' ____    ',
     '/\\  _`\\  ',
     '\\ \\ \\L\\ \\',
@@ -468,8 +474,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/ ',
     '         ',
     '         ',
-  );
-  $font['Q'] = array(
+  ];
+  $font['Q'] = [
     ' _____      ',
     '/\\  __`\\    ',
     '\\ \\ \\/\\ \\   ',
@@ -479,8 +485,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/__//_/',
     '            ',
     '            ',
-  );
-  $font['R'] = array(
+  ];
+  $font['R'] = [
     ' ____       ',
     '/\\  _`\\     ',
     '\\ \\ \\L\\ \\   ',
@@ -490,8 +496,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/\\/ /',
     '            ',
     '            ',
-  );
-  $font['S'] = array(
+  ];
+  $font['S'] = [
     ' ____       ',
     '/\\  _`\\     ',
     '\\ \\,\\L\\_\\   ',
@@ -501,8 +507,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_____/',
     '            ',
     '            ',
-  );
-  $font['T'] = array(
+  ];
+  $font['T'] = [
     ' ______   ',
     '/\\__  _\\  ',
     '\\/_/\\ \\/  ',
@@ -512,8 +518,8 @@ function ASCII_art_captcha_font_larry3d() {
     '      \\/_/',
     '          ',
     '          ',
-  );
-  $font['U'] = array(
+  ];
+  $font['U'] = [
     ' __  __     ',
     '/\\ \\/\\ \\    ',
     '\\ \\ \\ \\ \\   ',
@@ -523,8 +529,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_____/',
     '            ',
     '            ',
-  );
-  $font['V'] = array(
+  ];
+  $font['V'] = [
     ' __  __    ',
     '/\\ \\/\\ \\   ',
     '\\ \\ \\ \\ \\  ',
@@ -534,8 +540,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    `\\/__/ ',
     '           ',
     '           ',
-  );
-  $font['W'] = array(
+  ];
+  $font['W'] = [
     ' __      __    ',
     '/\\ \\  __/\\ \\   ',
     '\\ \\ \\/\\ \\ \\ \\  ',
@@ -545,8 +551,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \'\\/__//__/ ',
     '               ',
     '               ',
-  );
-  $font['X'] = array(
+  ];
+  $font['X'] = [
     ' __   __     ',
     '/\\ \\ /\\ \\    ',
     '\\ `\\`\\/\'/\'   ',
@@ -556,8 +562,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_/ \\/_/',
     '             ',
     '             ',
-  );
-  $font['Y'] = array(
+  ];
+  $font['Y'] = [
     ' __    __ ',
     '/\\ \\  /\\ \\',
     '\\ `\\`\\\\/\'/',
@@ -567,8 +573,8 @@ function ASCII_art_captcha_font_larry3d() {
     '      \\/_/',
     '          ',
     '          ',
-  );
-  $font['Z'] = array(
+  ];
+  $font['Z'] = [
     ' ________     ',
     '/\\_____  \\    ',
     '\\/____//\'/\'   ',
@@ -578,8 +584,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/_______/',
     '              ',
     '              ',
-  );
-  $font['0'] = array(
+  ];
+  $font['0'] = [
     '   __     ',
     ' /\'__`\\   ',
     '/\\ \\/\\ \\  ',
@@ -589,8 +595,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/___/ ',
     '          ',
     '          ',
-  );
-  $font['1'] = array(
+  ];
+  $font['1'] = [
     '   _     ',
     ' /\' \\    ',
     '/\\_, \\   ',
@@ -600,8 +606,8 @@ function ASCII_art_captcha_font_larry3d() {
     '     \\/_/',
     '         ',
     '         ',
-  );
-  $font['2'] = array(
+  ];
+  $font['2'] = [
     '   ___     ',
     ' /\'___`\\   ',
     '/\\_\\ /\\ \\  ',
@@ -611,8 +617,8 @@ function ASCII_art_captcha_font_larry3d() {
     '  \\/_____/ ',
     '           ',
     '           ',
-  );
-  $font['3'] = array(
+  ];
+  $font['3'] = [
     '   __     ',
     ' /\'__`\\   ',
     '/\\_\\L\\ \\  ',
@@ -622,8 +628,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/___/ ',
     '          ',
     '          ',
-  );
-  $font['4'] = array(
+  ];
+  $font['4'] = [
     ' __ __      ',
     '/\\ \\\\ \\     ',
     '\\ \\ \\\\ \\    ',
@@ -633,8 +639,8 @@ function ASCII_art_captcha_font_larry3d() {
     '      \\/_/  ',
     '            ',
     '            ',
-  );
-  $font['5'] = array(
+  ];
+  $font['5'] = [
     ' ______    ',
     '/\\  ___\\   ',
     '\\ \\ \\__/   ',
@@ -644,8 +650,8 @@ function ASCII_art_captcha_font_larry3d() {
     '    \\/___/ ',
     '           ',
     '           ',
-  );
-  $font['6'] = array(
+  ];
+  $font['6'] = [
     '  ____    ',
     ' /\'___\\   ',
     '/\\ \\__/   ',
@@ -655,8 +661,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/___/ ',
     '          ',
     '          ',
-  );
-  $font['7'] = array(
+  ];
+  $font['7'] = [
     ' ________ ',
     '/\\_____  \\',
     '\\/___//\'/\'',
@@ -666,8 +672,8 @@ function ASCII_art_captcha_font_larry3d() {
     ' \\//      ',
     '          ',
     '          ',
-  );
-  $font['8'] = array(
+  ];
+  $font['8'] = [
     '   __     ',
     ' /\'_ `\\   ',
     '/\\ \\L\\ \\  ',
@@ -677,8 +683,8 @@ function ASCII_art_captcha_font_larry3d() {
     '   \\/___/ ',
     '          ',
     '          ',
-  );
-  $font['9'] = array(
+  ];
+  $font['9'] = [
     '   __      ',
     ' /\'_ `\\    ',
     '/\\ \\L\\ \\   ',
@@ -688,7 +694,7 @@ function ASCII_art_captcha_font_larry3d() {
     '       \\/_/',
     '           ',
     '           ',
-  );
+  ];
 
   return $font;
 }

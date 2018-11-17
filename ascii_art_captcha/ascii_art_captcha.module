@@ -29,7 +29,7 @@ function _ascii_art_captcha_available_fonts() {
 }
 
 /**
- * helper function for generating a code, taking the allowed characters into account
+ * Helper function for generating a code, taking the allowed characters into account.
  */
 function _ascii_art_captcha_get_allowed_characters() {
   $allowed_chars = [];
@@ -53,23 +53,24 @@ function _ascii_art_captcha_get_allowed_characters() {
 function ascii_art_captcha_captcha($op, $captcha_type = '') {
   switch ($op) {
     case 'list':
-      return array('ASCII art CAPTCHA');
+      return ['ASCII art CAPTCHA'];
+
     case 'generate':
       if ($captcha_type == "ASCII art CAPTCHA") {
         $config = Drupal::config('ascii_art_captcha.settings');
-        // get settings
+        // Get settings.
         $allowed_chars = _ascii_art_captcha_get_allowed_characters();
         $code_length = (int) $config->get('ascii_art_captcha_code_length');
-        // load font
+        // Load font.
         $font_name = $config->get('ascii_art_captcha_font');
-        if (!include_once('fonts/ascii_art_captcha_font_' . $font_name . '.inc')) {
+        if (!include_once 'fonts/ascii_art_captcha_font_' . $font_name . '.inc') {
           return;
         }
         $font = call_user_func('ascii_art_captcha_font_' . $font_name);
         if (!$font) {
           return;
         }
-        // build solution and ASCII art array
+        // Build solution and ASCII art array.
         $solution = '';
         $ascii_lines = [];
         for ($i = 0; $i < $font['height']; $i++) {
@@ -82,7 +83,7 @@ function ascii_art_captcha_captcha($op, $captcha_type = '') {
             $ascii_lines[$l] .= ' ' . Html::escape($cline);
           }
         }
-        // build CAPTCHA array
+        // Build CAPTCHA array.
         $captcha = [];
         $captcha['solution'] = $solution;
         $style = 'line-height:1.1;';
@@ -98,7 +99,7 @@ function ascii_art_captcha_captcha($op, $captcha_type = '') {
           '#size' => 10,
           '#maxlength' => 10,
           '#required' => TRUE,
-          '#description' => t('Enter the code depicted in ASCII art style.')
+          '#description' => t('Enter the code depicted in ASCII art style.'),
         ];
         return $captcha;
       }
