@@ -7,7 +7,7 @@
 
 /**
  * Implements hook_uninstall().
- * On uninstall: remove module variables and clear variables cache
+ * On uninstall: remove module variables and clear variables cache.
  */
 function lost_character_captcha_uninstall() {
   db_query("DELETE FROM {config} WHERE name LIKE 'lost_character_captcha_%'");
