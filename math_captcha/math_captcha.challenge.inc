@@ -6,11 +6,12 @@
  */
 
 /**
- * Function for addition challenges
+ * Function for addition challenges.
  */
 function _math_captcha_addition_challenge() {
-  $argmax = intval(variable_get('math_captcha_addition_argmax', 10));
-  if (variable_get('math_captcha_addition_allow_negative', FALSE)) {
+  $config = Drupal::config('math_captcha.settings');
+  $argmax = intval($config->get('math_captcha_addition_argmax'));
+  if ($config->get('math_captcha_addition_allow_negative')) {
     $x = mt_rand(-$argmax, $argmax);
     $y = mt_rand(-$argmax, $argmax);
   }
@@ -19,16 +20,17 @@ function _math_captcha_addition_challenge() {
     $y = mt_rand(0, $argmax);
   }
   $solution = $x + $y;
-  $maxlength = strlen(strval($argmax + $argmax)) + intval(variable_get('math_captcha_addition_allow_negative', FALSE));
+  $maxlength = strlen(strval($argmax + $argmax)) + intval($config->get('math_captcha_addition_allow_negative'));
   return _math_captcha_build_captcha($x, $y, '+', $solution, $maxlength);
 }
 
 /**
- * Function for subtraction challenges
+ * Function for subtraction challenges.
  */
 function _math_captcha_subtraction_challenge() {
-  $argmax = intval(variable_get('math_captcha_subtraction_argmax', 10));
-  if (variable_get('math_captcha_subtraction_allow_negative', FALSE)) {
+  $config = Drupal::config('math_captcha.settings');
+  $argmax = intval($config->get('math_captcha_subtraction_argmax'));
+  if ($config->get('math_captcha_subtraction_allow_negative')) {
     $x = mt_rand(-$argmax, $argmax);
     $y = mt_rand(-$argmax, $argmax);
   }
@@ -37,23 +39,24 @@ function _math_captcha_subtraction_challenge() {
     $x = mt_rand($y, $argmax);
   }
   $solution = $x - $y;
-  $maxlength = strlen(strval($argmax + $argmax)) + intval(variable_get('math_captcha_subtraction_allow_negative', FALSE));
+  $maxlength = strlen(strval($argmax + $argmax)) + intval($config->get('math_captcha_subtraction_allow_negative'));
   return _math_captcha_build_captcha($x, $y, '-', $solution, $maxlength);
 }
 
 /**
- * Function for multiplication challenges
+ * Function for multiplication challenges.
  */
 function _math_captcha_multiplication_challenge() {
-  $argmax = intval(variable_get('math_captcha_multiplication_argmax', 5));
+  $config = Drupal::config('math_captcha.settings');
+  $argmax = intval($config->get('math_captcha_multiplication_argmax'));
   $x = mt_rand(1, $argmax);
   $y = mt_rand(1, $argmax);
-  if (variable_get('math_captcha_multiplication_allow_negative', FALSE)) {
+  if ($config->get('math_captcha_multiplication_allow_negative')) {
     $x = $x * (mt_rand(0, 1) * 2 - 1);
     $y = $y * (mt_rand(0, 1) * 2 - 1);
   }
   $solution = $x * $y;
-  $maxlength = strlen(strval($argmax * $argmax)) + intval(variable_get('math_captcha_multiplication_allow_negative', FALSE));
+  $maxlength = strlen(strval($argmax * $argmax)) + intval($config->get('math_captcha_multiplication_allow_negative'));
   return _math_captcha_build_captcha($x, $y, '*', $solution, $maxlength);
 }
 
@@ -92,10 +95,11 @@ function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength = 3)
  * Helper function for transforming a number to a textual representation
  */
 function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
+  $config = Drupal::config('math_captcha.settings');
   // Start with no textual representation
   $t = "$n";
   // If enabled and available: do textual representation
-  if (variable_get('math_captcha_textual_numbers', TRUE)) {
+  if ($config->get('math_captcha_textual_numbers')) {
     $repr_map = array(
       0 => t('zero'), 1 => t('one'), 2 => t('two'), 3 => t('three'),
       4 => t('four'), 5 => t('five'), 6 => t('six'), 7 => t('seven'), 8 => t('eight'),
@@ -119,10 +123,11 @@ function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
  * Helper function for transforming a operator to a textual representation
  */
 function _math_captcha_repr_op($op) {
+  $config = Drupal::config('math_captcha.settings');
   // Start with no textual representation
   $t = "$op";
   // If enabled and available: do textual representation
-  if (variable_get('math_captcha_textual_operators', FALSE)) {
+  if ($config->get('math_captcha_textual_operators')) {
     $repr_map = array('+' => t('plus'), '-' => t('minus'), '*' => t('times'), '=' => t('equals'));
     if (array_key_exists($op, $repr_map)) {
       $t = $repr_map[$op];

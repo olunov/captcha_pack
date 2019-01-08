@@ -63,7 +63,7 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Addition challenge: x + y = z'),
     ];
     $form['math_captcha_addition']['math_captcha_addition_argmax'] = [
-      '#type' => 'textfield',
+      '#type' => 'number',
       '#title' => $this->t('Maximum value for x and y'),
       '#default_value' => $config->get('math_captcha_addition_argmax'),
       '#maxlength' => 3,
@@ -80,7 +80,7 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Subtraction challenge: x - y = z'),
     ];
     $form['math_captcha_subtraction']['math_captcha_subtraction_argmax'] = [
-      '#type' => 'textfield',
+      '#type' => 'number',
       '#title' => $this->t('Maximum value for x and y'),
       '#default_value' => $config->get('math_captcha_subtraction_argmax'),
       '#maxlength' => 3,
@@ -97,7 +97,7 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Multiplication challenge: x * y = z'),
     ];
     $form['math_captcha_multiplication']['math_captcha_multiplication_argmax'] = [
-      '#type' => 'textfield',
+      '#type' => 'number',
       '#title' => $this->t('Maximum value for x and y'),
       '#default_value' => $config->get('math_captcha_multiplication_argmax'),
       '#maxlength' => 3,
