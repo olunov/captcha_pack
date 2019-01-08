@@ -41,12 +41,14 @@ function math_captcha_captcha($op, $captcha_type = '') {
  * Function for getting the enabled challenges (e.g. for use as checkboxes default_value)
  */
 function _math_captcha_enabled_challenges() {
-  $enabled = variable_get('math_captcha_enabled_challenges', [
-    'addition' => 'addition',
-    'subtraction' => 'subtraction',
-    'multiplication' => 'multiplication'
-  ]);
-  
+//  $enabled = variable_get('math_captcha_enabled_challenges', [
+//    'addition' => 'addition',
+//    'subtraction' => 'subtraction',
+//    'multiplication' => 'multiplication'
+//  ]);
+
+  $enabled = Drupal::config('math_captcha.settings')->get('math_captcha_enabled_challenges');
+
   return $enabled;
 }
 
