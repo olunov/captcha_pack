@@ -11,7 +11,7 @@
 function math_captcha_help($path, $arg) {
   switch ($path) {
     case 'admin/config/people/captcha/math_captcha':
-      return '<p>' . t('Provide math CAPTCHAs like \'two + three = ?\' and \'2 times ? = 6\'.') . '</p>';
+      return '<p>' . t("Provide math CAPTCHAs like 'two + three = ?' and '2 times ? = 6'.") . '</p>';
   }
 }
 
@@ -25,8 +25,8 @@ function math_captcha_captcha($op, $captcha_type = '') {
 
     case 'generate':
       if ($captcha_type == 'Math CAPTCHA') {
-        require_once('math_captcha.challenge.inc');
-        // Get the available challenges
+        require_once 'math_captcha.challenge.inc';
+        // Get the available challenges.
         $enabled_challenges = _math_captcha_enabled_challenges();
         $challenges = array_filter($enabled_challenges);
         $challenge = $challenges[array_rand($challenges)];
@@ -38,26 +38,9 @@ function math_captcha_captcha($op, $captcha_type = '') {
 }
 
 /**
- * Function for getting the enabled challenges (e.g. for use as checkboxes default_value)
+ * Function for getting the enabled math captcha challenges.
  */
 function _math_captcha_enabled_challenges() {
-//  $enabled = variable_get('math_captcha_enabled_challenges', [
-//    'addition' => 'addition',
-//    'subtraction' => 'subtraction',
-//    'multiplication' => 'multiplication'
-//  ]);
-
   $enabled = Drupal::config('math_captcha.settings')->get('math_captcha_enabled_challenges');
-
   return $enabled;
 }
-
-// /**
-//  * Process the response to the Math CAPTCHA before validation.
-//  */
-// function math_captcha_process($element, $edit) {
-//   if (\Drupal::config('math_captcha.settings')->get('math_captcha_ignore_spaces')) {
-//     $element['#value'] = preg_replace('/\s*/', '', $element['#value']);
-//   }
-//   return $element;
-// }

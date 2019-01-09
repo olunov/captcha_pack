@@ -61,7 +61,7 @@ function _math_captcha_multiplication_challenge() {
 }
 
 /**
- * Helper function to build a math CAPTCHA form item
+ * Helper function to build a math CAPTCHA form item.
  */
 function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength = 3) {
   $form_item = [];
@@ -74,16 +74,21 @@ function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength = 3)
     '#description' => t('Solve this math question and enter the solution with digits. E.g. for "two plus four = ?" enter "6".'),
   ];
   switch (mt_rand(0, 2)) {
-    case 0: // question like "x + y = ?"
+    // Question like "x + y = ?".
+    case 0:
       $form_item['solution'] = "$result";
       $form_item['form']['captcha_response']['#field_prefix'] = _math_captcha_repr($x, TRUE) . ' ' . _math_captcha_repr_op($operator) . ' ' . _math_captcha_repr($y, TRUE) . ' ' . _math_captcha_repr_op('=');
       break;
-    case 1: // question like "x + ? = z"
+
+    // Question like "x + ? = z".
+    case 1:
       $form_item['solution'] = "$y";
       $form_item['form']['captcha_response']['#field_prefix'] = _math_captcha_repr($x, TRUE) . ' ' . _math_captcha_repr_op($operator) . ' ';
       $form_item['form']['captcha_response']['#field_suffix'] = ' ' . _math_captcha_repr_op('=') . ' ' . _math_captcha_repr($result);
       break;
-    case 2: // question like "? + y = z"
+
+    // Question like "? + y = z".
+    case 2:
       $form_item['solution'] = "$x";
       $form_item['form']['captcha_response']['#field_suffix'] = ' ' . _math_captcha_repr_op($operator) . ' ' . _math_captcha_repr($y, TRUE) . ' ' . _math_captcha_repr_op('=') . ' ' . _math_captcha_repr($result);
       break;
@@ -92,7 +97,7 @@ function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength = 3)
 }
 
 /**
- * Helper function for transforming a number to a textual representation
+ * Helper function for transforming a number to a textual representation.
  */
 function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
   $config = Drupal::config('math_captcha.settings');
@@ -101,15 +106,27 @@ function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
   // If enabled and available: do textual representation.
   if ($config->get('math_captcha_textual_numbers')) {
     $repr_map = [
-      0 => t('zero'), 1 => t('one'), 2 => t('two'), 3 => t('three'),
-      4 => t('four'), 5 => t('five'), 6 => t('six'), 7 => t('seven'), 8 => t('eight'),
-      9 => t('nine'), 10 => t('ten'), 11 => t('eleven'), 12 => t('twelve'),
-      13 => t('thirteen'), 14 => t('fourteen'), 15 => t('fifteen'),
+      0 => t('zero'),
+      1 => t('one'),
+      2 => t('two'),
+      3 => t('three'),
+      4 => t('four'),
+      5 => t('five'),
+      6 => t('six'),
+      7 => t('seven'),
+      8 => t('eight'),
+      9 => t('nine'),
+      10 => t('ten'),
+      11 => t('eleven'),
+      12 => t('twelve'),
+      13 => t('thirteen'),
+      14 => t('fourteen'),
+      15 => t('fifteen'),
     ];
     if (array_key_exists(abs($n), $repr_map)) {
       $t = $repr_map[abs($n)];
       if ($n < 0) {
-        $t = (string) t('minus @number', ['@number' => (string) $t]);
+        $t = t('minus @number', ['@number' => $t]);
       }
     }
   }
@@ -124,11 +141,17 @@ function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
  */
 function _math_captcha_repr_op($op) {
   $config = Drupal::config('math_captcha.settings');
-  // Start with no textual representation
+  // Start with no textual representation.
   $t = "$op";
-  // If enabled and available: do textual representation
+  // If enabled and available: do textual representation.
   if ($config->get('math_captcha_textual_operators')) {
-    $repr_map = ['+' => t('plus'), '-' => t('minus'), '*' => t('times'), '=' => t('equals')];
+    $repr_map = [
+      '+' => t('plus'),
+      '-' => t('minus'),
+      '*' => t('times'),
+      '=' => t('equals'),
+    ];
+
     if (array_key_exists($op, $repr_map)) {
       $t = $repr_map[$op];
     }
