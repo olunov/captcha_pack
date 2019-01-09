@@ -64,15 +64,15 @@ function _math_captcha_multiplication_challenge() {
  * Helper function to build a math CAPTCHA form item
  */
 function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength = 3) {
-  $form_item = array();
-  $form_item['form']['captcha_response'] = array(
+  $form_item = [];
+  $form_item['form']['captcha_response'] = [
     '#type' => 'textfield',
     '#title' => t('Math question'),
     '#required' => TRUE,
     '#size' => $maxlength + 2,
     '#maxlength' => $maxlength,
     '#description' => t('Solve this math question and enter the solution with digits. E.g. for "two plus four = ?" enter "6".'),
-  );
+  ];
   switch (mt_rand(0, 2)) {
     case 0: // question like "x + y = ?"
       $form_item['solution'] = "$result";
@@ -96,20 +96,20 @@ function _math_captcha_build_captcha($x, $y, $operator, $result, $maxlength = 3)
  */
 function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
   $config = Drupal::config('math_captcha.settings');
-  // Start with no textual representation
+  // Start with no textual representation.
   $t = "$n";
-  // If enabled and available: do textual representation
+  // If enabled and available: do textual representation.
   if ($config->get('math_captcha_textual_numbers')) {
-    $repr_map = array(
+    $repr_map = [
       0 => t('zero'), 1 => t('one'), 2 => t('two'), 3 => t('three'),
       4 => t('four'), 5 => t('five'), 6 => t('six'), 7 => t('seven'), 8 => t('eight'),
       9 => t('nine'), 10 => t('ten'), 11 => t('eleven'), 12 => t('twelve'),
       13 => t('thirteen'), 14 => t('fourteen'), 15 => t('fifteen'),
-    );
+    ];
     if (array_key_exists(abs($n), $repr_map)) {
       $t = $repr_map[abs($n)];
       if ($n < 0) {
-        $t = t('minus !number', array('!number' => $t));
+        $t = (string) t('minus @number', ['@number' => (string) $t]);
       }
     }
   }
@@ -120,7 +120,7 @@ function _math_captcha_repr($n, $add_paratheses_when_negative = FALSE) {
 }
 
 /**
- * Helper function for transforming a operator to a textual representation
+ * Helper function for transforming a operator to a textual representation.
  */
 function _math_captcha_repr_op($op) {
   $config = Drupal::config('math_captcha.settings');
@@ -128,7 +128,7 @@ function _math_captcha_repr_op($op) {
   $t = "$op";
   // If enabled and available: do textual representation
   if ($config->get('math_captcha_textual_operators')) {
-    $repr_map = array('+' => t('plus'), '-' => t('minus'), '*' => t('times'), '=' => t('equals'));
+    $repr_map = ['+' => t('plus'), '-' => t('minus'), '*' => t('times'), '=' => t('equals')];
     if (array_key_exists($op, $repr_map)) {
       $t = $repr_map[$op];
     }

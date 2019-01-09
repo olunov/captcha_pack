@@ -119,7 +119,7 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
     if (count(array_filter($form_state->getValue('math_captcha_enabled_challenges'))) < 1) {
       $form_state->setErrorByName('math_captcha_enabled_challenges', $this->t('You should select at least one type of math challenges.'));
     }
-    // Check argmax's
+    // Check argmax's.
     $argmaxs = ['math_captcha_addition_argmax', 'math_captcha_subtraction_argmax', 'math_captcha_multiplication_argmax'];
     foreach ($argmaxs as $argmax) {
       if (!ctype_digit($form_state->getValue($argmax))) {
