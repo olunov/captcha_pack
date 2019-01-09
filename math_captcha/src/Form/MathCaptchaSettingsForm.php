@@ -57,10 +57,16 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('math_captcha_textual_operators'),
       '#description' => $this->t('When enabled, the operators in the challenge will get a textual representation if available. E.g. "plus" instead of "+".'),
     ];
+
     // Addition challenge.
     $form['math_captcha_addition'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Addition challenge: x + y = z'),
+      '#states' => array(
+        'invisible' => array(
+          ':input[name="math_captcha_enabled_challenges[addition]"]' => array('checked' => FALSE),
+        ),
+      ),
     ];
     $form['math_captcha_addition']['math_captcha_addition_argmax'] = [
       '#type' => 'number',
@@ -68,16 +74,27 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('math_captcha_addition_argmax'),
       '#maxlength' => 3,
       '#size' => 3,
+      '#states' => array(
+        'required' => array(
+          ':input[name="math_captcha_enabled_challenges[addition]"]' => array('checked' => TRUE),
+        ),
+      ),
     ];
     $form['math_captcha_addition']['math_captcha_addition_allow_negative'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Allow negative values.'),
       '#default_value' => $config->get('math_captcha_addition_allow_negative'),
     ];
+
     // Subtraction challenge.
     $form['math_captcha_subtraction'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Subtraction challenge: x - y = z'),
+      '#states' => array(
+        'invisible' => array(
+          ':input[name="math_captcha_enabled_challenges[subtraction]"]' => array('checked' => FALSE),
+        ),
+      ),
     ];
     $form['math_captcha_subtraction']['math_captcha_subtraction_argmax'] = [
       '#type' => 'number',
@@ -85,16 +102,27 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('math_captcha_subtraction_argmax'),
       '#maxlength' => 3,
       '#size' => 3,
+      '#states' => array(
+        'required' => array(
+          ':input[name="math_captcha_enabled_challenges[subtraction]"]' => array('checked' => TRUE),
+        ),
+      ),
     ];
     $form['math_captcha_subtraction']['math_captcha_subtraction_allow_negative'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Allow negative values.'),
       '#default_value' => $config->get('math_captcha_subtraction_allow_negative'),
     ];
+
     // Multiplication challenge.
     $form['math_captcha_multiplication'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Multiplication challenge: x * y = z'),
+      '#states' => array(
+        'invisible' => array(
+          ':input[name="math_captcha_enabled_challenges[multiplication]"]' => array('checked' => FALSE),
+        ),
+      ),
     ];
     $form['math_captcha_multiplication']['math_captcha_multiplication_argmax'] = [
       '#type' => 'number',
@@ -102,6 +130,11 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('math_captcha_multiplication_argmax'),
       '#maxlength' => 3,
       '#size' => 3,
+      '#states' => array(
+        'required' => array(
+          ':input[name="math_captcha_enabled_challenges[multiplication]"]' => array('checked' => TRUE),
+        ),
+      ),
     ];
     $form['math_captcha_multiplication']['math_captcha_multiplication_allow_negative'] = [
       '#type' => 'checkbox',
@@ -116,18 +149,19 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if (count(array_filter($form_state->getValue('math_captcha_enabled_challenges'))) < 1) {
+    $enabled_challenges = $form_state->getValue('math_captcha_enabled_challenges');
+    if (count(array_filter($enabled_challenges)) < 1) {
       $form_state->setErrorByName('math_captcha_enabled_challenges', $this->t('You should select at least one type of math challenges.'));
     }
 
-    // Check argmax's.
-    $argmaxs = [
-      'math_captcha_addition_argmax',
-      'math_captcha_subtraction_argmax',
-      'math_captcha_multiplication_argmax',
-    ];
+    $challenges = array_keys($enabled_challenges);
 
-    foreach ($argmaxs as $argmax) {
+    foreach ($challenges as $challenge) {
+      if (empty($enabled_challenges[$challenge])) {
+        continue;
+      }
+
+      $argmax = "math_captcha_{$challenge}_argmax";
       if (!ctype_digit($form_state->getValue($argmax))) {
         $form_state->setErrorByName($argmax, $this->t('Maximum value should be an integer.'));
       }
