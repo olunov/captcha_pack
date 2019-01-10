@@ -62,11 +62,11 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
     $form['math_captcha_addition'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Addition challenge: x + y = z'),
-      '#states' => array(
-        'invisible' => array(
-          ':input[name="math_captcha_enabled_challenges[addition]"]' => array('checked' => FALSE),
-        ),
-      ),
+      '#states' => [
+        'invisible' => [
+          ':input[name="math_captcha_enabled_challenges[addition]"]' => ['checked' => FALSE],
+        ],
+      ],
     ];
     $form['math_captcha_addition']['math_captcha_addition_argmax'] = [
       '#type' => 'number',
@@ -74,11 +74,11 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('math_captcha_addition_argmax'),
       '#maxlength' => 3,
       '#size' => 3,
-      '#states' => array(
-        'required' => array(
-          ':input[name="math_captcha_enabled_challenges[addition]"]' => array('checked' => TRUE),
-        ),
-      ),
+      '#states' => [
+        'required' => [
+          ':input[name="math_captcha_enabled_challenges[addition]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $form['math_captcha_addition']['math_captcha_addition_allow_negative'] = [
       '#type' => 'checkbox',
@@ -90,11 +90,11 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
     $form['math_captcha_subtraction'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Subtraction challenge: x - y = z'),
-      '#states' => array(
-        'invisible' => array(
-          ':input[name="math_captcha_enabled_challenges[subtraction]"]' => array('checked' => FALSE),
-        ),
-      ),
+      '#states' => [
+        'invisible' => [
+          ':input[name="math_captcha_enabled_challenges[subtraction]"]' => ['checked' => FALSE],
+        ],
+      ],
     ];
     $form['math_captcha_subtraction']['math_captcha_subtraction_argmax'] = [
       '#type' => 'number',
@@ -102,11 +102,11 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('math_captcha_subtraction_argmax'),
       '#maxlength' => 3,
       '#size' => 3,
-      '#states' => array(
-        'required' => array(
-          ':input[name="math_captcha_enabled_challenges[subtraction]"]' => array('checked' => TRUE),
-        ),
-      ),
+      '#states' => [
+        'required' => [
+          ':input[name="math_captcha_enabled_challenges[subtraction]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $form['math_captcha_subtraction']['math_captcha_subtraction_allow_negative'] = [
       '#type' => 'checkbox',
@@ -118,11 +118,11 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
     $form['math_captcha_multiplication'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Multiplication challenge: x * y = z'),
-      '#states' => array(
-        'invisible' => array(
-          ':input[name="math_captcha_enabled_challenges[multiplication]"]' => array('checked' => FALSE),
-        ),
-      ),
+      '#states' => [
+        'invisible' => [
+          ':input[name="math_captcha_enabled_challenges[multiplication]"]' => ['checked' => FALSE],
+        ],
+      ],
     ];
     $form['math_captcha_multiplication']['math_captcha_multiplication_argmax'] = [
       '#type' => 'number',
@@ -130,11 +130,11 @@ class MathCaptchaSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('math_captcha_multiplication_argmax'),
       '#maxlength' => 3,
       '#size' => 3,
-      '#states' => array(
-        'required' => array(
-          ':input[name="math_captcha_enabled_challenges[multiplication]"]' => array('checked' => TRUE),
-        ),
-      ),
+      '#states' => [
+        'required' => [
+          ':input[name="math_captcha_enabled_challenges[multiplication]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $form['math_captcha_multiplication']['math_captcha_multiplication_allow_negative'] = [
       '#type' => 'checkbox',
