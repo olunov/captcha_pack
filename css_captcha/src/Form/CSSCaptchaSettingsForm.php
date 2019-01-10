@@ -44,6 +44,7 @@ class CSSCaptchaSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Characters to use in the code'),
       '#default_value' => $config->get('css_captcha_allowed_characters'),
+      '#required' => TRUE,
     ];
     $form['css_captcha_code_length'] = [
       '#type' => 'select',
@@ -58,6 +59,29 @@ class CSSCaptchaSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $css_captcha_allowed_characters = $form_state->getValue('css_captcha_allowed_characters');
+    // Checking if there are spaces among allowed characters.
+    if (preg_match('/\s/', $css_captcha_allowed_characters)) {
+      $form_state->setErrorByName('css_captcha_allowed_characters', $this->t('The list of characters to use should not contain spaces.'));
+    }
+
+    // Checking if number of entered symbols not less than length of code.
+    if (strlen($css_captcha_allowed_characters) < $form_state->getValue('css_captcha_code_length')) {
+      $form_state->setErrorByName('css_captcha_allowed_characters', $this->t('Number of allowed characters should be at least as code length.'));
+    }
+
+    // Checking for duplicated characters among allowed characters.
+    if ($css_captcha_allowed_characters !== implode('', array_unique(str_split($css_captcha_allowed_characters)))) {
+      $form_state->setErrorByName('css_captcha_allowed_characters', $this->t('Please remove duplicated characters.'));
+    }
+
+    parent::validateForm($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('css_captcha.settings')
       ->set('css_captcha_allowed_characters', $form_state->getValue('css_captcha_allowed_characters'))
@@ -65,17 +89,6 @@ class CSSCaptchaSettingsForm extends ConfigFormBase {
       ->save();
 
     parent::SubmitForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    if (preg_match('/\s/', $form_state->getValue('css_captcha_allowed_characters'))) {
-      $form_state->setErrorByName('css_captcha_allowed_characters', $this->t('The list of characters to use should not contain spaces.'));
-    }
-
-    parent::validateForm($form, $form_state);
   }
 
 }
