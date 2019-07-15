@@ -72,8 +72,8 @@ function css_captcha_captcha($op, $captcha_type = '') {
         $captcha = [];
         $captcha['solution'] = $solution;
         $captcha['form']['captcha_code'] = [
-          '#type' => 'markup',
-          '#children' => '<div class="css-captcha-code">' . $code_struct[0]['content'] . '</div>',
+          '#type' => 'inline_template',
+          '#template' => '<div class="css-captcha-code">' . $code_struct[0]['content'] . '</div>',
           '#cache' => ['max-age' => 0],
         ];
         $captcha['form']['captcha_response'] = [
