@@ -4,5 +4,5 @@ description: Provides an ASCII art based CAPTCHA type.
 package: Spam control
 core: 8.x
 dependencies:
-  - drupal:captcha
+  - captcha:captcha
 configure: admin/config/people/captcha/ascii_art_captcha

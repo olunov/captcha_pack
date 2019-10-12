@@ -3,7 +3,7 @@ type: module
 description: Provide math CAPTCHAs like 'two + three = ?' and '2 times ? = 6'.
 package: "Spam control"
 dependencies:
-  - drupal:captcha
+  - captcha:captcha
 configure: admin/config/people/captcha/math_captcha
 
 # Information added by drupal.org packaging script on 2011-10-23

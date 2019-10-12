@@ -1,9 +1,9 @@
-name: Random CAPTCHA type
+name: Random CAPTCHA Type
 type: module
 description: Provides a 'meta' CAPTCHA that randomly picks a CAPTCHA type.
 package: "Spam control"
 dependencies:
-  - drupal:captcha
+  - captcha:captcha
 configure: admin/config/people/captcha/random_captcha_type
 
 # Information added by drupal.org packaging script on 2011-10-23
