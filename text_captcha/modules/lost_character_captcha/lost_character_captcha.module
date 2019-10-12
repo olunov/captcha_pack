@@ -7,8 +7,6 @@
 
 use Drupal\Core\Form\FormStateInterface;
 
-require_once drupal_get_path('module', 'lost_character_captcha') . '/../text_captcha.inc';
-
 define('LOST_CHARACTER_CAPTCHA_DEFAULT_WORD_POOL', 'information language interesting vocabulary communication computer security presentation infrastructure videotape yesterday xylophone workforce validation supervisor standalone multimedia grapefruit friendship aboriginal alphabetical agriculture atmosphere candidature catastrophe audiovisual fingerprint keyboard testimonial supervision supermarket temperature terminology telephonist ultraviolet scholarship spaceflight shoplifting punctuation screwdriver quarterback');
 define('LOST_CHARACTER_CAPTCHA_HINTER', '_');
 

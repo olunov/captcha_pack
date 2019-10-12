@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains general functionality of the module.
+ * Contains general functionality for the module.
  */
 
 use Drupal\Core\Form\FormStateInterface;

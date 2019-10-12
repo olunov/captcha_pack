@@ -1,4 +1,0 @@
-base:
-  css:
-    all:
-      ../text_captcha.css: {}

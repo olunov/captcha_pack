@@ -4,6 +4,7 @@ description: Provides CAPTCHA that asks for the lost character(s) in a given wor
 package: "Spam control"
 dependencies:
   - captcha:captcha
+  - captcha_pack:text_captcha
 configure: admin/config/people/captcha/lost_character_captcha
 
 # Information added by drupal.org packaging script on 2011-10-23
