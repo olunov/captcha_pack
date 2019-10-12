@@ -41,7 +41,9 @@ function random_captcha_type_captcha($op, $captcha_type = '', $captcha_sid = 0) 
         }
         list($module, $type) = explode('/', $module_and_type);
         // Call the generate CAPTCHA hook.
-        $captcha = \Drupal::moduleHandler()->invoke($module, 'captcha', ['generate', $type, $captcha_sid]);
+        $captcha = \Drupal::moduleHandler()->invoke($module, 'captcha', [
+          'generate', $type, $captcha_sid,
+        ]);
         // Store the current CAPTCHA type so it can be recovered for
         // regenerating the form in the validation phase.
         $captcha['form']['random_captcha_type'] = [
