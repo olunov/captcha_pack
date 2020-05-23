@@ -3,7 +3,8 @@ type: module
 description: Provides a CSS based CAPTCHA type.
 package: "Spam control"
 dependencies:
-  - drupal:captcha
+  - captcha:captcha
+  - captcha_pack:text_captcha
 configure: admin/config/people/captcha/css_captcha
 
 # Information added by drupal.org packaging script on 2011-10-23

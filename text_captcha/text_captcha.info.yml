@@ -1,0 +1,7 @@
+name: Text CAPTCHA
+type: module
+description: Module provide common functionality for text processing CAPTCHA.
+package: "Spam control"
+core: 8.x
+dependencies:
+  - captcha:captcha

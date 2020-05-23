@@ -3,7 +3,7 @@ type: module
 description: Provides CAPTCHA that requires to pick for the right word/character out of a CAPTCHA phrase.
 package: "Spam control"
 dependencies:
-  - drupal:captcha
+  - captcha:captcha
 configure: admin/config/people/captcha/phrase_captcha
 
 # Information added by drupal.org packaging script on 2011-10-23

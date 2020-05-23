@@ -5,8 +5,6 @@
  * Load css captcha file to use some helper functions.
  */
 
-require_once drupal_get_path('module', 'css_captcha') . '/../text_captcha/text_captcha.inc';
-
 /**
  * Implements hook_help().
  */

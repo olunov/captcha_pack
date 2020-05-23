@@ -3,7 +3,7 @@ type: module
 description: The foo CAPTCHA requires the user to enter the word 'foo'.
 package: "Spam control"
 dependencies:
-  - drupal:captcha
+  - captcha:captcha
 configure: admin/config/people/captcha/foo_captcha
 
 # Information added by drupal.org packaging script on 2011-10-23
