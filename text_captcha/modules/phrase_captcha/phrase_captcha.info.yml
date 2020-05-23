@@ -2,12 +2,7 @@ name: Phrase CAPTCHA
 type: module
 description: Provides CAPTCHA that requires to pick for the right word/character out of a CAPTCHA phrase.
 package: "Spam control"
-dependencies:
-  - captcha:captcha
-configure: admin/config/people/captcha/phrase_captcha
-
-# Information added by drupal.org packaging script on 2011-10-23
-# version: "8.x-1.0-alpha1"
 core: "8.x"
-# project: "captcha_pack"
-datestamp: "1319362529"
+dependencies:
+  - captcha_pack:text_captcha
+configure: phrase_captcha.settings
