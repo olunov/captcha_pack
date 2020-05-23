@@ -86,25 +86,6 @@ class PhraseCaptchaSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    $config = $this->config('phrase_captcha.settings');
-    $config
-      ->set('phrase_captcha_word_selection_challenges', $form_state->getValue('phrase_captcha_word_selection_challenges'))
-      ->set('phrase_captcha_additional_word_quantity', $form_state->getValue('phrase_captcha_additional_word_quantity'))
-      ->set('phrase_captcha_word_quantity', $form_state->getValue('phrase_captcha_word_quantity'));
-    foreach ($form_state->getValues() as $label => $value) {
-      if (strpos($label, 'phrase_captcha_userdefined_word_pool') !== FALSE) {
-        $config->set($label, $value);
-      }
-    }
-    $config->save();
-
-    parent::SubmitForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     if ($form_state->getValue('phrase_captcha_words') == PHRASE_CAPTCHA_USER_DEFINED_WORDS) {
       $word_count_minimum = $form_state->getValue('phrase_captcha_word_quantity') + $form_state->getValue('phrase_captcha_additional_word_quantity') + 2;
@@ -116,6 +97,26 @@ class PhraseCaptchaSettingsForm extends ConfigFormBase {
     }
 
     parent::validateForm($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $config = $this->config('phrase_captcha.settings');
+    $config
+      ->set('phrase_captcha_words', $form_state->getValue('phrase_captcha_words'))
+      ->set('phrase_captcha_word_selection_challenges', $form_state->getValue('phrase_captcha_word_selection_challenges'))
+      ->set('phrase_captcha_additional_word_quantity', $form_state->getValue('phrase_captcha_additional_word_quantity'))
+      ->set('phrase_captcha_word_quantity', $form_state->getValue('phrase_captcha_word_quantity'));
+    foreach ($form_state->getValues() as $label => $value) {
+      if (strpos($label, 'phrase_captcha_userdefined_word_pool') !== FALSE) {
+        $config->set($label, $value);
+      }
+    }
+    $config->save();
+
+    parent::SubmitForm($form, $form_state);
   }
 
 }

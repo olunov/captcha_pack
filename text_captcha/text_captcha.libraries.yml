@@ -1,4 +1,4 @@
 base:
   css:
-    all:
+    theme:
       css/text_captcha.css: {}
