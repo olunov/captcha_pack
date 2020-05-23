@@ -64,17 +64,6 @@ function word_list_captcha_captcha($op, $captcha_type = '') {
           '#options' => $options,
           // Extra class needed for additional CSS'ing of the options.
           '#attributes' => ['class' => ['text-captcha-word-list-radios']],
-          // TODO: the following needs to be ported to Drupal 6, which does not
-          // Support DANGEROUS_SKIP_CHECK anymore
-          //
-          // The following entry '#DANGEROUS_SKIP_CHECK' is needed to prevent
-          // that Drupal checks during validation phase if a submitted option
-          // is in the list of possible options. (see includes/form.inc)
-          // The options are randomly generated on each call and consequently
-          // almost never the same during the generate phase and the validation
-          // phase.
-        //
-          '#DANGEROUS_SKIP_CHECK' => TRUE,
           '#required' => TRUE,
           '#cache' => ['max-age' => 0],
         ];
